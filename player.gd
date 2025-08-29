@@ -8,11 +8,17 @@ extends CharacterBody3D
 @export_group("Movement")
 @export var move_speed := 8.0
 @export var acceleration := 20.0
+@export var rotation_speed := 8.0
+@export var jump_velocity := 12.0
 
+
+var _last_movement_direction := Vector3.FORWARD
 var _camera_input_direction := Vector2.ZERO
+var _gravity := -30.0
+
 @onready var _camera_pivot: Node3D = %CameraPivot
 @onready var _camera: Node3D = %CameraPivot/Camera3D
-
+@onready var _character_solidObj = %CollisionShape3D
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_click"):
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -51,9 +57,28 @@ func _physics_process(delta: float) -> void:
 	move_direction.y = 0
 	move_direction = move_direction.normalized()
 	
+	var y_velocity := velocity.y
+	
 	velocity = velocity.move_toward(move_direction * move_speed,
 	 acceleration * delta)
 	
+	velocity.y = y_velocity + _gravity*delta
+	
+	var is_starting_jump := Input.is_action_just_pressed("jump") and is_on_floor()
+	if is_starting_jump:
+		velocity.y += jump_velocity
+	
 	move_and_slide()
+
+	if move_direction.length() >0.2:
+		
+		_last_movement_direction = move_direction
+	var t_angle := Vector3.FORWARD.signed_angle_to(
+		_last_movement_direction,
+		Vector3.UP)
+		
+	_character_solidObj.global_rotation.y = lerp_angle(_character_solidObj.rotation.y, t_angle, rotation_speed * delta)
+	 
+	
 	
 	
