@@ -13,7 +13,6 @@ points = PackedVector3Array(-0.5, -0.5, 0, -0.497651, -0.5, -0.0490407, -0.49246
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_di3jm")
-dps = 0.24
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_rn1i3")
@@ -35,4 +34,4 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 0.910388, 0.413756, 0, -0.413756, 0.910388, 0, 0.417742, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.326428, 5.11289)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.599667, 7.15058)

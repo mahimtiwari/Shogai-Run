@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://l0s5a8dlr3xb"]
+[gd_scene load_steps=6 format=3 uid="uid://l0s5a8dlr3xb"]
 
 [ext_resource type="PackedScene" uid="uid://c7pjhwciirsge" path="res://Player3d.tscn" id="1_y8xcq"]
 
@@ -15,6 +15,11 @@ sky = SubResource("Sky_t0ega")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y8xcq"]
+albedo_color = Color(0.679522, 0.897247, 1, 1)
+metallic = 1.0
+roughness = 0.35
+
 [node name="Node3D" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -30,3 +35,16 @@ use_collision = true
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_y8xcq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.53541, 1.5, 14.7095)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(7.01677, 0, 0, 0, 9.3755, 0, 0, 0, 1, 8.46741, 5.14819, 6.77217)
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D2"]
+transform = Transform3D(0.545757, 0, 0, 0, 0.688655, 0, 0, 0, 4.44937, 0.0466468, -0.178755, -1.49295)
+operation = 2
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(2.10014, 0, 0, 0, 0.591324, -1.37976, 0, 0.116228, 7.01972, 0.59015, 0.817979, 0)
+size = Vector3(1.56201, 1, 1)
+material = SubResource("StandardMaterial3D_y8xcq")
