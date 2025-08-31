@@ -18,8 +18,7 @@ var _gravity := -30.0
 @onready var _camera_pivot: Node3D = %CameraPivot
 @onready var _camera: Node3D = %CameraPivot/Camera3D
 @onready var _character_solidObj = %CollisionShape3D
-@onready var animation_tree = $CollisionShape3D/Player1/AnimationTree
-
+@onready var animtree = $CollisionShape3D/Player1/AnimationTree
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_click"):
@@ -69,9 +68,7 @@ func _physics_process(delta: float) -> void:
 	if is_starting_jump:
 		velocity.y += jump_velocity
 	
-	animation_tree.set("parameters/BlendSpace1D/blend_position", velocity.length()/move_speed)
 	
-	move_and_slide()
 	
 	if move_direction.length() >0.2:		
 		_last_movement_direction = move_direction
@@ -81,3 +78,10 @@ func _physics_process(delta: float) -> void:
 		Vector3.UP)
 		
 	_character_solidObj.global_rotation.y = lerp_angle(_character_solidObj.rotation.y, t_angle, rotation_speed * delta)
+	
+	animtree.set("parameters/conditions/idle", raw_Inp==Vector2.ZERO && is_on_floor())
+	animtree.set("parameters/conditions/run", raw_Inp!=Vector2.ZERO && is_on_floor())
+	animtree.set("parameters/conditions/jump", !is_on_floor())
+	animtree.set("parameters/conditions/jump_end", is_on_floor())
+	move_and_slide()
+	
