@@ -18,6 +18,8 @@ var _gravity := -30.0
 @onready var _camera_pivot: Node3D = %CameraPivot
 @onready var _camera: Node3D = %CameraPivot/Camera3D
 @onready var _character_solidObj = %CollisionShape3D
+@onready var animation_tree = $CollisionShape3D/Player1/AnimationTree
+
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_click"):
@@ -34,6 +36,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	if is_camera_motion:
 		_camera_input_direction = event.screen_relative * rotation_sensitivity
+
+
 
 func _physics_process(delta: float) -> void:
 	_camera_pivot.rotation.x -= _camera_input_direction.y * delta
@@ -64,6 +68,8 @@ func _physics_process(delta: float) -> void:
 	var is_starting_jump := Input.is_action_just_pressed("jump") and is_on_floor()
 	if is_starting_jump:
 		velocity.y += jump_velocity
+	
+	animation_tree.set("parameters/BlendSpace1D/blend_position", velocity.length()/move_speed)
 	
 	move_and_slide()
 	
