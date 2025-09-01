@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://wgkwqy5j8ny8"
+path="res://.godot/imported/175. Random Song.mp3-fcc3c26e4be5fb637a1628f3b5521b0e.mp3str"
+
+[deps]
+
+source_file="res://SFX/175. Random Song.mp3"
+dest_files=["res://.godot/imported/175. Random Song.mp3-fcc3c26e4be5fb637a1628f3b5521b0e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

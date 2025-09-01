@@ -13,12 +13,17 @@ extends CharacterBody3D
 
 var _last_movement_direction := Vector3.FORWARD
 var _camera_input_direction := Vector2.ZERO
-var _gravity := -30.0
+var _gravity := -40.0
 
 @onready var _camera_pivot: Node3D = %CameraPivot
 @onready var _camera: Node3D = %CameraPivot/Camera3D
 @onready var _character_solidObj = %CollisionShape3D
 @onready var animtree = $CollisionShape3D/Player1/AnimationTree
+@onready var sfx_jump: AudioStreamPlayer = $SFX_Jump
+@onready var sfx_background: AudioStreamPlayer = $SFX_Background
+
+func _ready() -> void:
+	sfx_background.play()
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_click"):
@@ -66,6 +71,7 @@ func _physics_process(delta: float) -> void:
 	velocity.y = y_velocity + _gravity*delta
 	var is_starting_jump := Input.is_action_just_pressed("jump") and is_on_floor()
 	if is_starting_jump:
+		sfx_jump.play(0.18)
 		velocity.y += jump_velocity
 	
 	
