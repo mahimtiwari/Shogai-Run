@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0jj71gtptgkg"]
+
+[ext_resource type="PackedScene" uid="uid://br7gumlxlrwas" path="res://Level Design Objects/round_cylinder_sm.blend.glb" id="1_cxp75"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0htwr"]
+
+[node name="round_cylinder_sm_blend" instance=ExtResource("1_cxp75")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(2.04132, 0, 0, 0, -4.34183e-08, -2.04132, 0, 0.993294, -8.92287e-08, 0, 0, 0)
+shape = SubResource("CylinderShape3D_0htwr")

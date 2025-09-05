@@ -77,15 +77,15 @@ graph_offset = Vector2(101, -11)
 [node name="Player1" instance=ExtResource("1_st4ii")]
 
 [node name="Skeleton3D" parent="Armature" index="0"]
-bones/0/rotation = Quaternion(0.023038, 0.000314554, 0.0017706, 0.999733)
+bones/0/rotation = Quaternion(0.032806, 0.000297237, 0.00177359, 0.99946)
 bones/3/rotation = Quaternion(1.86253e-09, -2.18279e-11, 5.72982e-11, 1)
-bones/5/rotation = Quaternion(-0.0931946, -0.0950812, -0.161761, 0.977808)
+bones/5/rotation = Quaternion(-0.0950108, -0.110587, -0.179772, 0.972844)
 bones/6/rotation = Quaternion(-8.23175e-09, -9.55573e-08, -0.0598798, 0.998206)
-bones/8/rotation = Quaternion(-0.0931947, 0.0950813, 0.161761, 0.977808)
+bones/8/rotation = Quaternion(-0.0950109, 0.110587, 0.179772, 0.972844)
 bones/9/rotation = Quaternion(5.80616e-09, 1.10394e-07, 0.0598797, 0.998206)
 bones/11/rotation = Quaternion(-0.753264, -3.67439e-08, 2.89481e-08, 0.657719)
 bones/14/rotation = Quaternion(-0.753264, 3.67439e-08, -2.89481e-08, 0.657719)
-bones/17/rotation = Quaternion(-0.469053, 0.0268674, -0.000283938, 0.882761)
+bones/17/rotation = Quaternion(-0.45734, 0.0268613, -0.000639156, 0.888886)
 
 [node name="AnimationTree" type="AnimationTree" parent="." index="2"]
 tree_root = SubResource("AnimationNodeStateMachine_5q6qb")

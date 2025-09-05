@@ -10,10 +10,10 @@ extends CharacterBody3D
 @export var acceleration := 20.0
 @export var rotation_speed := 8.0
 @export var jump_velocity := 12.0
+@export var _gravity := -40
 
 var _last_movement_direction := Vector3.FORWARD
 var _camera_input_direction := Vector2.ZERO
-var _gravity := -40.0
 
 @onready var _camera_pivot: Node3D = %CameraPivot
 @onready var _camera: Node3D = %CameraPivot/Camera3D

@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjir0nllr70ct"]
+
+[ext_resource type="PackedScene" uid="uid://cevr2yhr4ciba" path="res://Level Design Objects/spawnBlock15x8.blend.glb" id="1_yh1up"]
+[ext_resource type="Script" uid="uid://b3w8i8qbtgegu" path="res://Level1/spawn_block_15x_8_blend.gd" id="2_51vj3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_51vj3"]
+resource_name = "Material.001"
+cull_mode = 2
+roughness = 0.579926
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_51vj3"]
+
+[node name="spawnBlock15x8_blend" instance=ExtResource("1_yh1up")]
+script = ExtResource("2_51vj3")
+
+[node name="Cube" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_51vj3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(14.946, 0, 0, 0, 1.99227, 0, 0, 0, 7.88767, 0, 0, 0)
+shape = SubResource("BoxShape3D_51vj3")

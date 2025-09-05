@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://5txxir5ycr02"]
+
+[ext_resource type="PackedScene" uid="uid://clq188p7j4imi" path="res://Level Design Objects/Rotator2.glb" id="1_7kv6w"]
+[ext_resource type="Script" uid="uid://dxn03bhyxai51" path="res://Level1/big_rotator.gd" id="2_3k1s8"]
+[ext_resource type="Script" uid="uid://c4aq7f8x8eb2n" path="res://general_obst/Rotating/cylinder_001.gd" id="3_v0q1j"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v0q1j"]
+resource_name = "Material.002"
+cull_mode = 2
+albedo_color = Color(0.972549, 0.00392157, 0.654902, 1)
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3k1s8"]
+resource_name = "Material.001"
+cull_mode = 2
+albedo_color = Color(0.972549, 0.00392157, 0.654902, 1)
+roughness = 0.5
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_5dktx"]
+height = 1.4668
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_cknci"]
+height = 0.480905
+radius = 0.405273
+
+[node name="Rotator2" instance=ExtResource("1_7kv6w")]
+transform = Transform3D(2.95263, 0, 0, 0, 2.95263, 0, 0, 0, 2.95263, 0, 0, 0)
+script = ExtResource("2_3k1s8")
+
+[node name="Cylinder" parent="." index="0"]
+transform = Transform3D(2.42515, 0, 0, 0, 2.89239, 0, 0, 0, 2.42515, 0, 2, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_v0q1j")
+
+[node name="Cylinder_001" parent="." index="1"]
+transform = Transform3D(2.75454, 0, 0, 0, 0, -2.75454, 0, 0.638826, 0, 0.0112114, 1.83979, 7.18911)
+surface_material_override/0 = SubResource("StandardMaterial3D_3k1s8")
+script = ExtResource("3_v0q1j")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(4.84544, 0, 0, 0, 3.98682, 0, 0, 0, 4.84544, 0, 2.00703, 0)
+shape = SubResource("CylinderShape3D_5dktx")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(3.30699, 0, 0, 0, -1.23088e-06, -3.30699, 0, 28.1592, -1.44553e-07, 0, 1.86907, 6.28183)
+shape = SubResource("CylinderShape3D_cknci")

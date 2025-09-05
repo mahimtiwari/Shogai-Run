@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1u85f6dfxlof"]
+
+[ext_resource type="PackedScene" uid="uid://clq188p7j4imi" path="res://Level Design Objects/Rotator2.glb" id="1_5ffwe"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_5dktx"]
+height = 1.4668
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_5vs3j"]
+height = 1.39087
+
+[node name="Rotator2" instance=ExtResource("1_5ffwe")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(4.84544, 0, 0, 0, 2.34269, 0, 0, 0, 4.84544, 0, 2.00703, 0)
+shape = SubResource("CylinderShape3D_5dktx")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(1.319, 0, 0, 0, -1.19438e-06, -1.319, 0, 27.3243, -5.76553e-08, 0, 1.86907, -6.91741e-08)
+shape = SubResource("CylinderShape3D_5vs3j")

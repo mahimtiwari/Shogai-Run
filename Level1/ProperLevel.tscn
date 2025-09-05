@@ -1,0 +1,433 @@
+[gd_scene load_steps=12 format=3 uid="uid://dp8ntlbnsjm35"]
+
+[ext_resource type="PackedScene" uid="uid://c7pjhwciirsge" path="res://Player3d.tscn" id="2_2jex3"]
+[ext_resource type="PackedScene" uid="uid://cjir0nllr70ct" path="res://Level1/spawn_block_15x_8_blend.tscn" id="2_gdkdi"]
+[ext_resource type="Texture2D" uid="uid://oodasrchstxr" path="res://73_bbefdfe7df90c2ce3b16f344fb358d93_file.jpg" id="3_gdkdi"]
+[ext_resource type="PackedScene" uid="uid://c1u85f6dfxlof" path="res://general_obst/Rotating/rotator_2.tscn" id="4_dsrnb"]
+[ext_resource type="Script" uid="uid://dxn03bhyxai51" path="res://Level1/big_rotator.gd" id="5_dsrnb"]
+[ext_resource type="PackedScene" uid="uid://dxsdo1gfjt54a" path="res://general_obst/bases/round_cylinder_sm_blend.tscn" id="6_att4f"]
+[ext_resource type="PackedScene" uid="uid://5txxir5ycr02" path="res://general_obst/Rotating/rotator_small_single.tscn" id="7_k3sol"]
+[ext_resource type="PackedScene" uid="uid://bio0tdd4mo587" path="res://general_obst/fall_platform_hexagon/hexagon.tscn" id="8_82quq"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_bfu0y"]
+panorama = ExtResource("3_gdkdi")
+energy_multiplier = 0.7
+
+[sub_resource type="Sky" id="Sky_t0ega"]
+sky_material = SubResource("PanoramaSkyMaterial_bfu0y")
+
+[sub_resource type="Environment" id="Environment_dsrnb"]
+background_mode = 2
+sky = SubResource("Sky_t0ega")
+sky_rotation = Vector3(0, -0.233874, 0)
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Node3D" type="Node3D"]
+
+[node name="spawnBlock15x8_blend" parent="." instance=ExtResource("2_gdkdi")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -1.08889, 0, 1.76037)
+color = Color(0.00392157, 0.603922, 0.984314, 1)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.977146, 0.197272, -0.0791795, -0.00437451, 0.353747, 0.935331, 0.212524, 0.914301, -0.3448, 0, 7.57648, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_dsrnb")
+
+[node name="CharacterBody3D2" parent="." instance=ExtResource("2_2jex3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.86883, 11.2868, -51.2985)
+
+[node name="spawnBlock15x8_blend2" parent="." instance=ExtResource("2_gdkdi")]
+transform = Transform3D(1.11075, 0, 0, 0, 5, 0, 0, 0, 5, -1.17547, 0.270688, -37.9908)
+color = Color(0.231373, 0.819608, 1, 1)
+
+[node name="Rotator3" parent="." instance=ExtResource("4_dsrnb")]
+transform = Transform3D(1.71794, 0, 0, 0, 1.71794, 0, 0, 0, 1.71794, 0, 6.31794, -89.666)
+script = ExtResource("5_dsrnb")
+
+[node name="3d Bck platform" type="Node3D" parent="."]
+
+[node name="spawnBlock15x8_blend3" parent="3d Bck platform" instance=ExtResource("2_gdkdi")]
+transform = Transform3D(3.43711, 0, 0, 0, -2.18557e-07, 5, 0, -5, -2.18557e-07, -0.00634766, -22.749, -50.6359)
+color = Color(0.00392157, 0.603922, 0.984314, 1)
+
+[node name="spawnBlock15x8_blend4" parent="3d Bck platform" instance=ExtResource("2_gdkdi")]
+transform = Transform3D(3.43711, 0, 0, 0, -2.18557e-07, 5, 0, -5, -2.18557e-07, -51.529, -22.961, -50.681)
+color = Color(0.00392157, 0.603922, 0.984314, 1)
+
+[node name="spawnBlock15x8_blend5" parent="3d Bck platform" instance=ExtResource("2_gdkdi")]
+transform = Transform3D(3.43711, 0, 0, 0, -2.18557e-07, 5, 0, -5, -2.18557e-07, 51.529, -23.045, -50.681)
+color = Color(0.00392157, 0.603922, 0.984314, 1)
+
+[node name="3d Bck platform2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 0, 13, -98.9952)
+
+[node name="spawnBlock15x8_blend3" parent="3d Bck platform2" instance=ExtResource("2_gdkdi")]
+transform = Transform3D(3.43711, 0, 0, 0, -2.18557e-07, 5, 0, -5, -2.18557e-07, 0, -23.045, -50.681)
+color = Color(0.231373, 0.819608, 1, 1)
+
+[node name="spawnBlock15x8_blend4" parent="3d Bck platform2" instance=ExtResource("2_gdkdi")]
+transform = Transform3D(3.43711, 0, 0, 0, -2.18557e-07, 5, 0, -5, -2.18557e-07, -51.529, -22.961, -50.681)
+color = Color(0.231373, 0.819608, 1, 1)
+
+[node name="spawnBlock15x8_blend5" parent="3d Bck platform2" instance=ExtResource("2_gdkdi")]
+transform = Transform3D(3.43711, 0, 0, 0, -2.18557e-07, 5, 0, -5, -2.18557e-07, 51.529, -23.045, -50.681)
+color = Color(0.231373, 0.819608, 1, 1)
+
+[node name="3d Bck platform3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 0, 13, -138.995)
+
+[node name="spawnBlock15x8_blend3" parent="3d Bck platform3" instance=ExtResource("2_gdkdi")]
+transform = Transform3D(3.43711, 0, 0, 0, -2.18557e-07, 5, 0, -5, -2.18557e-07, 0, -23.045, -50.681)
+color = Color(0.231373, 0.819608, 1, 1)
+
+[node name="spawnBlock15x8_blend4" parent="3d Bck platform3" instance=ExtResource("2_gdkdi")]
+transform = Transform3D(3.43711, 0, 0, 0, -2.18557e-07, 5, 0, -5, -2.18557e-07, -51.529, -22.961, -50.681)
+color = Color(0.231373, 0.819608, 1, 1)
+
+[node name="spawnBlock15x8_blend5" parent="3d Bck platform3" instance=ExtResource("2_gdkdi")]
+transform = Transform3D(3.43711, 0, 0, 0, -2.18557e-07, 5, 0, -5, -2.18557e-07, 51.529, -23.045, -50.681)
+color = Color(0.231373, 0.819608, 1, 1)
+
+[node name="3d Bck platform4" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 0, 13, -178.995)
+
+[node name="spawnBlock15x8_blend3" parent="3d Bck platform4" instance=ExtResource("2_gdkdi")]
+transform = Transform3D(3.43711, 0, 0, 0, -2.18557e-07, 5, 0, -5, -2.18557e-07, 0, -23.045, -50.681)
+color = Color(0.231373, 0.819608, 1, 1)
+
+[node name="spawnBlock15x8_blend4" parent="3d Bck platform4" instance=ExtResource("2_gdkdi")]
+transform = Transform3D(3.43711, 0, 0, 0, -2.18557e-07, 5, 0, -5, -2.18557e-07, -51.529, -22.961, -50.681)
+color = Color(0.231373, 0.819608, 1, 1)
+
+[node name="spawnBlock15x8_blend5" parent="3d Bck platform4" instance=ExtResource("2_gdkdi")]
+transform = Transform3D(3.43711, 0, 0, 0, -2.18557e-07, 5, 0, -5, -2.18557e-07, 51.529, -23.045, -50.681)
+color = Color(0.231373, 0.819608, 1, 1)
+
+[node name="round_cylinder_sm_blend" parent="." instance=ExtResource("6_att4f")]
+transform = Transform3D(33.23, 0, 0, 0, 9.031, 0, 0, 0, 33.23, 0, -2.178, -89.666)
+color = Color(1, 0.913725, 0.305882, 1)
+
+[node name="Small Rotator" type="Node3D" parent="."]
+transform = Transform3D(0.751026, 0, 0, 0, 0.751026, 0, 0, 0, 0.751026, -51.501, -32.8817, -150.45)
+
+[node name="Rotator2" parent="Small Rotator" instance=ExtResource("7_k3sol")]
+transform = Transform3D(2.51766, 0, 0, 0, 2.51766, 0, 0, 0, 2.51766, 0.320007, 3.53152, 7.255)
+
+[node name="round_cylinder_sm_blend2" parent="Small Rotator" instance=ExtResource("6_att4f")]
+transform = Transform3D(32.7821, 0, 0, 0, 8.90927, 0, 0, 0, 32.7821, 0.319733, -7.30936, 7.2551)
+color = Color(1, 0.854902, 0.152941, 1)
+
+[node name="Small Rotator2" type="Node3D" parent="."]
+transform = Transform3D(0.751026, 0, 0, 0, 0.751026, 0, 0, 0, 0.751026, -0.431244, -32.8817, -150.45)
+
+[node name="Rotator2" parent="Small Rotator2" instance=ExtResource("7_k3sol")]
+transform = Transform3D(2.51766, 0, 0, 0, 2.51766, 0, 0, 0, 2.51766, 0.320007, 3.53152, 7.255)
+
+[node name="round_cylinder_sm_blend2" parent="Small Rotator2" instance=ExtResource("6_att4f")]
+transform = Transform3D(32.7821, 0, 0, 0, 8.90927, 0, 0, 0, 32.7821, 0.319733, -7.30936, 7.2551)
+color = Color(1, 0.854902, 0.152941, 1)
+
+[node name="Small Rotator3" type="Node3D" parent="."]
+transform = Transform3D(0.751026, 0, 0, 0, 0.751026, 0, 0, 0, 0.751026, 51.2228, -32.8817, -150.45)
+
+[node name="Rotator2" parent="Small Rotator3" instance=ExtResource("7_k3sol")]
+transform = Transform3D(2.51766, 0, 0, 0, 2.51766, 0, 0, 0, 2.51766, 0.320007, 3.53152, 7.255)
+
+[node name="round_cylinder_sm_blend2" parent="Small Rotator3" instance=ExtResource("6_att4f")]
+transform = Transform3D(32.7821, 0, 0, 0, 8.90927, 0, 0, 0, 32.7821, 0.319733, -7.30936, 7.2551)
+color = Color(1, 0.854902, 0.152941, 1)
+
+[node name="3d Bck platform5" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 0, 13, -218.736)
+
+[node name="spawnBlock15x8_blend3" parent="3d Bck platform5" instance=ExtResource("2_gdkdi")]
+transform = Transform3D(3.43711, 0, 0, 0, -2.18557e-07, 5, 0, -5, -2.18557e-07, 0, -23.045, -50.681)
+color = Color(0.231373, 0.819608, 1, 1)
+
+[node name="spawnBlock15x8_blend4" parent="3d Bck platform5" instance=ExtResource("2_gdkdi")]
+transform = Transform3D(3.43711, 0, 0, 0, -2.18557e-07, 5, 0, -5, -2.18557e-07, -51.529, -22.961, -50.681)
+color = Color(0.231373, 0.819608, 1, 1)
+
+[node name="spawnBlock15x8_blend5" parent="3d Bck platform5" instance=ExtResource("2_gdkdi")]
+transform = Transform3D(3.43711, 0, 0, 0, -2.18557e-07, 5, 0, -5, -2.18557e-07, 51.529, -23.045, -50.681)
+color = Color(0.231373, 0.819608, 1, 1)
+
+[node name="3d Bck platform6" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 0, 13, -258.418)
+
+[node name="spawnBlock15x8_blend3" parent="3d Bck platform6" instance=ExtResource("2_gdkdi")]
+transform = Transform3D(3.43711, 0, 0, 0, -2.18557e-07, 5, 0, -5, -2.18557e-07, 0, -23.045, -50.681)
+color = Color(0.231373, 0.819608, 1, 1)
+
+[node name="spawnBlock15x8_blend4" parent="3d Bck platform6" instance=ExtResource("2_gdkdi")]
+transform = Transform3D(3.43711, 0, 0, 0, -2.18557e-07, 5, 0, -5, -2.18557e-07, -51.529, -22.961, -50.681)
+color = Color(0.231373, 0.819608, 1, 1)
+
+[node name="spawnBlock15x8_blend5" parent="3d Bck platform6" instance=ExtResource("2_gdkdi")]
+transform = Transform3D(3.43711, 0, 0, 0, -2.18557e-07, 5, 0, -5, -2.18557e-07, 51.529, -23.045, -50.681)
+color = Color(0.231373, 0.819608, 1, 1)
+
+[node name="Small Rotator4" type="Node3D" parent="."]
+transform = Transform3D(0.751026, 0, 0, 0, 0.751026, 0, 0, 0, 0.751026, -51.501, -32.8817, -203.328)
+
+[node name="Rotator2" parent="Small Rotator4" instance=ExtResource("7_k3sol")]
+transform = Transform3D(2.51766, 0, 0, 0, 2.51766, 0, 0, 0, 2.51766, 0.320007, 3.53152, 7.255)
+
+[node name="round_cylinder_sm_blend2" parent="Small Rotator4" instance=ExtResource("6_att4f")]
+transform = Transform3D(32.7821, 0, 0, 0, 8.90927, 0, 0, 0, 32.7821, 0.319733, -7.30936, 7.2551)
+color = Color(1, 0.854902, 0.152941, 1)
+
+[node name="Small Rotator5" type="Node3D" parent="."]
+transform = Transform3D(0.751026, 0, 0, 0, 0.751026, 0, 0, 0, 0.751026, -0.431244, -32.8817, -203.328)
+
+[node name="Rotator2" parent="Small Rotator5" instance=ExtResource("7_k3sol")]
+transform = Transform3D(2.51766, 0, 0, 0, 2.51766, 0, 0, 0, 2.51766, 0.320007, 3.53152, 7.255)
+
+[node name="round_cylinder_sm_blend2" parent="Small Rotator5" instance=ExtResource("6_att4f")]
+transform = Transform3D(32.7821, 0, 0, 0, 8.90927, 0, 0, 0, 32.7821, 0.319733, -7.30936, 7.2551)
+color = Color(1, 0.854902, 0.152941, 1)
+
+[node name="Small Rotator6" type="Node3D" parent="."]
+transform = Transform3D(0.751026, 0, 0, 0, 0.751026, 0, 0, 0, 0.751026, 51.2228, -32.8817, -203.328)
+
+[node name="Rotator2" parent="Small Rotator6" instance=ExtResource("7_k3sol")]
+transform = Transform3D(2.51766, 0, 0, 0, 2.51766, 0, 0, 0, 2.51766, 0.320007, 3.53152, 7.255)
+
+[node name="round_cylinder_sm_blend2" parent="Small Rotator6" instance=ExtResource("6_att4f")]
+transform = Transform3D(32.7821, 0, 0, 0, 8.90927, 0, 0, 0, 32.7821, 0.319733, -7.30936, 7.2551)
+color = Color(1, 0.854902, 0.152941, 1)
+
+[node name="hexa_fall_floor1" type="Node3D" parent="."]
+transform = Transform3D(5.24069, 0, 0, 0, 5.24069, 0, 0, 0, 5.24069, 19.2986, 4.68945, -122.23)
+
+[node name="hexagon39" parent="hexa_fall_floor1" instance=ExtResource("8_82quq")]
+
+[node name="hexagon40" parent="hexa_fall_floor1" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.79372, 0, 0)
+
+[node name="hexagon41" parent="hexa_fall_floor1" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.897667, 0, -1.53719)
+
+[node name="hexagon42" parent="hexa_fall_floor1" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.886707, 0, 1.5311)
+
+[node name="hexagon43" parent="hexa_fall_floor1" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.79015, 0, -3.0677)
+
+[node name="hexagon44" parent="hexa_fall_floor1" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.58387, 0, -3.0677)
+
+[node name="hexagon45" parent="hexa_fall_floor1" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.68782, 0, -4.60489)
+
+[node name="hexagon46" parent="hexa_fall_floor1" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.67686, 0, -1.53659)
+
+[node name="hexagon47" parent="hexa_fall_floor1" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.58829, 0, -6.14216)
+
+[node name="hexagon48" parent="hexa_fall_floor1" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.38201, 0, -6.14216)
+
+[node name="hexagon49" parent="hexa_fall_floor1" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.48595, 0, -7.67935)
+
+[node name="hexagon50" parent="hexa_fall_floor1" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.47499, 0, -4.61106)
+
+[node name="hexagon51" parent="hexa_fall_floor1" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.37774, 0, -9.20661)
+
+[node name="hexagon52" parent="hexa_fall_floor1" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5975, 0, -9.20661)
+
+[node name="hexagon53" parent="hexa_fall_floor1" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.27541, 0, -10.7438)
+
+[node name="hexagon54" parent="hexa_fall_floor1" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.26445, 0, -7.67551)
+
+[node name="hexagon55" parent="hexa_fall_floor1" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.56044, 0, -12.2751)
+
+[node name="hexagon56" parent="hexa_fall_floor1" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.68604, 0, -10.732)
+
+[node name="hexagon57" parent="hexa_fall_floor1" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.36127, 0, -12.2751)
+
+[node name="hexagon58" parent="hexa_fall_floor1" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.48822, 0, -10.7438)
+
+[node name="hexagon59" parent="hexa_fall_floor1" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.46988, 0, -13.8267)
+
+[node name="hexagon60" parent="hexa_fall_floor1" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2636, 0, -13.8267)
+
+[node name="hexagon61" parent="hexa_fall_floor1" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.58812, 0, -15.3844)
+
+[node name="hexagon62" parent="hexa_fall_floor1" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4744, 0, -16.9157)
+
+[node name="hexagon63" parent="hexa_fall_floor1" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.36161, 0, -15.3844)
+
+[node name="hexagon64" parent="hexa_fall_floor1" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.67398, 0, -16.9157)
+
+[node name="hexagon65" parent="hexa_fall_floor1" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.78259, 0, -18.4673)
+
+[node name="hexagon66" parent="hexa_fall_floor1" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.57631, 0, -18.4673)
+
+[node name="hexagon67" parent="hexa_fall_floor1" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.89069, 0, -20.0129)
+
+[node name="hexagon68" parent="hexa_fall_floor1" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.77698, 0, -21.5443)
+
+[node name="hexagon69" parent="hexa_fall_floor1" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.66419, 0, -20.0129)
+
+[node name="hexagon70" parent="hexa_fall_floor1" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0234447, 0, -21.5443)
+
+[node name="hexagon71" parent="hexa_fall_floor1" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.914837, 0, -23.0958)
+
+[node name="hexagon72" parent="hexa_fall_floor1" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.878883, 0, -23.0958)
+
+[node name="hexagon73" parent="hexa_fall_floor1" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.70402, 0, -7.67418)
+
+[node name="hexagon74" parent="hexa_fall_floor1" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.68197, 0, -13.8436)
+
+[node name="hexagon75" parent="hexa_fall_floor1" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.14472, 0, -12.2751)
+
+[node name="hexagon76" parent="hexa_fall_floor1" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.18616, 0, -9.18686)
+
+[node name="hexa_fall_floor2" type="Node3D" parent="."]
+transform = Transform3D(-5.24069, 4.58156e-07, 0, -4.58156e-07, -5.24069, 0, 0, 0, 5.24069, -19.299, 4.689, -122.23)
+
+[node name="hexagon39" parent="hexa_fall_floor2" instance=ExtResource("8_82quq")]
+
+[node name="hexagon40" parent="hexa_fall_floor2" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.79372, 0, 0)
+
+[node name="hexagon41" parent="hexa_fall_floor2" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.897667, 0, -1.53719)
+
+[node name="hexagon42" parent="hexa_fall_floor2" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.886707, 0, 1.5311)
+
+[node name="hexagon43" parent="hexa_fall_floor2" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.79015, 0, -3.0677)
+
+[node name="hexagon44" parent="hexa_fall_floor2" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.58387, 0, -3.0677)
+
+[node name="hexagon45" parent="hexa_fall_floor2" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.68782, 0, -4.60489)
+
+[node name="hexagon46" parent="hexa_fall_floor2" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.67686, 0, -1.53659)
+
+[node name="hexagon47" parent="hexa_fall_floor2" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.58829, 0, -6.14216)
+
+[node name="hexagon48" parent="hexa_fall_floor2" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.38201, 0, -6.14216)
+
+[node name="hexagon49" parent="hexa_fall_floor2" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.48595, 0, -7.67935)
+
+[node name="hexagon50" parent="hexa_fall_floor2" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.47499, 0, -4.61106)
+
+[node name="hexagon51" parent="hexa_fall_floor2" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.37774, 0, -9.20661)
+
+[node name="hexagon52" parent="hexa_fall_floor2" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5975, 0, -9.20661)
+
+[node name="hexagon53" parent="hexa_fall_floor2" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.27541, 0, -10.7438)
+
+[node name="hexagon54" parent="hexa_fall_floor2" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.26445, 0, -7.67551)
+
+[node name="hexagon55" parent="hexa_fall_floor2" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.56044, 0, -12.2751)
+
+[node name="hexagon56" parent="hexa_fall_floor2" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.68604, 0, -10.732)
+
+[node name="hexagon57" parent="hexa_fall_floor2" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.36127, 0, -12.2751)
+
+[node name="hexagon58" parent="hexa_fall_floor2" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.48822, 0, -10.7438)
+
+[node name="hexagon59" parent="hexa_fall_floor2" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.46988, 0, -13.8267)
+
+[node name="hexagon60" parent="hexa_fall_floor2" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2636, 0, -13.8267)
+
+[node name="hexagon61" parent="hexa_fall_floor2" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.58812, 0, -15.3844)
+
+[node name="hexagon62" parent="hexa_fall_floor2" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4744, 0, -16.9157)
+
+[node name="hexagon63" parent="hexa_fall_floor2" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.36161, 0, -15.3844)
+
+[node name="hexagon64" parent="hexa_fall_floor2" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.67398, 0, -16.9157)
+
+[node name="hexagon65" parent="hexa_fall_floor2" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.78259, 0, -18.4673)
+
+[node name="hexagon66" parent="hexa_fall_floor2" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.57631, 0, -18.4673)
+
+[node name="hexagon67" parent="hexa_fall_floor2" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.89069, 0, -20.0129)
+
+[node name="hexagon68" parent="hexa_fall_floor2" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.77698, 0, -21.5443)
+
+[node name="hexagon69" parent="hexa_fall_floor2" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.66419, 0, -20.0129)
+
+[node name="hexagon70" parent="hexa_fall_floor2" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0234447, 0, -21.5443)
+
+[node name="hexagon71" parent="hexa_fall_floor2" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.914837, 0, -23.0958)
+
+[node name="hexagon72" parent="hexa_fall_floor2" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.878883, 0, -23.0958)
+
+[node name="hexagon73" parent="hexa_fall_floor2" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.70402, 0, -7.67418)
+
+[node name="hexagon74" parent="hexa_fall_floor2" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.68197, 0, -13.8436)
+
+[node name="hexagon75" parent="hexa_fall_floor2" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.14472, 0, -12.2751)
+
+[node name="hexagon76" parent="hexa_fall_floor2" instance=ExtResource("8_82quq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.18616, 0, -9.18686)

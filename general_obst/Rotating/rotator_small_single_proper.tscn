@@ -1,0 +1,41 @@
+[gd_scene load_steps=9 format=3 uid="uid://bjrkw6c4qswxb"]
+
+[ext_resource type="PackedScene" uid="uid://clq188p7j4imi" path="res://Level Design Objects/Rotator2.glb" id="1_jqeg4"]
+[ext_resource type="Script" uid="uid://dxn03bhyxai51" path="res://Level1/big_rotator.gd" id="2_2nmf7"]
+[ext_resource type="Texture2D" uid="uid://c0fkqv5ptnfa3" path="res://texture/seamless-pattern-with-white-yellow-oblique-stripes_197792-7626.jpg" id="3_h3j75"]
+[ext_resource type="Script" uid="uid://c4aq7f8x8eb2n" path="res://general_obst/Rotating/cylinder_001.gd" id="4_a5b7v"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v0q1j"]
+albedo_color = Color(0.870588, 0.501961, 0.996078, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7kv6w"]
+albedo_texture = ExtResource("3_h3j75")
+uv1_scale = Vector3(0.53, 0.53, 0.53)
+uv1_offset = Vector3(5.555, 0, 0)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_5dktx"]
+height = 1.4668
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_cknci"]
+height = 1.39087
+
+[node name="Rotator2" instance=ExtResource("1_jqeg4")]
+script = ExtResource("2_2nmf7")
+
+[node name="Cylinder" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_v0q1j")
+
+[node name="Cylinder_001" parent="." index="1"]
+transform = Transform3D(2.1181, 0, 0, 0, 0, -2.1181, 0, 1.29314, 0, 0.0112114, 1.83979, 11.641)
+surface_material_override/0 = SubResource("StandardMaterial3D_7kv6w")
+script = ExtResource("4_a5b7v")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(4.84544, 0, 0, 0, 2.34269, 0, 0, 0, 4.84544, 0, 2.00703, 0)
+shape = SubResource("CylinderShape3D_5dktx")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(2.02942, 0, 0, 0, -7.55359e-07, -2.02942, 0, 17.2806, -8.87088e-08, 0, 1.86907, 11.6323)
+shape = SubResource("CylinderShape3D_cknci")
