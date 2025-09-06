@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dp8ntlbnsjm35"]
+[gd_scene load_steps=17 format=3 uid="uid://dp8ntlbnsjm35"]
 
 [ext_resource type="PackedScene" uid="uid://c7pjhwciirsge" path="res://Player3d.tscn" id="2_2jex3"]
 [ext_resource type="PackedScene" uid="uid://cjir0nllr70ct" path="res://Level1/spawn_block_15x_8_blend.tscn" id="2_gdkdi"]
@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://dxsdo1gfjt54a" path="res://general_obst/bases/round_cylinder_sm_blend.tscn" id="6_att4f"]
 [ext_resource type="PackedScene" uid="uid://5txxir5ycr02" path="res://general_obst/Rotating/rotator_small_single.tscn" id="7_k3sol"]
 [ext_resource type="PackedScene" uid="uid://bio0tdd4mo587" path="res://general_obst/fall_platform_hexagon/hexagon.tscn" id="8_82quq"]
+[ext_resource type="PackedScene" uid="uid://btyfugxs8mdkj" path="res://Level Design Objects/base1x2BlockMRound.glb" id="9_vhy5y"]
+[ext_resource type="PackedScene" uid="uid://dqr6fk5hpotqs" path="res://Level Design Objects/spawnBlock15x5.blend.glb" id="10_kgqs6"]
+[ext_resource type="PackedScene" uid="uid://hy4i1xggvmrk" path="res://general_obst/boxes/base_cube_block_s_round.tscn" id="11_kgqs6"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_bfu0y"]
 panorama = ExtResource("3_gdkdi")
@@ -22,6 +25,13 @@ sky = SubResource("Sky_t0ega")
 sky_rotation = Vector3(0, -0.233874, 0)
 tonemap_mode = 2
 glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vhy5y"]
+size = Vector3(51.4039, 37.8452, 25.8728)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vhy5y"]
+transparency = 1
+albedo_color = Color(0, 1, 1, 0.498039)
 
 [node name="Node3D" type="Node3D"]
 
@@ -156,7 +166,7 @@ transform = Transform3D(3.43711, 0, 0, 0, -2.18557e-07, 5, 0, -5, -2.18557e-07, 
 color = Color(0.231373, 0.819608, 1, 1)
 
 [node name="3d Bck platform6" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 0, 13, -258.418)
+transform = Transform3D(1, 0, 0, 0, 2.10573e-07, 1, 0, -1.60579, 1.31134e-07, 0, 13, -284.332)
 
 [node name="spawnBlock15x8_blend3" parent="3d Bck platform6" instance=ExtResource("2_gdkdi")]
 transform = Transform3D(3.43711, 0, 0, 0, -2.18557e-07, 5, 0, -5, -2.18557e-07, 0, -23.045, -50.681)
@@ -431,3 +441,38 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.14472, 0, -12.2751)
 
 [node name="hexagon76" parent="hexa_fall_floor2" instance=ExtResource("8_82quq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.18616, 0, -9.18686)
+
+[node name="base1x2BlockMRound" parent="." instance=ExtResource("9_vhy5y")]
+transform = Transform3D(12.9913, 0, 0, 0, 12.9913, 0, 0, 0, 12.9913, 0, -7.43583, -266.944)
+
+[node name="base1x2BlockMRound2" parent="." instance=ExtResource("9_vhy5y")]
+transform = Transform3D(13.0039, 0, 0, 0, 6.1004, 0, 0, 0, 13.0039, 0, -26.4819, -266.944)
+
+[node name="spawnBlock15x5_blend" parent="." instance=ExtResource("10_kgqs6")]
+transform = Transform3D(10.3482, 0, 0, 0, 6.1004, 0, 0, 0, 13.0039, 0, -0.554, -311.861)
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.6141, -13.5197, -267.044)
+shape = SubResource("BoxShape3D_vhy5y")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Area3D/CollisionShape3D"]
+transform = Transform3D(11.1844, 0, 0, 0, 11.1844, 0, 0, 0, 11.1844, 0.0788422, -0.371357, 0.113312)
+size = Vector3(4.57953, 3.46289, 2.29517)
+material = SubResource("StandardMaterial3D_vhy5y")
+
+[node name="baseCubeBlockSRound" parent="Area3D" instance=ExtResource("11_kgqs6")]
+transform = Transform3D(5.48112, 0, 0, 0, 1.70026, 0, 0, 0, 5.48112, 51.5435, -22.0462, -269.95)
+
+[node name="baseCubeBlockSRound2" parent="Area3D" instance=ExtResource("11_kgqs6")]
+transform = Transform3D(5.48112, 0, 0, 0, 1.70026, 0, 0, 0, 5.48112, 33.2645, -11.585, -262.75)
+
+[node name="baseCubeBlockSRound3" parent="Area3D" instance=ExtResource("11_kgqs6")]
+transform = Transform3D(5.48112, 0, 0, 0, 1.70026, 0, 0, 0, 5.48112, 67.7168, -7.27324, -273.655)
+
+[node name="baseCubeBlockSRound4" parent="Area3D" instance=ExtResource("11_kgqs6")]
+transform = Transform3D(6.13452, 0, 0, 0, 1.04619, 0, 0, 0, 3.3726, 36.3969, -0.883152, -272.456)
+
+[connection signal="body_entered" from="Area3D" to="CharacterBody3D2" method="_on_low_g_zone_entered"]
+[connection signal="body_exited" from="Area3D" to="CharacterBody3D2" method="_on_area_3d_body_exited"]

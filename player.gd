@@ -5,12 +5,18 @@ extends CharacterBody3D
 @export_range(-PI/2, PI/2) var lower_angle := PI/10
 @export_range(-PI/2, PI/2) var upper_angle := PI/2.8
 
+var g_ini: float
+var bg_m_pitch:=1.0
+var jump_pitch:=1.0
+
 @export_group("Movement")
 @export var move_speed := 8.0
 @export var acceleration := 20.0
 @export var rotation_speed := 8.0
 @export var jump_velocity := 12.0
 @export var _gravity := -40
+@export var _lowGravity := -10
+@export var _lowGravityPitch := 0.5
 
 var _last_movement_direction := Vector3.FORWARD
 var _camera_input_direction := Vector2.ZERO
@@ -23,6 +29,8 @@ var _camera_input_direction := Vector2.ZERO
 @onready var sfx_background: AudioStreamPlayer = $SFX_Background
 
 func _ready() -> void:
+	g_ini = _gravity
+	sfx_background.pitch_scale = bg_m_pitch
 	sfx_background.play()
 
 func _input(event: InputEvent) -> void:
@@ -91,3 +99,15 @@ func _physics_process(delta: float) -> void:
 	animtree.set("parameters/conditions/jump_end", is_on_floor())
 	move_and_slide()
 	
+
+
+func _on_low_g_zone_entered(body: Node3D) -> void:
+	sfx_background.pitch_scale = _lowGravityPitch
+	sfx_jump.pitch_scale = _lowGravityPitch
+	_gravity = _lowGravity
+
+
+func _on_area_3d_body_exited(body: Node3D) -> void:
+	sfx_background.pitch_scale = bg_m_pitch
+	sfx_jump.pitch_scale = jump_pitch
+	_gravity = g_ini

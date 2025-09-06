@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://hy4i1xggvmrk"]
+
+[ext_resource type="PackedScene" uid="uid://cmxga0dr1euoy" path="res://Level Design Objects/baseCubeBlockSRound.glb" id="1_cc7au"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mrquf"]
+
+[node name="baseCubeBlockSRound" instance=ExtResource("1_cc7au")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1.99379, 0, 0, 0, 1.99379, 0, 0, 0, 1.99379, 0, 0, 0)
+shape = SubResource("BoxShape3D_mrquf")
