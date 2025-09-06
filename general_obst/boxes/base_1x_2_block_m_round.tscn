@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cphtocrm5iodv"]
+[gd_scene load_steps=4 format=3 uid="uid://cphtocrm5iodv"]
 
 [ext_resource type="PackedScene" uid="uid://btyfugxs8mdkj" path="res://Level Design Objects/base1x2BlockMRound.glb" id="1_y0otn"]
+[ext_resource type="Script" uid="uid://b3w8i8qbtgegu" path="res://Level1/spawn_block_15x_8_blend.gd" id="2_uyofk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uyofk"]
 size = Vector3(3.99219, 1.9975, 2.00122)
 
 [node name="base1x2BlockMRound" instance=ExtResource("1_y0otn")]
+script = ExtResource("2_uyofk")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
 

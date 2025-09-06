@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbke6k4t82tlf"]
+
+[ext_resource type="PackedScene" uid="uid://dqr6fk5hpotqs" path="res://Level Design Objects/spawnBlock15x5.blend.glb" id="1_nd623"]
+[ext_resource type="Script" uid="uid://b3w8i8qbtgegu" path="res://Level1/spawn_block_15x_8_blend.gd" id="2_0nl1v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0nl1v"]
+size = Vector3(14.978, 1.98682, 5.00439)
+
+[node name="spawnBlock15x5_blend" instance=ExtResource("1_nd623")]
+script = ExtResource("2_0nl1v")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00765991, 0.00512695, -0.000244141)
+shape = SubResource("BoxShape3D_0nl1v")
