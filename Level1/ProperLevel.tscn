@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dp8ntlbnsjm35"]
+[gd_scene load_steps=19 format=3 uid="uid://dp8ntlbnsjm35"]
 
 [ext_resource type="PackedScene" uid="uid://c7pjhwciirsge" path="res://Player3d.tscn" id="2_2jex3"]
 [ext_resource type="PackedScene" uid="uid://cjir0nllr70ct" path="res://Level1/spawn_block_15x_8_blend.tscn" id="2_gdkdi"]
@@ -34,6 +34,9 @@ size = Vector3(51.4039, 37.8452, 25.8728)
 transparency = 1
 albedo_color = Color(0, 1, 1, 0.498039)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_7v46q"]
+size = Vector3(7.375, 1, 10.6904)
+
 [node name="Node3D" type="Node3D"]
 
 [node name="spawnBlock15x8_blend" parent="." instance=ExtResource("2_gdkdi")]
@@ -48,7 +51,7 @@ shadow_enabled = true
 environment = SubResource("Environment_dsrnb")
 
 [node name="CharacterBody3D2" parent="." instance=ExtResource("2_2jex3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.86883, 11.2868, -51.2985)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.86883, 5.17768, -6.38487)
 
 [node name="spawnBlock15x8_blend2" parent="." instance=ExtResource("2_gdkdi")]
 transform = Transform3D(1.11075, 0, 0, 0, 5, 0, 0, 0, 5, -1.17547, 0.270688, -37.9908)
@@ -490,10 +493,17 @@ transform = Transform3D(6.13452, 0, 0, 0, 1.04619, 0, 0, 0, 3.3726, 36.3969, -0.
 
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(29.3319, 0, 0, 0, 29.3319, 0, 0, 0, 29.3319, 0, 11.3346, -311.206)
-text = "i am adding new funny obstacles and extending this level 
-so Stay tuned :))"
+text = "This is just the beginning more obstacles  ur wayyy:)
+Stay tuned :))"
+
+[node name="Area3D3" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D3"]
+transform = Transform3D(66.3921, 0, 0, 0, 66.3921, 0, 0, 0, 66.3921, 24.119, -111.813, -167.958)
+shape = SubResource("BoxShape3D_7v46q")
 
 [connection signal="body_entered" from="Area3D" to="CharacterBody3D2" method="_on_low_g_zone_entered"]
 [connection signal="body_exited" from="Area3D" to="CharacterBody3D2" method="_on_area_3d_body_exited"]
 [connection signal="body_entered" from="Area3D2" to="CharacterBody3D2" method="_on_low_g_zone_entered"]
 [connection signal="body_exited" from="Area3D2" to="CharacterBody3D2" method="_on_area_3d_body_exited"]
+[connection signal="body_entered" from="Area3D3" to="CharacterBody3D2" method="_on_area_3d_3_body_entered_spawn"]

@@ -111,3 +111,7 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 	sfx_background.pitch_scale = bg_m_pitch
 	sfx_jump.pitch_scale = jump_pitch
 	_gravity = g_ini
+
+
+func _on_area_3d_3_body_entered_spawn(body: Node3D) -> void:
+	position = Vector3(3.869,5.2,-6.4)
