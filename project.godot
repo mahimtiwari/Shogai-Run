@@ -15,6 +15,10 @@ run/main_scene="uid://dp8ntlbnsjm35"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameLevelManager="*res://scripts/GameLevelManager.gd"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")

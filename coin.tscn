@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://c43ark45maiom"]
+
+[ext_resource type="Script" uid="uid://cmmn6mplwr5o4" path="res://coin.gd" id="1_d5gmh"]
+[ext_resource type="Script" uid="uid://bqs5v0iebmexh" path="res://coin_mesh_cylinder.gd" id="2_0t63x"]
+[ext_resource type="PackedScene" uid="uid://b3bqs6nn5aef6" path="res://4star.glb" id="2_v7riw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v7riw"]
+
+[node name="Coin" type="Node3D"]
+script = ExtResource("1_d5gmh")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(0.768866, 0, 0, 0, 0.273146, 0, 0, 0, 0.788273, 0, -0.000189781, 0)
+shape = SubResource("BoxShape3D_v7riw")
+debug_color = Color(6.35326e-06, 0.594081, 0.732863, 0.42)
+
+[node name="4star" parent="." instance=ExtResource("2_v7riw")]
+transform = Transform3D(0.387707, 0, 0, 0, 0.626618, 0, 0, 0, 0.387707, 0, 0, 0)
+script = ExtResource("2_0t63x")
