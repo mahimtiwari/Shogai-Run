@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://ck3moabbuq1cl"]
+
+[ext_resource type="PackedScene" uid="uid://c43ark45maiom" path="res://coin.tscn" id="1_jhnbl"]
+
+[node name="Coin_ui_display" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.12536, -4.91912e-08)
+fov = 47.8125
+
+[node name="Coin" parent="." instance=ExtResource("1_jhnbl")]
+rotate_bool = false
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(0.341127, 0, 0, 0, 0.555364, 0, 0, 0, 0.555364, 0, 0.420223, 0)
+light_color = Color(1, 1, 0, 1)
+light_size = 1.0

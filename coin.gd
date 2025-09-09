@@ -1,5 +1,6 @@
 extends Node3D
 
+@export var rotate_bool:bool = true
 
 func _ready() -> void:
 	$Area3D.connect("body_entered", _on_body_entered)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dp8ntlbnsjm35"]
+[gd_scene load_steps=21 format=3 uid="uid://dp8ntlbnsjm35"]
 
 [ext_resource type="PackedScene" uid="uid://c7pjhwciirsge" path="res://Player3d.tscn" id="2_2jex3"]
 [ext_resource type="PackedScene" uid="uid://cjir0nllr70ct" path="res://Level1/spawn_block_15x_8_blend.tscn" id="2_gdkdi"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://hy4i1xggvmrk" path="res://general_obst/boxes/base_cube_block_s_round.tscn" id="11_kgqs6"]
 [ext_resource type="PackedScene" uid="uid://cfrkgnh25jdu5" path="res://general_obst/boxes/cylinder_S_rounded.tscn" id="12_7v46q"]
 [ext_resource type="PackedScene" uid="uid://c43ark45maiom" path="res://coin.tscn" id="13_b3pp6"]
+[ext_resource type="PackedScene" uid="uid://dovp8pflu4oid" path="res://UI_nodes/game_level_ UI.tscn" id="14_yh826"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_bfu0y"]
 panorama = ExtResource("3_gdkdi")
@@ -505,6 +506,8 @@ shape = SubResource("BoxShape3D_7v46q")
 
 [node name="Coin" parent="." instance=ExtResource("13_b3pp6")]
 transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, 25.7633, -27.6519, -181.625)
+
+[node name="GameLevelUi" parent="." instance=ExtResource("14_yh826")]
 
 [connection signal="body_entered" from="Area3D" to="CharacterBody3D2" method="_on_low_g_zone_entered"]
 [connection signal="body_exited" from="Area3D" to="CharacterBody3D2" method="_on_area_3d_body_exited"]

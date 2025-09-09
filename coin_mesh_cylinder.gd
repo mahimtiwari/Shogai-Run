@@ -1,4 +1,5 @@
 extends Node3D
 
 func _physics_process(delta: float) -> void:
-	rotation.z += 1 *delta
+	if $"..".rotate_bool:
+		rotation.z += 1 *delta
