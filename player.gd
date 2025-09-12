@@ -27,11 +27,16 @@ var _camera_input_direction := Vector2.ZERO
 @onready var animtree = $CollisionShape3D/Player1/AnimationTree
 @onready var sfx_jump: AudioStreamPlayer = $SFX_Jump
 @onready var sfx_background: AudioStreamPlayer = $SFX_Background
+@onready var sfx_coin: AudioStreamPlayer = $SFX_coin
+
+func _coin_amount_chnged_call(amount:int)->void:
+	sfx_coin.play()
 
 func _ready() -> void:
 	g_ini = _gravity
 	sfx_background.pitch_scale = bg_m_pitch
 	sfx_background.play()
+	GameLevelManager.connect("coin_amount_changed", _coin_amount_chnged_call)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_click"):

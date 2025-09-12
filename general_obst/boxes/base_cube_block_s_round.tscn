@@ -1,10 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://hy4i1xggvmrk"]
+[gd_scene load_steps=5 format=3 uid="uid://hy4i1xggvmrk"]
 
 [ext_resource type="PackedScene" uid="uid://cmxga0dr1euoy" path="res://Level Design Objects/baseCubeBlockSRound.glb" id="1_cc7au"]
+[ext_resource type="Script" uid="uid://dahxp6m6q4pf7" path="res://general_obst/boxes/base_cube_block_s_round.gd" id="2_mrquf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mrquf"]
+resource_name = "Material.001"
+cull_mode = 2
+roughness = 0.579926
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mrquf"]
 
 [node name="baseCubeBlockSRound" instance=ExtResource("1_cc7au")]
+script = ExtResource("2_mrquf")
+
+[node name="Cube" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_mrquf")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
 

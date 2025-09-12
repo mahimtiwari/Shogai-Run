@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7ckp7jy72yuk"]
+
+[ext_resource type="PackedScene" uid="uid://blrucvtn8h4me" path="res://Level Design Objects/Rope_jump.glb" id="1_83n2d"]
+[ext_resource type="Script" uid="uid://cllsknuc16sha" path="res://Level Design Objects/rope_jump_rotation.gd" id="2_qbxk8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qbxk8"]
+size = Vector3(1, 4.07663, 0.196045)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4honv"]
+size = Vector3(1, 0.266251, 10.2794)
+
+[node name="Rope_jump" instance=ExtResource("1_83n2d")]
+script = ExtResource("2_qbxk8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(0.110414, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.03825, -1.0121)
+shape = SubResource("BoxShape3D_qbxk8")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(0.151668, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.03825, -11.0947)
+shape = SubResource("BoxShape3D_qbxk8")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" index="2"]
+transform = Transform3D(0.138505, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.93795, -6.05787)
+shape = SubResource("BoxShape3D_4honv")

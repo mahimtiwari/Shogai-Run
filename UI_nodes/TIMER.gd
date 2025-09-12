@@ -1,9 +1,14 @@
 extends Node
 
 @onready var label: Label = $TimeLabel
+@onready var game_level_ui: CanvasLayer = $"../.."
 
-var time_left: float = 90.0
+var time_left: float = 90
 var running: bool = true
+
+func _ready() -> void:
+	time_left = game_level_ui.time_in_sec
+	_update_label()
 
 func _process(delta: float) -> void:
 	if running:

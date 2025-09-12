@@ -1,4 +1,4 @@
-[gd_scene load_steps=194 format=3 uid="uid://dovp8pflu4oid"]
+[gd_scene load_steps=192 format=3 uid="uid://dovp8pflu4oid"]
 
 [ext_resource type="Texture2D" uid="uid://bsur2cnu40ncn" path="res://UI_nodes/ui_round_rect500X100.png" id="1_jnv6f"]
 [ext_resource type="Script" uid="uid://c3qey45hm8n70" path="res://UI_nodes/game_level__ui.gd" id="1_unydp"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://dgsmndk13q2xk" path="res://stars/frame_000_delay-0.03s.png" id="5_wayqq"]
 [ext_resource type="Texture2D" uid="uid://b0357uwqg0c4u" path="res://stars/frame_001_delay-0.04s.png" id="6_unydp"]
 [ext_resource type="Texture2D" uid="uid://blbx21auqt5xl" path="res://stars/frame_002_delay-0.03s.png" id="7_bnghc"]
-[ext_resource type="PackedScene" uid="uid://ck3moabbuq1cl" path="res://coin_ui_display.tscn" id="7_jtvap"]
 [ext_resource type="Texture2D" uid="uid://bnoafv03ruq6q" path="res://stars/frame_003_delay-0.03s.png" id="8_ccs7m"]
 [ext_resource type="Texture2D" uid="uid://cse5vowix4tor" path="res://stars/frame_004_delay-0.04s.png" id="9_0j4rw"]
 [ext_resource type="Texture2D" uid="uid://cakpm0d2lej1v" path="res://stars/frame_005_delay-0.03s.png" id="10_2gvwk"]
@@ -191,9 +190,6 @@
 [ext_resource type="Texture2D" uid="uid://ctnbrrcb3cmnn" path="res://stars/frame_181_delay-0.03s.png" id="186_8wvvn"]
 [ext_resource type="Script" uid="uid://c41oyuydqdvua" path="res://UI_nodes/animated_sprite_2d.gd" id="188_bnghc"]
 [ext_resource type="Script" uid="uid://lr6bt372qyh8" path="res://UI_nodes/TIMER.gd" id="190_ccs7m"]
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_3wkyu"]
-viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c7ekk"]
 animations = [{
@@ -850,16 +846,6 @@ theme_override_fonts/font = ExtResource("2_dtl3i")
 theme_override_font_sizes/font_size = 34
 text = "580"
 
-[node name="TextureRect" type="TextureRect" parent="NinePatchRect4"]
-visible = false
-layout_mode = 0
-offset_left = 36.4307
-offset_top = 24.3679
-offset_right = 548.431
-offset_bottom = 536.368
-scale = Vector2(0.0660216, 0.0660216)
-texture = SubResource("ViewportTexture_3wkyu")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NinePatchRect4"]
 position = Vector2(52.0597, 41.3672)
 rotation = 1.58825
@@ -905,9 +891,3 @@ theme_override_fonts/font = ExtResource("2_dtl3i")
 theme_override_font_sizes/font_size = 46
 text = "01:10"
 script = ExtResource("190_ccs7m")
-
-[node name="SubViewport" type="SubViewport" parent="."]
-unique_name_in_owner = true
-transparent_bg = true
-
-[node name="Coin_ui_display" parent="SubViewport" instance=ExtResource("7_jtvap")]
