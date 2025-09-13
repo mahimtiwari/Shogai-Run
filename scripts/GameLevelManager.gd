@@ -3,6 +3,7 @@ extends Node3D
 var coins: int = 0
 signal coin_amount_changed(amount: int)
 
+
 func _ready() -> void:
 	coins = 0
 

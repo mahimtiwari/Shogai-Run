@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dp8ntlbnsjm35"]
+[gd_scene load_steps=27 format=3 uid="uid://dp8ntlbnsjm35"]
 
 [ext_resource type="PackedScene" uid="uid://c7pjhwciirsge" path="res://Player3d.tscn" id="2_2jex3"]
 [ext_resource type="PackedScene" uid="uid://cjir0nllr70ct" path="res://Level1/spawn_block_15x_8_blend.tscn" id="2_gdkdi"]
@@ -16,9 +16,10 @@
 [ext_resource type="PackedScene" uid="uid://dovp8pflu4oid" path="res://UI_nodes/game_level_ UI.tscn" id="14_yh826"]
 [ext_resource type="Texture2D" uid="uid://f6ygyie5b67" path="res://texture/10264796.jpg" id="15_buhfv"]
 [ext_resource type="AudioStream" uid="uid://v4gwoyhnej6w" path="res://SFX/hexagon_step.mp3" id="16_0gior"]
-[ext_resource type="PackedScene" uid="uid://blrucvtn8h4me" path="res://Level Design Objects/Rope_jump.glb" id="17_88a6w"]
 [ext_resource type="PackedScene" uid="uid://6vry456mct8o" path="res://Level Design Objects/jumprope_gate.glb" id="18_2b6yt"]
 [ext_resource type="PackedScene" uid="uid://b7ckp7jy72yuk" path="res://Level Design Objects/rope_jump.tscn" id="19_7xfi0"]
+[ext_resource type="Script" uid="uid://3jniguxs3w8i" path="res://Level1/square_rope_jump_base_bridge.gd" id="19_hugtb"]
+[ext_resource type="PackedScene" uid="uid://bc6tsnkr7wbis" path="res://general_obst/square bridge platform/square_bridge_blocks.tscn" id="19_raq7w"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_bfu0y"]
 panorama = ExtResource("3_gdkdi")
@@ -504,9 +505,6 @@ transform = Transform3D(6.13452, 0, 0, 0, 1.04619, 0, 0, 0, 3.3726, 36.3969, -0.
 transform = Transform3D(66.3921, 0, 0, 0, 66.3921, 0, 0, 0, 66.3921, 24.119, -111.813, -511.444)
 shape = SubResource("BoxShape3D_7v46q")
 
-[node name="base1x2BlockMRound" parent="Area3D3" instance=ExtResource("9_kgqs6")]
-transform = Transform3D(4.509, 0, 0, 0, 1, 0, 0, 0, 75, 0, 4.55191, -414.978)
-
 [node name="GameLevelUi" parent="." instance=ExtResource("14_yh826")]
 
 [node name="all_coins" type="Node3D" parent="."]
@@ -632,10 +630,6 @@ uv_scale = Vector3(1.92, 1, 1)
 stream = ExtResource("16_0gior")
 volume_db = -5.0
 
-[node name="Rope_jump" parent="." instance=ExtResource("17_88a6w")]
-transform = Transform3D(-14.257, 8.33926e-07, 0, -1.24639e-06, -9.539, 0, 0, 0, 14.263, 0, 44.259, -329.535)
-visible = false
-
 [node name="jumprope_gate" parent="." instance=ExtResource("18_2b6yt")]
 transform = Transform3D(-1.55684e-07, 0, 3.56164, 0, 3.56164, 0, -3.56164, 0, -1.55684e-07, 0, 5.825, -335.924)
 
@@ -660,6 +654,75 @@ transform = Transform3D(-1.55684e-07, 0, 3.56164, 0, 3.56164, 0, -3.56164, 0, -1
 
 [node name="Rope_jump2" parent="." instance=ExtResource("19_7xfi0")]
 transform = Transform3D(14.257, 0, 0, 0, 9.539, 0, 0, 0, 14.263, 0, 44.259, -329.535)
+
+[node name="square_rope_jump_base_bridge" type="Node3D" parent="."]
+script = ExtResource("19_hugtb")
+
+[node name="square_bridge_blocks1" parent="square_rope_jump_base_bridge" instance=ExtResource("19_raq7w")]
+transform = Transform3D(5.06432, 0, 0, 0, 5.06432, 0, 0, 0, 5.06432, 6.84209, 4.9936, -350.709)
+
+[node name="square_bridge_blocks2" parent="square_rope_jump_base_bridge" instance=ExtResource("19_raq7w")]
+transform = Transform3D(5.06432, 0, 0, 0, 5.06432, 0, 0, 0, 5.06432, -6.88955, 4.9936, -350.709)
+
+[node name="square_bridge_blocks3" parent="square_rope_jump_base_bridge" instance=ExtResource("19_raq7w")]
+transform = Transform3D(5.06432, 0, 0, 0, 5.06432, 0, 0, 0, 5.06432, 6.84209, 4.9936, -363.709)
+
+[node name="square_bridge_blocks4" parent="square_rope_jump_base_bridge" instance=ExtResource("19_raq7w")]
+transform = Transform3D(5.06432, 0, 0, 0, 5.06432, 0, 0, 0, 5.06432, -6.88955, 4.9936, -363.709)
+
+[node name="square_bridge_blocks5" parent="square_rope_jump_base_bridge" instance=ExtResource("19_raq7w")]
+transform = Transform3D(5.06432, 0, 0, 0, 5.06432, 0, 0, 0, 5.06432, 6.84209, 4.9936, -376.709)
+
+[node name="square_bridge_blocks6" parent="square_rope_jump_base_bridge" instance=ExtResource("19_raq7w")]
+transform = Transform3D(5.06432, 0, 0, 0, 5.06432, 0, 0, 0, 5.06432, -6.88955, 4.9936, -376.709)
+
+[node name="square_bridge_blocks7" parent="square_rope_jump_base_bridge" instance=ExtResource("19_raq7w")]
+transform = Transform3D(5.06432, 0, 0, 0, 5.06432, 0, 0, 0, 5.06432, 6.84209, 4.9936, -389.709)
+
+[node name="square_bridge_blocks8" parent="square_rope_jump_base_bridge" instance=ExtResource("19_raq7w")]
+transform = Transform3D(5.06432, 0, 0, 0, 5.06432, 0, 0, 0, 5.06432, -6.88955, 4.9936, -389.709)
+
+[node name="square_bridge_blocks9" parent="square_rope_jump_base_bridge" instance=ExtResource("19_raq7w")]
+transform = Transform3D(5.06432, 0, 0, 0, 5.06432, 0, 0, 0, 5.06432, 6.84209, 4.9936, -402.709)
+
+[node name="square_bridge_blocks10" parent="square_rope_jump_base_bridge" instance=ExtResource("19_raq7w")]
+transform = Transform3D(5.06432, 0, 0, 0, 5.06432, 0, 0, 0, 5.06432, -6.88955, 4.9936, -402.709)
+
+[node name="square_bridge_blocks11" parent="square_rope_jump_base_bridge" instance=ExtResource("19_raq7w")]
+transform = Transform3D(5.06432, 0, 0, 0, 5.06432, 0, 0, 0, 5.06432, 6.84209, 4.9936, -415.709)
+
+[node name="square_bridge_blocks12" parent="square_rope_jump_base_bridge" instance=ExtResource("19_raq7w")]
+transform = Transform3D(5.06432, 0, 0, 0, 5.06432, 0, 0, 0, 5.06432, -6.88955, 4.9936, -415.709)
+
+[node name="square_bridge_blocks13" parent="square_rope_jump_base_bridge" instance=ExtResource("19_raq7w")]
+transform = Transform3D(5.06432, 0, 0, 0, 5.06432, 0, 0, 0, 5.06432, 6.84209, 4.9936, -428.709)
+
+[node name="square_bridge_blocks14" parent="square_rope_jump_base_bridge" instance=ExtResource("19_raq7w")]
+transform = Transform3D(5.06432, 0, 0, 0, 5.06432, 0, 0, 0, 5.06432, -6.88955, 4.9936, -428.709)
+
+[node name="square_bridge_blocks15" parent="square_rope_jump_base_bridge" instance=ExtResource("19_raq7w")]
+transform = Transform3D(5.06432, 0, 0, 0, 5.06432, 0, 0, 0, 5.06432, 6.84209, 4.9936, -441.709)
+
+[node name="square_bridge_blocks16" parent="square_rope_jump_base_bridge" instance=ExtResource("19_raq7w")]
+transform = Transform3D(5.06432, 0, 0, 0, 5.06432, 0, 0, 0, 5.06432, -6.88955, 4.9936, -441.709)
+
+[node name="square_bridge_blocks17" parent="square_rope_jump_base_bridge" instance=ExtResource("19_raq7w")]
+transform = Transform3D(5.06432, 0, 0, 0, 5.06432, 0, 0, 0, 5.06432, 6.84209, 4.9936, -454.709)
+
+[node name="square_bridge_blocks18" parent="square_rope_jump_base_bridge" instance=ExtResource("19_raq7w")]
+transform = Transform3D(5.06432, 0, 0, 0, 5.06432, 0, 0, 0, 5.06432, -6.88955, 4.9936, -454.709)
+
+[node name="square_bridge_blocks19" parent="square_rope_jump_base_bridge" instance=ExtResource("19_raq7w")]
+transform = Transform3D(5.06432, 0, 0, 0, 5.06432, 0, 0, 0, 5.06432, 6.84209, 4.9936, -467.709)
+
+[node name="square_bridge_blocks20" parent="square_rope_jump_base_bridge" instance=ExtResource("19_raq7w")]
+transform = Transform3D(5.06432, 0, 0, 0, 5.06432, 0, 0, 0, 5.06432, -6.88955, 4.9936, -467.709)
+
+[node name="square_bridge_blocks21" parent="square_rope_jump_base_bridge" instance=ExtResource("19_raq7w")]
+transform = Transform3D(5.06432, 0, 0, 0, 5.06432, 0, 0, 0, 5.06432, 6.84209, 4.9936, -480.709)
+
+[node name="square_bridge_blocks22" parent="square_rope_jump_base_bridge" instance=ExtResource("19_raq7w")]
+transform = Transform3D(5.06432, 0, 0, 0, 5.06432, 0, 0, 0, 5.06432, -6.88955, 4.9936, -480.709)
 
 [connection signal="body_entered" from="Area3D" to="CharacterBody3D2" method="_on_low_g_zone_entered"]
 [connection signal="body_exited" from="Area3D" to="CharacterBody3D2" method="_on_area_3d_body_exited"]
