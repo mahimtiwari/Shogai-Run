@@ -30,14 +30,13 @@ func update_block_grid_visib()->void:
 	for i in range(bases_visib_pattern.size()):
 		for j in range(bases_visib_pattern[i].size()):
 			if bases_visib_pattern[i][j] == 0 && (bases_visib_pattern[i][j] != bases_visib_pattern_prev[i][j]):
-				remove_block(bases_new[i][j])
+				bases_new[i][j].remove_block()
 			if bases_visib_pattern[i][j] == 1 && bases_visib_pattern[i][j] != bases_visib_pattern_prev[i][j]:
 				add_block(bases_new[i][j])
 				
 	bases_visib_pattern_prev=bases_visib_pattern.duplicate(true)
 
 func _process(delta: float) -> void:
-	
 	t1_lifetime -= delta
 	if t1_lifetime <= 0.0:
 		bases_visib_pattern=[]

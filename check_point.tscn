@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://chiu30f1bp4km"]
+
+[ext_resource type="Script" uid="uid://br38qgkn8kdcd" path="res://scripts/checkpoint_node.gd" id="1_rjssc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lywxg"]
+size = Vector3(1, 1, 17)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rjssc"]
+transparency = 1
+albedo_color = Color(0.545098, 0.811765, 0.929412, 0.337255)
+
+[node name="CheckPoint" type="Area3D"]
+script = ExtResource("1_rjssc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0020752)
+shape = SubResource("BoxShape3D_lywxg")
+
+[node name="shape_preview" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 17.1606, 0, 0, 0)
+size = Vector3(1, 1, 0.990234)
+material = SubResource("StandardMaterial3D_rjssc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

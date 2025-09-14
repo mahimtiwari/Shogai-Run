@@ -119,4 +119,4 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 
 
 func _on_area_3d_3_body_entered_spawn(body: Node3D) -> void:
-	position = Vector3(3.869,5.2,-6.4)
+	position = GameLevelManager.checkpoint_node.position
