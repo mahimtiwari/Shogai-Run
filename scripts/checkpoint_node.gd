@@ -8,7 +8,6 @@ func _ready() -> void:
 	print("runnn")
 
 func _on_body_entered(body):
-	print(GameLevelManager.checkpoint_index)
 	if !body.is_in_group("player"):
 		return
 	

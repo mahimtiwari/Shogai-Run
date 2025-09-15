@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccfrcb7ro6kd3"]
+
+[ext_resource type="PackedScene" uid="uid://dcfd8s4yymq6v" path="res://general_obst/block_cannon/cannon_block.glb" id="1_fyg5o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1smck"]
+albedo_color = Color(0.866667, 0.27451, 0.992157, 1)
+
+[node name="cannon_block" instance=ExtResource("1_fyg5o")]
+
+[node name="Canon_cube_holder" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1smck")

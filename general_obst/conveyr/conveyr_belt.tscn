@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://bovoi2a2psccp"]
+
+[ext_resource type="PackedScene" uid="uid://b41kjpekmvbkr" path="res://general_obst/conveyr/conveyr_belt.glb" id="1_xxyd8"]
+[ext_resource type="Script" uid="uid://ct262yfq0cng0" path="res://general_obst/conveyr/conveyr_belt.gd" id="2_ulwtm"]
+[ext_resource type="Texture2D" uid="uid://e55b2kfii5f0" path="res://general_obst/conveyr/orange_conveyr.png" id="3_mou25"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a2dot"]
+albedo_texture = ExtResource("3_mou25")
+uv1_offset = Vector3(0, 98.6988, 0)
+
+[node name="conveyr_belt" instance=ExtResource("1_xxyd8")]
+script = ExtResource("2_ulwtm")
+
+[node name="Cube" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_a2dot")
+
+[node name="Area3D" type="Area3D" parent="." index="1"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
