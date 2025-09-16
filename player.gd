@@ -77,9 +77,8 @@ func _physics_process(delta: float) -> void:
 	
 	var y_velocity := velocity.y
 	
-	velocity = velocity.move_toward(move_direction * move_speed,
+	velocity = velocity.move_toward((move_direction * move_speed)+GameLevelManager.enviorment_obstacle_velocity,
 	 acceleration * delta)
-	
 	# jumping and falling
 	velocity.y = y_velocity + _gravity*delta
 	var is_starting_jump := Input.is_action_just_pressed("jump") and is_on_floor()
