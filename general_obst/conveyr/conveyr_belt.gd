@@ -35,11 +35,21 @@ extends Node3D
 @export var run:bool = false
 
 @onready var cube: MeshInstance3D = $Cube
+@onready var area_3d: Area3D = $Area3D
 
 func _ready():
 	run=true
 	_apply_appearance()
+	area_3d.connect("body_entered", _body_in)
+	area_3d.connect("body_exited", _body_out)
 
+func _body_in(body: Node3D):
+	if body.is_in_group("player"):
+		pass
+		
+func _body_out(body:Node3D):
+	if body.is_in_group("player"):
+		pass
 
 func _apply_appearance():
 	if not is_inside_tree() or not cube:
