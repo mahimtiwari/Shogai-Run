@@ -38,7 +38,6 @@ extends Node3D
 
 @onready var cube: MeshInstance3D = $Cube
 @onready var area_3d: Area3D = $Area3D
-
 func _ready():
 	run=true
 	

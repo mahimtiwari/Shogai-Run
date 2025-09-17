@@ -1,9 +1,9 @@
 [gd_scene load_steps=33 format=3 uid="uid://dp8ntlbnsjm35"]
 
+[ext_resource type="PackedScene" uid="uid://c7pjhwciirsge" path="res://Player3d.tscn" id="2_2jex3"]
 [ext_resource type="PackedScene" uid="uid://cjir0nllr70ct" path="res://Level1/spawn_block_15x_8_blend.tscn" id="2_gdkdi"]
 [ext_resource type="Texture2D" uid="uid://oodasrchstxr" path="res://73_bbefdfe7df90c2ce3b16f344fb358d93_file.jpg" id="3_gdkdi"]
 [ext_resource type="PackedScene" uid="uid://c1u85f6dfxlof" path="res://general_obst/Rotating/rotator_2.tscn" id="4_dsrnb"]
-[ext_resource type="PackedScene" uid="uid://dcv6cr8kju056" path="res://player rigid body.tscn" id="4_jqvxq"]
 [ext_resource type="Script" uid="uid://dxn03bhyxai51" path="res://Level1/big_rotator.gd" id="5_dsrnb"]
 [ext_resource type="PackedScene" uid="uid://dxsdo1gfjt54a" path="res://general_obst/bases/round_cylinder_sm_blend.tscn" id="6_att4f"]
 [ext_resource type="PackedScene" uid="uid://5txxir5ycr02" path="res://general_obst/Rotating/rotator_small_single.tscn" id="7_k3sol"]
@@ -63,9 +63,6 @@ shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_dsrnb")
-
-[node name="CharacterRigid" parent="." groups=["player"] instance=ExtResource("4_jqvxq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.64541, 12.6683, -159.344)
 
 [node name="spawnBlock15x8_blend2" parent="." instance=ExtResource("2_gdkdi")]
 transform = Transform3D(1.11075, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0.271, -37.991)
@@ -764,22 +761,27 @@ transform = Transform3D(-6.61812e-07, 0, 15.1405, 0, 15.1405, 0, -15.1405, 0, -6
 
 [node name="conveyr_belt1" parent="." instance=ExtResource("24_jqvxq")]
 transform = Transform3D(-3.62074e-07, 1.70664e-08, 15.0178, 1.76808, 7.97796, 1.13357e-07, -7.97796, 1.76808, -6.56447e-07, -60.4969, 20.96, -771.045)
+run = true
 
 [node name="conveyr_belt2" parent="." instance=ExtResource("24_jqvxq")]
 transform = Transform3D(-3.61987e-07, 1.70623e-08, 15.0142, 1.76766, 7.97605, 1.1333e-07, -7.97605, 1.76766, -6.5629e-07, 0, 20.804, -771.053)
+run = true
 
 [node name="conveyr_belt3" parent="." instance=ExtResource("24_jqvxq")]
 transform = Transform3D(-3.61987e-07, 1.70623e-08, 15.0142, 1.76766, 7.97605, 1.1333e-07, -7.97605, 1.76766, -6.5629e-07, 60.596, 20.804, -771.053)
+run = true
 
 [node name="conveyr_belt4" parent="." instance=ExtResource("24_jqvxq")]
 transform = Transform3D(-3.63737e-07, 1.71448e-08, 15.0868, 1.77621, 8.01461, 1.13878e-07, -8.01461, 1.77621, -6.59463e-07, 30.3, 20.804, -771.053)
 texture = ExtResource("26_38bxg")
 direction_inverse = true
+run = true
 
 [node name="conveyr_belt5" parent="." instance=ExtResource("24_jqvxq")]
 transform = Transform3D(-3.61987e-07, 1.70623e-08, 15.0142, 1.76766, 7.97605, 1.1333e-07, -7.97605, 1.76766, -6.5629e-07, -30.3, 20.804, -771.053)
 texture = ExtResource("26_38bxg")
 direction_inverse = true
+run = true
 
 [node name="Node3D" parent="." instance=ExtResource("26_jggfg")]
 transform = Transform3D(-4.33481e-08, -0.991689, 0, 0.991689, -4.33481e-08, 0, 0, 0, 0.991689, -59.9932, 52.2606, -885.729)
@@ -799,3 +801,6 @@ modulate = Color(0, 0, 0, 1)
 text = "THIS STAGE IS
 UNDER DEVLOPMENT"
 font_size = 4267
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("2_2jex3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.43442, 5.53747, -547.655)
