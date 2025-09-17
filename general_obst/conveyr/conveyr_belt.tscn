@@ -6,7 +6,6 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xxyd8"]
 albedo_texture = ExtResource("3_mou25")
-uv1_offset = Vector3(0, 1.08333, 0)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ulwtm"]
 size = Vector3(25.5398, 0.0937152, 2.00397)
@@ -18,6 +17,7 @@ size = Vector3(25.5442, 0.0623779, 1.99985)
 script = ExtResource("2_ulwtm")
 use_texture = true
 texture = ExtResource("3_mou25")
+run = true
 
 [node name="Cube" parent="." index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_xxyd8")
