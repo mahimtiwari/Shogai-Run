@@ -33,6 +33,7 @@ extends Node3D
 @export var direction_inverse:bool = false
 @export var platform_speed:float=0.5
 @export var run:bool = false
+#var run = false
 @export var player_speed_factor:float = 2.715
 
 @onready var cube: MeshInstance3D = $Cube
@@ -40,16 +41,16 @@ extends Node3D
 
 func _ready():
 	run=true
+	
 	_apply_appearance()
 	area_3d.connect("body_entered", _body_in)
 	area_3d.connect("body_exited", _body_out)
-
 
 func _body_in(body: Node3D):
 	if body.is_in_group("player"):
 		GameLevelManager.conveyrs_in_num+=1
 		GameLevelManager.enviorment_obstacle_velocity=global_transform.basis.x*platform_speed*(-1 if direction_inverse else 1)*player_speed_factor
-		
+
 
 func _body_out(body:Node3D):
 	if body.is_in_group("player"):
