@@ -1,21 +1,28 @@
 extends RigidBody3D
 
-var _pid := Pid3D.new(1.8, 0.1, 1.0)
-const TARGET_SPEED = 20
+var _pid := Pid3D.new(2.25, 0.0075, 1.1)
+
 
 @export_group("Camera")
 @export_range(0.0, 1.0) var rotation_sensitivity := 0.25
 @export_range(-PI/2, PI/2) var lower_angle := PI/10
 @export_range(-PI/2, PI/2) var upper_angle := PI/2.8
 
-@export var rotation_speed := 8.0
-
+@export_group("Movement")
+@export var rotation_speed := 10
+@export var jump_force := 30
+@export var impulse_scale := 0.01
+@export var TARGET_SPEED : float = 20
 var _camera_input_direction := Vector2.ZERO
 var _last_movement_direction := Vector3.FORWARD
 
+
 @onready var _camera_pivot: Node3D = %CameraPivot
+
 @onready var _camera: Node3D = %CameraPivot/Camera3D
-@onready var _character_mesh: Node3D = %CollisionShape3D   # <-- your mesh/CollisionShape3D
+@onready var _character_mesh: Node3D = %CollisionShape3D
+@onready var _ground_check: RayCast3D = $GroundCheck
+@onready var animtree: AnimationTree = $CollisionShape3D/Player1/AnimationTree
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_click"):
@@ -55,9 +62,23 @@ func _physics_process(delta: float) -> void:
 
 	# --- PID controlled movement ---
 	var target_v = move_direction * TARGET_SPEED
+	
 	var velocity_error = target_v - linear_velocity
-	var impulse = _pid.update(velocity_error, delta) * 0.01
+	var impulse = _pid.update(velocity_error, delta) * impulse_scale
 	apply_central_impulse(impulse)
+
+	var is_moving = move_direction.length() > 0.1
+	var is_on_ground = _ground_check.is_colliding()
+
+
+	animtree.set("parameters/conditions/idle", not is_moving and is_on_ground)
+	animtree.set("parameters/conditions/run", is_moving and is_on_ground)
+	animtree.set("parameters/conditions/jump", not is_on_ground)
+	animtree.set("parameters/conditions/jump_end", is_on_ground and not is_moving)
+
+	# --- Jump ---
+	if Input.is_action_just_pressed("jump") and is_on_ground:
+		apply_central_impulse(Vector3.UP * jump_force)
 
 	# --- Rotate character to face movement ---
 	if move_direction.length() > 0.2:
