@@ -1,6 +1,6 @@
 extends RigidBody3D
 
-var _pid := Pid3D.new(2.25, 0.0075, 1.1)
+var _pid := Pid3D.new(3, 0.004, 0.9)
 
 
 @export_group("Camera")
@@ -10,9 +10,9 @@ var _pid := Pid3D.new(2.25, 0.0075, 1.1)
 
 @export_group("Movement")
 @export var rotation_speed := 10
-@export var jump_force := 30
+@export var jump_force := 40
 @export var impulse_scale := 0.01
-@export var TARGET_SPEED : float = 20
+@export var TARGET_SPEED : float = 25
 var _camera_input_direction := Vector2.ZERO
 var _last_movement_direction := Vector3.FORWARD
 
@@ -69,13 +69,16 @@ func _physics_process(delta: float) -> void:
 
 	var is_moving = move_direction.length() > 0.1
 	var is_on_ground = _ground_check.is_colliding()
-
-
+	#print(move_direction)
+	if is_on_ground && move_direction==Vector3.ZERO && !Input.is_action_just_pressed("jump"):
+		linear_damp=10
+	else:
+		linear_damp=0
+	print(linear_damp)
 	animtree.set("parameters/conditions/idle", not is_moving and is_on_ground)
 	animtree.set("parameters/conditions/run", is_moving and is_on_ground)
 	animtree.set("parameters/conditions/jump", not is_on_ground)
 	animtree.set("parameters/conditions/jump_end", is_on_ground and not is_moving)
-
 	# --- Jump ---
 	if Input.is_action_just_pressed("jump") and is_on_ground:
 		apply_central_impulse(Vector3.UP * jump_force)

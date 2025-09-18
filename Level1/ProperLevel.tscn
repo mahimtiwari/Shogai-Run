@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dp8ntlbnsjm35"]
+[gd_scene load_steps=34 format=3 uid="uid://dp8ntlbnsjm35"]
 
 [ext_resource type="PackedScene" uid="uid://cjir0nllr70ct" path="res://Level1/spawn_block_15x_8_blend.tscn" id="2_gdkdi"]
 [ext_resource type="Texture2D" uid="uid://oodasrchstxr" path="res://73_bbefdfe7df90c2ce3b16f344fb358d93_file.jpg" id="3_gdkdi"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://sfoki57exsli" path="res://general_obst/conveyr/pink_conveyr_down.png" id="26_38bxg"]
 [ext_resource type="PackedScene" uid="uid://br8btcq1cxfj5" path="res://general_obst/ball/roller.tscn" id="26_jggfg"]
 [ext_resource type="PackedScene" uid="uid://dcv6cr8kju056" path="res://player rigid body.tscn" id="26_jqvxq"]
+[ext_resource type="PackedScene" uid="uid://c7pjhwciirsge" path="res://Player3d.tscn" id="27_jqvxq"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_bfu0y"]
 panorama = ExtResource("3_gdkdi")
@@ -760,7 +761,7 @@ transform = Transform3D(-6.61812e-07, 0, 15.1405, 0, 15.1405, 0, -15.1405, 0, -6
 transform = Transform3D(-6.61812e-07, 0, 15.1405, 0, 15.1405, 0, -15.1405, 0, -6.61812e-07, 60.5959, 59.129, -909.878)
 
 [node name="conveyr_belt1" parent="." instance=ExtResource("24_jqvxq")]
-transform = Transform3D(-3.62074e-07, 1.70664e-08, 15.0178, 1.76808, 7.97796, 1.13357e-07, -7.97796, 1.76808, -6.56447e-07, -60.4969, 20.96, -771.045)
+transform = Transform3D(-3.62074e-07, 1.70664e-08, 15.0178, 1.76808, 7.97796, 1.13357e-07, -7.97796, 1.76808, -6.56447e-07, -60.497, 20.804, -771.053)
 
 [node name="conveyr_belt2" parent="." instance=ExtResource("24_jqvxq")]
 transform = Transform3D(-3.61987e-07, 1.70623e-08, 15.0142, 1.76766, 7.97605, 1.1333e-07, -7.97605, 1.76766, -6.5629e-07, 0, 20.804, -771.053)
@@ -796,4 +797,7 @@ UNDER DEVLOPMENT"
 font_size = 4267
 
 [node name="CharacterRigid" parent="." instance=ExtResource("26_jqvxq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.788366, -1.37653, -610.136)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.788366, 5.95169, -313.413)
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("27_jqvxq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.09408, 5.55669, -313.718)
