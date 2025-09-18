@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dp8ntlbnsjm35"]
+[gd_scene load_steps=33 format=3 uid="uid://dp8ntlbnsjm35"]
 
 [ext_resource type="PackedScene" uid="uid://cjir0nllr70ct" path="res://Level1/spawn_block_15x_8_blend.tscn" id="2_gdkdi"]
 [ext_resource type="Texture2D" uid="uid://oodasrchstxr" path="res://73_bbefdfe7df90c2ce3b16f344fb358d93_file.jpg" id="3_gdkdi"]
@@ -26,7 +26,6 @@
 [ext_resource type="Texture2D" uid="uid://sfoki57exsli" path="res://general_obst/conveyr/pink_conveyr_down.png" id="26_38bxg"]
 [ext_resource type="PackedScene" uid="uid://br8btcq1cxfj5" path="res://general_obst/ball/roller.tscn" id="26_jggfg"]
 [ext_resource type="PackedScene" uid="uid://dcv6cr8kju056" path="res://player rigid body.tscn" id="26_jqvxq"]
-[ext_resource type="PackedScene" uid="uid://c7pjhwciirsge" path="res://Player3d.tscn" id="27_jqvxq"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_bfu0y"]
 panorama = ExtResource("3_gdkdi")
@@ -796,9 +795,10 @@ text = "THIS STAGE IS
 UNDER DEVLOPMENT"
 font_size = 4267
 
-[node name="CharacterRigid" parent="." instance=ExtResource("26_jqvxq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.34426, 4.98067, 2.90771)
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(0.880742, 0.473596, 0, -0.473596, 0.880742, 0, 0, 0, 1, -54.0908, 15.5861, -542.819)
+use_collision = true
+size = Vector3(71.6245, 1, 13.8571)
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("27_jqvxq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.49083, 4.98067, 2.90872)
-visible = false
+[node name="CharacterRigid" parent="." instance=ExtResource("26_jqvxq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.34426, 5.69133, -549.318)

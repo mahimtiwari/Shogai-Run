@@ -13,6 +13,13 @@ var _pid := Pid3D.new(8, 0.004, 0.9)
 @export var jump_force := 55
 @export var impulse_scale := 0.01
 @export var TARGET_SPEED : float = 15
+
+
+@export_group("Slope")
+@export var max_slope_angle: float = 45.0
+@export var min_slope_angle: float = 0.1
+
+
 var _camera_input_direction := Vector2.ZERO
 var _last_movement_direction := Vector3.FORWARD
 
@@ -50,17 +57,23 @@ func _physics_process(delta: float) -> void:
 	_camera_input_direction = Vector2.ZERO
 	
 	# --- Slope Dettection ---	
-	var is_on_climbable_slope: bool = false 
+	var is_on_climbable_slope: bool = false
 	var slope_normal := Vector3.UP
 	
 	if _ground_check.is_colliding():
 		slope_normal = _ground_check.get_collision_normal(0)
 		var angle = rad_to_deg(acos(slope_normal.dot(Vector3.UP)))
-		if angle > 0.1: 
+		if max_slope_angle > angle &&  angle > min_slope_angle: 
 			is_on_climbable_slope = true
 	
-	print(is_on_slope)
 	
+	if is_on_climbable_slope:
+		var mass = self.mass            # mass of the RigidBody3D
+		var g = ProjectSettings.get_setting("physics/3d/default_gravity")  # default gravity
+		var gravity_force = mass * g * gravity_scale
+		apply_central_force(Vector3.UP * gravity_force)
+		
+		print(gravity_force)
 	# --- Movement input relative to camera ---
 	var raw_inp := Input.get_vector("left", "right", "forward", "back")
 
