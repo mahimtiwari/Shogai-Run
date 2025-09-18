@@ -1,6 +1,6 @@
 extends RigidBody3D
 
-var _pid := Pid3D.new(3, 0.004, 0.9)
+var _pid := Pid3D.new(8, 0.004, 0.9)
 
 
 @export_group("Camera")
@@ -10,23 +10,22 @@ var _pid := Pid3D.new(3, 0.004, 0.9)
 
 @export_group("Movement")
 @export var rotation_speed := 10
-@export var jump_force := 40
+@export var jump_force := 55
 @export var impulse_scale := 0.01
-@export var TARGET_SPEED : float = 25
+@export var TARGET_SPEED : float = 15
 var _camera_input_direction := Vector2.ZERO
 var _last_movement_direction := Vector3.FORWARD
 
-
 @onready var _camera_pivot: Node3D = %CameraPivot
-
 @onready var _camera: Node3D = %CameraPivot/Camera3D
 @onready var _character_mesh: Node3D = %CollisionShape3D
-@onready var _ground_check: RayCast3D = $GroundCheck
+@onready var _ground_check: ShapeCast3D = $ShapeCast3D
 @onready var animtree: AnimationTree = $CollisionShape3D/Player1/AnimationTree
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_click"):
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
 	if event.is_action_pressed("ui_cancel"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
@@ -49,13 +48,27 @@ func _physics_process(delta: float) -> void:
 
 	_camera_pivot.rotation.y -= _camera_input_direction.x * delta
 	_camera_input_direction = Vector2.ZERO
-
+	
+	# --- Slope Dettection ---	
+	var is_on_climbable_slope: bool = false 
+	var slope_normal := Vector3.UP
+	
+	if _ground_check.is_colliding():
+		slope_normal = _ground_check.get_collision_normal(0)
+		var angle = rad_to_deg(acos(slope_normal.dot(Vector3.UP)))
+		if angle > 0.1: 
+			is_on_climbable_slope = true
+	
+	print(is_on_slope)
+	
 	# --- Movement input relative to camera ---
 	var raw_inp := Input.get_vector("left", "right", "forward", "back")
 
 	var forward := _camera.global_basis.z
 	var right := _camera.global_basis.x
+	
 
+	
 	var move_direction := forward * raw_inp.y + right * raw_inp.x
 	move_direction.y = 0
 	move_direction = move_direction.normalized()
@@ -70,10 +83,21 @@ func _physics_process(delta: float) -> void:
 	var is_moving = move_direction.length() > 0.1
 	var is_on_ground = _ground_check.is_colliding()
 	#print(move_direction)
+	
 	if is_on_ground && move_direction==Vector3.ZERO && !Input.is_action_just_pressed("jump"):
 		linear_damp=10
 	else:
 		linear_damp=0
+	
+	if linear_velocity.y<-5:
+		$".".gravity_scale = 15
+	else:
+		$".".gravity_scale = 6
+
+	
+	
+	
+	
 	print(linear_damp)
 	animtree.set("parameters/conditions/idle", not is_moving and is_on_ground)
 	animtree.set("parameters/conditions/run", is_moving and is_on_ground)

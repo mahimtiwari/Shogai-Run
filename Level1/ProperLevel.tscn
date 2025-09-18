@@ -797,7 +797,8 @@ UNDER DEVLOPMENT"
 font_size = 4267
 
 [node name="CharacterRigid" parent="." instance=ExtResource("26_jqvxq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.788366, 5.95169, -313.413)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.34426, 4.98067, 2.90771)
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("27_jqvxq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.09408, 5.55669, -313.718)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.49083, 4.98067, 2.90872)
+visible = false

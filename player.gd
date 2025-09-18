@@ -37,7 +37,7 @@ func _ready() -> void:
 	sfx_background.pitch_scale = bg_m_pitch
 	sfx_background.play()
 	GameLevelManager.connect("coin_amount_changed", _coin_amount_chnged_call)
-
+	$"../Area3D3".connect("body_entered", _on_area_3d_3_body_entered_spawn)
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_click"):
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -85,8 +85,6 @@ func _physics_process(delta: float) -> void:
 	if is_starting_jump:
 		sfx_jump.play(0.18)
 		velocity.y += jump_velocity
-	
-	
 	
 	if move_direction.length() >0.2:		
 		_last_movement_direction = move_direction
