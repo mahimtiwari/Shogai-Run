@@ -59,31 +59,38 @@ func _physics_process(delta: float) -> void:
 	# --- Slope Dettection ---	
 	var is_on_climbable_slope: bool = false
 	var slope_normal := Vector3.UP
+	var angle: float
 	
 	if _ground_check.is_colliding():
 		slope_normal = _ground_check.get_collision_normal(0)
-		var angle = rad_to_deg(acos(slope_normal.dot(Vector3.UP)))
+		angle = rad_to_deg(acos(slope_normal.dot(Vector3.UP)))
 		if max_slope_angle > angle &&  angle > min_slope_angle: 
 			is_on_climbable_slope = true
-	
 	
 	if is_on_climbable_slope:
 		var mass = self.mass            # mass of the RigidBody3D
 		var g = ProjectSettings.get_setting("physics/3d/default_gravity")  # default gravity
 		var gravity_force = mass * g * gravity_scale
 		apply_central_force(Vector3.UP * gravity_force)
-		
-		print(gravity_force)
+
 	# --- Movement input relative to camera ---
 	var raw_inp := Input.get_vector("left", "right", "forward", "back")
 
 	var forward := _camera.global_basis.z
 	var right := _camera.global_basis.x
 	
-
-	
 	var move_direction := forward * raw_inp.y + right * raw_inp.x
-	move_direction.y = 0
+	
+	if _ground_check.is_colliding() && (abs(angle)<=max_slope_angle): 
+		var slope_normal_loc = _ground_check.get_collision_normal(0)
+		move_direction = move_direction - slope_normal_loc * move_direction.dot(slope_normal_loc)
+	else:
+		move_direction.y =0
+		
+	# Renormalize so speed is consistent
+	if move_direction.length() > 0.001:
+		move_direction = move_direction.normalized()
+	
 	move_direction = move_direction.normalized()
 
 	# --- PID controlled movement ---
@@ -111,7 +118,6 @@ func _physics_process(delta: float) -> void:
 	
 	
 	
-	print(linear_damp)
 	animtree.set("parameters/conditions/idle", not is_moving and is_on_ground)
 	animtree.set("parameters/conditions/run", is_moving and is_on_ground)
 	animtree.set("parameters/conditions/jump", not is_on_ground)
