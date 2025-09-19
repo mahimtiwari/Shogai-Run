@@ -13,7 +13,8 @@ var _pid := Pid3D.new(8, 0.004, 0.9)
 @export var jump_force := 55
 @export var impulse_scale := 0.01
 @export var TARGET_SPEED : float = 15
-
+@export var _lowGravity := 1
+@export var _lowGravityPitch := 0.5
 
 @export_group("Slope")
 @export var max_slope_angle: float = 45.0
@@ -28,6 +29,20 @@ var _last_movement_direction := Vector3.FORWARD
 @onready var _character_mesh: Node3D = %CollisionShape3D
 @onready var _ground_check: ShapeCast3D = $ShapeCast3D
 @onready var animtree: AnimationTree = $CollisionShape3D/Player1/AnimationTree
+@onready var sfx_jump: AudioStreamPlayer = $SFX_Jump
+@onready var sfx_background: AudioStreamPlayer = $SFX_Background
+@onready var sfx_coin: AudioStreamPlayer = $SFX_coin
+
+var lowG: bool = false
+var bg_m_pitch:=1.0
+var jump_pitch:=1.0
+
+func _ready() -> void:
+	
+	sfx_background.play()
+	GameLevelManager.connect("coin_amount_changed", _coin_amount_chnged_call)
+	$"../Area3D3".connect("body_entered", _on_area_3d_3_body_entered_spawn)
+
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_click"):
@@ -110,10 +125,13 @@ func _physics_process(delta: float) -> void:
 		linear_damp=0
 	
 	if linear_velocity.y<-5:
-		$".".gravity_scale = 15
+		self.gravity_scale = 15
+	elif lowG:
+		self.gravity_scale = _lowGravity
 	else:
-		$".".gravity_scale = 6
+		self.gravity_scale = 6
 
+	
 	
 	
 	
@@ -124,6 +142,7 @@ func _physics_process(delta: float) -> void:
 	animtree.set("parameters/conditions/jump_end", is_on_ground and not is_moving)
 	# --- Jump ---
 	if Input.is_action_just_pressed("jump") and is_on_ground:
+		sfx_jump.play(0.18)
 		apply_central_impulse(Vector3.UP * jump_force)
 
 	# --- Rotate character to face movement ---
@@ -140,3 +159,22 @@ func _physics_process(delta: float) -> void:
 		t_angle,
 		rotation_speed * delta
 	)
+
+
+func _coin_amount_chnged_call(amount:int)->void:
+	sfx_coin.play()
+
+func _on_low_g_zone_entered(body: Node3D) -> void:
+	sfx_background.pitch_scale = _lowGravityPitch
+	sfx_jump.pitch_scale = _lowGravityPitch
+	lowG=true
+
+
+func _on_area_3d_body_exited(body: Node3D) -> void:
+	sfx_background.pitch_scale = bg_m_pitch
+	sfx_jump.pitch_scale = jump_pitch
+	lowG=false
+
+
+func _on_area_3d_3_body_entered_spawn(body: Node3D) -> void:
+	position = GameLevelManager.checkpoint_node.position

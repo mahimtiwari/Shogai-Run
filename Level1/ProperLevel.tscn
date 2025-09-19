@@ -795,10 +795,5 @@ text = "THIS STAGE IS
 UNDER DEVLOPMENT"
 font_size = 4267
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(0.880742, 0.473596, 0, -0.473596, 0.880742, 0, 0, 0, 1, -54.0908, 15.5861, -542.819)
-use_collision = true
-size = Vector3(71.6245, 1, 13.8571)
-
 [node name="CharacterRigid" parent="." instance=ExtResource("26_jqvxq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.34426, 5.69133, -549.318)

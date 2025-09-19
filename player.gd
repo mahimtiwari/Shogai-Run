@@ -38,6 +38,7 @@ func _ready() -> void:
 	sfx_background.play()
 	GameLevelManager.connect("coin_amount_changed", _coin_amount_chnged_call)
 	$"../Area3D3".connect("body_entered", _on_area_3d_3_body_entered_spawn)
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_click"):
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
