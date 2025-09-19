@@ -14,6 +14,7 @@ var _pid := Pid3D.new(8, 0.004, 0.9)
 @export var impulse_scale := 0.01
 @export var TARGET_SPEED : float = 15
 @export var _lowGravity := 1
+@export var jumpX := 2
 @export var _lowGravityPitch := 0.5
 
 @export_group("Slope")
@@ -123,17 +124,20 @@ func _physics_process(delta: float) -> void:
 		linear_damp=10
 	else:
 		linear_damp=0
+	var jump_Scale:=1
 	
-	if linear_velocity.y<-5:
-		self.gravity_scale = 15
-	elif lowG:
-		self.gravity_scale = _lowGravity
+	if !lowG:
+		if linear_velocity.y<-5:
+			self.gravity_scale = 15
+		else:
+			self.gravity_scale = 6
+	
 	else:
-		self.gravity_scale = 6
-
-	
-	
-	
+		jump_Scale=jumpX
+		if linear_velocity.y>0:
+			self.gravity_scale = _lowGravity
+		else:
+			self.gravity_scale = _lowGravity*4
 	
 	
 	animtree.set("parameters/conditions/idle", not is_moving and is_on_ground)
@@ -143,7 +147,7 @@ func _physics_process(delta: float) -> void:
 	# --- Jump ---
 	if Input.is_action_just_pressed("jump") and is_on_ground:
 		sfx_jump.play(0.18)
-		apply_central_impulse(Vector3.UP * jump_force)
+		apply_central_impulse(Vector3.UP * jump_force * jump_Scale)
 
 	# --- Rotate character to face movement ---
 	if move_direction.length() > 0.2:
@@ -177,4 +181,5 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 
 
 func _on_area_3d_3_body_entered_spawn(body: Node3D) -> void:
-	position = GameLevelManager.checkpoint_node.position
+	if body.is_in_group("player"):
+		position = GameLevelManager.checkpoint_node.position
