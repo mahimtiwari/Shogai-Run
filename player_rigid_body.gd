@@ -10,11 +10,11 @@ var _pid := Pid3D.new(8, 0.004, 0.9)
 
 @export_group("Movement")
 @export var rotation_speed := 10
-@export var jump_force := 55
+@export var jump_force :=23
 @export var impulse_scale := 0.01
 @export var TARGET_SPEED : float = 15
 @export var _lowGravity := 1
-@export var jumpX := 2
+@export var jumpX := 1
 @export var _lowGravityPitch := 0.5
 
 @export_group("Slope")
@@ -60,6 +60,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	if is_camera_motion:
 		_camera_input_direction = event.screen_relative * rotation_sensitivity
 
+var p_v: float = 0
+
 func _physics_process(delta: float) -> void:
 	# --- Camera rotation ---
 	_camera_pivot.rotation.x -= _camera_input_direction.y * delta
@@ -89,37 +91,35 @@ func _physics_process(delta: float) -> void:
 		var gravity_force = mass * g * gravity_scale
 		apply_central_force(Vector3.UP * gravity_force)
 
-	# --- Movement input relative to camera ---
-	var raw_inp := Input.get_vector("left", "right", "forward", "back")
 
+	# --- Movement input relative to camera ---
+
+	var raw_inp := Input.get_vector("left", "right", "forward", "back")
 	var forward := _camera.global_basis.z
 	var right := _camera.global_basis.x
-	
 	var move_direction := forward * raw_inp.y + right * raw_inp.x
 	
-	if _ground_check.is_colliding() && (abs(angle)<=max_slope_angle): 
-		var slope_normal_loc = _ground_check.get_collision_normal(0)
-		move_direction = move_direction - slope_normal_loc * move_direction.dot(slope_normal_loc)
+	# Project movement onto slope if on slope
+	if is_on_climbable_slope:
+		move_direction -= slope_normal * move_direction.dot(slope_normal)
 	else:
-		move_direction.y =0
-		
-	# Renormalize so speed is consistent
+		move_direction.y = 0
+	
 	if move_direction.length() > 0.001:
 		move_direction = move_direction.normalized()
 	
-	move_direction = move_direction.normalized()
-
-	# --- PID controlled movement ---
+	# --- PID horizontal movement ---
 	var target_v = move_direction * TARGET_SPEED
-	
 	var velocity_error = target_v - linear_velocity
+	if is_on_climbable_slope:
+		# Project error onto slope plane
+		velocity_error -= slope_normal * velocity_error.dot(slope_normal)
+	velocity_error.y = 0  # don't affect vertical
 	var impulse = _pid.update(velocity_error, delta) * impulse_scale
 	apply_central_impulse(impulse)
-
 	var is_moving = move_direction.length() > 0.1
 	var is_on_ground = _ground_check.is_colliding()
-	#print(move_direction)
-	
+
 	if is_on_ground && move_direction==Vector3.ZERO && !Input.is_action_just_pressed("jump"):
 		linear_damp=10
 	else:
@@ -127,18 +127,13 @@ func _physics_process(delta: float) -> void:
 	var jump_Scale:=1
 	
 	if !lowG:
-		if linear_velocity.y<-5:
-			self.gravity_scale = 15
-		else:
-			self.gravity_scale = 6
+		gravity_scale=6
 	
 	else:
 		jump_Scale=jumpX
-		if linear_velocity.y>0:
-			self.gravity_scale = _lowGravity
-		else:
-			self.gravity_scale = _lowGravity*4
-	
+		gravity_scale=1
+
+	p_v = linear_velocity.y
 	
 	animtree.set("parameters/conditions/idle", not is_moving and is_on_ground)
 	animtree.set("parameters/conditions/run", is_moving and is_on_ground)

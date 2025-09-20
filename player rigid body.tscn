@@ -23,7 +23,6 @@ physics_material_override = SubResource("PhysicsMaterial_2xtsc")
 gravity_scale = 6.0
 can_sleep = false
 script = ExtResource("1_2xtsc")
-jump_force = 40
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 unique_name_in_owner = true
@@ -34,15 +33,15 @@ shape = SubResource("ConvexPolygonShape3D_ayicv")
 transform = Transform3D(-0.447368, 0, -3.91101e-08, 0, 0.447368, 0, 3.91101e-08, 0, -0.447368, 0, -0.986265, 0.0552329)
 
 [node name="Skeleton3D" parent="CollisionShape3D/Player1/Armature" index="0"]
-bones/0/rotation = Quaternion(0.0371693, 0.000289491, 0.00177487, 0.999307)
+bones/0/rotation = Quaternion(0.0411879, 0.000282351, 0.00177602, 0.99915)
 bones/3/rotation = Quaternion(1.86253e-09, -2.18279e-11, 5.72982e-11, 1)
-bones/5/rotation = Quaternion(-0.0958023, -0.117477, -0.187765, 0.970446)
+bones/5/rotation = Quaternion(-0.0965202, -0.123802, -0.195097, 0.96814)
 bones/6/rotation = Quaternion(-8.23175e-09, -9.55573e-08, -0.0598798, 0.998206)
-bones/8/rotation = Quaternion(-0.0958023, 0.117477, 0.187765, 0.970446)
+bones/8/rotation = Quaternion(-0.0965202, 0.123802, 0.195097, 0.96814)
 bones/9/rotation = Quaternion(5.80616e-09, 1.10394e-07, 0.0598797, 0.998206)
 bones/11/rotation = Quaternion(-0.753264, -3.67439e-08, 2.89481e-08, 0.657719)
 bones/14/rotation = Quaternion(-0.753264, 3.67439e-08, -2.89481e-08, 0.657719)
-bones/17/rotation = Quaternion(-0.452083, 0.0268571, -0.000797768, 0.891571)
+bones/17/rotation = Quaternion(-0.447227, 0.0268523, -0.000943811, 0.894017)
 
 [node name="1_low_001" parent="CollisionShape3D/Player1/Armature/Skeleton3D" index="0"]
 transform = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, 0, 0, 0)

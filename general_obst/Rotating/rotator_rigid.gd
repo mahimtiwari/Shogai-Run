@@ -19,7 +19,7 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 func _on_body_entered(body: Node) -> void:
 	if body is RigidBody3D:
 		# Compute direction away from center
-			
+		print("collide")
 		var dir = (body.global_transform.origin - global_transform.origin).normalized()
 			# Apply impulse to throw the character
 		body.sleeping = false
