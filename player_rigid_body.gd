@@ -164,15 +164,18 @@ func _coin_amount_chnged_call(amount:int)->void:
 	sfx_coin.play()
 
 func _on_low_g_zone_entered(body: Node3D) -> void:
-	sfx_background.pitch_scale = _lowGravityPitch
-	sfx_jump.pitch_scale = _lowGravityPitch
-	lowG=true
+	if body.is_in_group("player"):
+		sfx_background.pitch_scale = _lowGravityPitch
+		sfx_jump.pitch_scale = _lowGravityPitch
+		lowG=true
+		print("entwertttw")
 
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
-	sfx_background.pitch_scale = bg_m_pitch
-	sfx_jump.pitch_scale = jump_pitch
-	lowG=false
+	if body.is_in_group("player"):
+		sfx_background.pitch_scale = bg_m_pitch
+		sfx_jump.pitch_scale = jump_pitch
+		lowG=false
 
 
 func _on_area_3d_3_body_entered_spawn(body: Node3D) -> void:
