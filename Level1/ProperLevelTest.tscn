@@ -24,7 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://ccfrcb7ro6kd3" path="res://general_obst/block_cannon/cannon_block.tscn" id="22_w8p50"]
 [ext_resource type="PackedScene" uid="uid://bovoi2a2psccp" path="res://general_obst/conveyr/conveyr_belt.tscn" id="23_xb6r8"]
 [ext_resource type="Texture2D" uid="uid://sfoki57exsli" path="res://general_obst/conveyr/pink_conveyr_down.png" id="24_ar4c7"]
-[ext_resource type="PackedScene" uid="uid://br8btcq1cxfj5" path="res://general_obst/ball/roller.tscn" id="25_lyhku"]
+[ext_resource type="PackedScene" uid="uid://br8btcq1cxfj5" path="res://general_obst/CannonShells/roller.tscn" id="25_lyhku"]
 [ext_resource type="PackedScene" uid="uid://c7pjhwciirsge" path="res://Player3d.tscn" id="26_n6msk"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_bfu0y"]

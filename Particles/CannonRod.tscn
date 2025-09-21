@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://40cyu745u3tu"]
+
+[ext_resource type="Script" uid="uid://yw1al481yiek" path="res://Particles/cannon_rod.gd" id="1_37wyp"]
+[ext_resource type="PackedScene" uid="uid://br8btcq1cxfj5" path="res://general_obst/CannonShells/roller.tscn" id="1_hnqf1"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_37wyp")
+
+[node name="Node3D" parent="." instance=ExtResource("1_hnqf1")]
