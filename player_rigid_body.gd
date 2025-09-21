@@ -86,14 +86,16 @@ func _physics_process(delta: float) -> void:
 			is_on_climbable_slope = true
 	
 	if is_on_climbable_slope:
-		var mass = self.mass            # mass of the RigidBody3D
-		var g = ProjectSettings.get_setting("physics/3d/default_gravity")  # default gravity
-		var gravity_force = mass * g * gravity_scale
-		apply_central_force(Vector3.UP * gravity_force)
+		slope_normal = _ground_check.get_collision_normal(0)
+		var m = self.mass
+		var g = ProjectSettings.get_setting("physics/3d/default_gravity")
+		
+		# Cancel only the component of gravity perpendicular to slope
+		var slope_gravity_correction = slope_normal * (Vector3.DOWN.dot(slope_normal) * m * g)
+		apply_central_force(-slope_gravity_correction)
 
 
 	# --- Movement input relative to camera ---
-
 	var raw_inp := Input.get_vector("left", "right", "forward", "back")
 	var forward := _camera.global_basis.z
 	var right := _camera.global_basis.x
@@ -119,7 +121,7 @@ func _physics_process(delta: float) -> void:
 	apply_central_impulse(impulse)
 	var is_moving = move_direction.length() > 0.1
 	var is_on_ground = _ground_check.is_colliding()
-
+	print(is_on_ground, is_on_climbable_slope)
 	if is_on_ground && move_direction==Vector3.ZERO && !Input.is_action_just_pressed("jump"):
 		linear_damp=10
 	else:
@@ -146,7 +148,8 @@ func _physics_process(delta: float) -> void:
 
 	# --- Rotate character to face movement ---
 	if move_direction.length() > 0.2:
-		_last_movement_direction = move_direction
+		var flat_dir = Vector3(move_direction.x, 0, move_direction.z).normalized()
+		_last_movement_direction = flat_dir
 
 	var t_angle := Vector3.FORWARD.signed_angle_to(
 		_last_movement_direction,

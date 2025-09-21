@@ -15,10 +15,10 @@
 [ext_resource type="AudioStream" uid="uid://v4gwoyhnej6w" path="res://SFX/hexagon_step.mp3" id="16_0gior"]
 [ext_resource type="PackedScene" uid="uid://b6i2lk67xcccq" path="res://general_obst/square bridge platform/jumprope_gate.tscn" id="17_raq7w"]
 [ext_resource type="Script" uid="uid://3jniguxs3w8i" path="res://Level1/square_rope_jump_base_bridge.gd" id="19_hugtb"]
+[ext_resource type="PackedScene" uid="uid://7cj5p6cgywgh" path="res://general_obst/block_cannon/rod_cannon_block.tscn" id="19_jggfg"]
 [ext_resource type="PackedScene" uid="uid://bc6tsnkr7wbis" path="res://general_obst/square bridge platform/square_bridge_blocks.tscn" id="19_raq7w"]
 [ext_resource type="PackedScene" uid="uid://chiu30f1bp4km" path="res://check_point.tscn" id="21_hugtb"]
 [ext_resource type="PackedScene" uid="uid://6uh68uc6lcre" path="res://general_obst/ramps/ramp.tscn" id="22_b4fio"]
-[ext_resource type="PackedScene" uid="uid://ccfrcb7ro6kd3" path="res://general_obst/block_cannon/cannon_block.tscn" id="23_jggfg"]
 [ext_resource type="PackedScene" uid="uid://bovoi2a2psccp" path="res://general_obst/conveyr/conveyr_belt.tscn" id="24_jqvxq"]
 [ext_resource type="PackedScene" uid="uid://dwkk12vbpo1mm" path="res://general_obst/Rotating/rope_rigid.tscn" id="26_1ayr7"]
 [ext_resource type="Texture2D" uid="uid://sfoki57exsli" path="res://general_obst/conveyr/pink_conveyr_down.png" id="26_38bxg"]
@@ -721,13 +721,13 @@ color = Color(0.00392157, 0.603922, 0.984314, 1)
 transform = Transform3D(-18.129, 0, 3.96214e-06, 0, 27.9927, 0, -1.58489e-06, 0, -45.3216, -0.002, 16.132, -706.582)
 color = Color(0.231373, 0.819608, 1, 1)
 
-[node name="cannon_block" parent="." instance=ExtResource("23_jggfg")]
+[node name="RodCannonBlock" parent="." instance=ExtResource("19_jggfg")]
 transform = Transform3D(-6.61812e-07, 0, 15.1405, 0, 15.1405, 0, -15.1405, 0, -6.61812e-07, -60.596, 59.129, -909.878)
 
-[node name="cannon_block2" parent="." instance=ExtResource("23_jggfg")]
+[node name="RodCannonBlock2" parent="." instance=ExtResource("19_jggfg")]
 transform = Transform3D(-6.61812e-07, 0, 15.1405, 0, 15.1405, 0, -15.1405, 0, -6.61812e-07, 0, 59.212, -909.878)
 
-[node name="cannon_block3" parent="." instance=ExtResource("23_jggfg")]
+[node name="RodCannonBlock3" parent="." instance=ExtResource("19_jggfg")]
 transform = Transform3D(-6.61812e-07, 0, 15.1405, 0, 15.1405, 0, -15.1405, 0, -6.61812e-07, 60.5959, 59.129, -909.878)
 
 [node name="conveyr_belt1" parent="." instance=ExtResource("24_jqvxq")]
@@ -767,7 +767,7 @@ UNDER DEVLOPMENT"
 font_size = 4267
 
 [node name="CharacterRigid" parent="." instance=ExtResource("26_jqvxq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0244, 6.14805, 3.82306)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0244, 6.14805, -617.34)
 
 [node name="RotatorRigid" parent="." instance=ExtResource("27_jqvxq")]
 transform = Transform3D(1.71794, 0, 0, 0, 1.71794, 0, 0, 0, 1.71794, 0, 6.31794, -89.666)
