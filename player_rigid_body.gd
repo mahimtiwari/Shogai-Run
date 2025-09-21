@@ -159,7 +159,25 @@ func _physics_process(delta: float) -> void:
 	var is_on_ground = _ground_check.is_colliding()
 
 	var raw_ground := _ground_check.is_colliding()
-	if raw_ground:
+	
+	var g_w_check:= false
+	
+	if _ground_check.is_colliding():
+		for i in range(_ground_check.get_collision_count()):
+			var collider = _ground_check.get_collider(i)
+			
+			if not collider:
+				continue
+			
+			var normal = _ground_check.get_collision_normal(i)
+			var c_angle = rad_to_deg(acos(normal.dot(Vector3.UP)))
+			
+			if angle <= 80:
+				g_w_check = true
+				break
+				
+	
+	if raw_ground && g_w_check:
 		_ground_lost_time = 0.0
 		is_on_ground = true
 	else:

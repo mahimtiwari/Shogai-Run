@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dp8ntlbnsjm35"]
+[gd_scene load_steps=36 format=3 uid="uid://dp8ntlbnsjm35"]
 
 [ext_resource type="PackedScene" uid="uid://cjir0nllr70ct" path="res://Level1/spawn_block_15x_8_blend.tscn" id="2_gdkdi"]
 [ext_resource type="Texture2D" uid="uid://oodasrchstxr" path="res://73_bbefdfe7df90c2ce3b16f344fb358d93_file.jpg" id="3_gdkdi"]
@@ -25,7 +25,9 @@
 [ext_resource type="Texture2D" uid="uid://sfoki57exsli" path="res://general_obst/conveyr/pink_conveyr_down.png" id="26_38bxg"]
 [ext_resource type="PackedScene" uid="uid://br8btcq1cxfj5" path="res://general_obst/CannonShells/roller.tscn" id="26_jggfg"]
 [ext_resource type="PackedScene" uid="uid://dcv6cr8kju056" path="res://player rigid body.tscn" id="26_jqvxq"]
+[ext_resource type="PackedScene" uid="uid://cvg8ow88mcfp" path="res://general_obst/DyanmicWalls/dynamic_wall_obstacle.tscn" id="27_1ayr7"]
 [ext_resource type="PackedScene" uid="uid://chldp3in6v0dk" path="res://general_obst/Rotating/rotator_rigid.tscn" id="27_jqvxq"]
+[ext_resource type="Script" uid="uid://cq15fdnwlxr15" path="res://general_obst/DyanmicWalls/dynamic_wall_obstacle.gd" id="28_1ayr7"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_bfu0y"]
 panorama = ExtResource("3_gdkdi")
@@ -711,38 +713,38 @@ transform = Transform3D(-3.98822e-07, 0, -9.12397, 0, 9.12397, 0, 9.12397, 0, -3
 checkpoint_index = 2
 
 [node name="ramp" parent="." instance=ExtResource("22_b4fio")]
-transform = Transform3D(18.129, 0, 0, 0, 4.384, 0, 0, 0, 5.88092, 0, 1.057, -585.976)
-color = Color(0.231373, 0.819608, 1, 1)
+transform = Transform3D(18.129, 0, 0, 0, 5.84456, 0, 0, 0, 5.88092, 0, -0.460001, -585.976)
+color = Color(0.00392157, 0.603922, 0.984314, 1)
 
 [node name="ramp2" parent="." instance=ExtResource("22_b4fio")]
-transform = Transform3D(-18.129, 0, 3.96214e-06, 0, 27.9927, 0, -1.58489e-06, 0, -45.3216, -0.002, 0.510067, -696.233)
+transform = Transform3D(-18.129, 0, 3.96214e-06, 0, 27.9927, 0, -1.58489e-06, 0, -45.3216, -0.002, -2.87318, -696.233)
 color = Color(0.231373, 0.819608, 1, 1)
 
 [node name="RodCannonBlock" parent="." instance=ExtResource("19_jggfg")]
-transform = Transform3D(-6.61812e-07, 0, 15.1405, 0, 15.1405, 0, -15.1405, 0, -6.61812e-07, -60.596, 42.9094, -877.672)
+transform = Transform3D(-6.61812e-07, 0, 15.1405, 0, 15.1405, 0, -15.1405, 0, -6.61812e-07, -60.596, 39.5261, -877.672)
 
 [node name="RodCannonBlock2" parent="." instance=ExtResource("19_jggfg")]
-transform = Transform3D(-6.61812e-07, 0, 15.1405, 0, 15.1405, 0, -15.1405, 0, -6.61812e-07, 0, 42.9924, -877.672)
+transform = Transform3D(-6.61812e-07, 0, 15.1405, 0, 15.1405, 0, -15.1405, 0, -6.61812e-07, 0, 39.6091, -877.672)
 
 [node name="RodCannonBlock3" parent="." instance=ExtResource("19_jggfg")]
-transform = Transform3D(-6.61812e-07, 0, 15.1405, 0, 15.1405, 0, -15.1405, 0, -6.61812e-07, 60.5959, 42.9094, -877.672)
+transform = Transform3D(-6.61812e-07, 0, 15.1405, 0, 15.1405, 0, -15.1405, 0, -6.61812e-07, 60.5959, 39.5261, -877.672)
 
 [node name="conveyr_belt1" parent="." instance=ExtResource("24_jqvxq")]
-transform = Transform3D(-3.62074e-07, 1.70664e-08, 15.0178, 1.76808, 7.97796, 1.13357e-07, -7.97796, 1.76808, -6.56447e-07, -60.497, 5.18207, -760.704)
+transform = Transform3D(-3.62074e-07, 1.70664e-08, 15.0178, 1.76808, 7.97796, 1.13357e-07, -7.97796, 1.76808, -6.56447e-07, -60.497, 1.79882, -760.704)
 
 [node name="conveyr_belt2" parent="." instance=ExtResource("24_jqvxq")]
-transform = Transform3D(-3.61987e-07, 1.70623e-08, 15.0142, 1.76766, 7.97605, 1.1333e-07, -7.97605, 1.76766, -6.5629e-07, 0, 5.18207, -760.704)
+transform = Transform3D(-3.61987e-07, 1.70623e-08, 15.0142, 1.76766, 7.97605, 1.1333e-07, -7.97605, 1.76766, -6.5629e-07, 0, 1.79882, -760.704)
 
 [node name="conveyr_belt3" parent="." instance=ExtResource("24_jqvxq")]
-transform = Transform3D(-3.61987e-07, 1.70623e-08, 15.0142, 1.76766, 7.97605, 1.1333e-07, -7.97605, 1.76766, -6.5629e-07, 60.596, 5.18207, -760.704)
+transform = Transform3D(-3.61987e-07, 1.70623e-08, 15.0142, 1.76766, 7.97605, 1.1333e-07, -7.97605, 1.76766, -6.5629e-07, 60.596, 1.79882, -760.704)
 
 [node name="conveyr_belt4" parent="." instance=ExtResource("24_jqvxq")]
-transform = Transform3D(-3.63737e-07, 1.71448e-08, 15.0868, 1.77621, 8.01461, 1.13878e-07, -8.01461, 1.77621, -6.59463e-07, 30.3, 5.18207, -760.704)
+transform = Transform3D(-3.63737e-07, 1.71448e-08, 15.0868, 1.77621, 8.01461, 1.13878e-07, -8.01461, 1.77621, -6.59463e-07, 30.3, 1.79882, -760.704)
 texture = ExtResource("26_38bxg")
 direction_inverse = true
 
 [node name="conveyr_belt5" parent="." instance=ExtResource("24_jqvxq")]
-transform = Transform3D(-3.61987e-07, 1.70623e-08, 15.0142, 1.76766, 7.97605, 1.1333e-07, -7.97605, 1.76766, -6.56292e-07, -30.3, 5.18207, -760.704)
+transform = Transform3D(-3.61987e-07, 1.70623e-08, 15.0142, 1.76766, 7.97605, 1.1333e-07, -7.97605, 1.76766, -6.56292e-07, -30.3, 1.79882, -760.704)
 texture = ExtResource("26_38bxg")
 direction_inverse = true
 
@@ -754,7 +756,7 @@ UNDER DEVLOPMENT"
 font_size = 4267
 
 [node name="CharacterRigid" parent="." instance=ExtResource("26_jqvxq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.618615, -0.214075, -589.532)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1466, 13.9088, -87.0205)
 
 [node name="RotatorRigid" parent="." instance=ExtResource("27_jqvxq")]
 transform = Transform3D(1.71794, 0, 0, 0, 1.71794, 0, 0, 0, 1.71794, 0, 6.31794, -89.666)
@@ -787,27 +789,33 @@ material = SubResource("StandardMaterial3D_0y3g0")
 transform = Transform3D(14.257, 0, 0, 0, 9.539, 0, 0, 0, 14.263, 0, 44.259, -416.117)
 
 [node name="baseCubeBlockSRound11" parent="." instance=ExtResource("11_kgqs6")]
-transform = Transform3D(76.919, 0, 0, 0, 1.182, 0, 0, 0, 15.153, 0, 26.8306, -877.954)
+transform = Transform3D(76.919, 0, 0, 0, 1.182, 0, 0, 0, 15.153, 0, 23.4473, -877.954)
 
 [node name="RodSpawner" parent="." instance=ExtResource("25_0y3g0")]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.244226, 42.6615, -852.243)
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.244226, 39.2782, -852.243)
 ProjectileScene = ExtResource("26_jggfg")
 
 [node name="RodSpawner2" parent="." instance=ExtResource("25_0y3g0")]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -60.4083, 42.6615, -852.243)
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -60.4083, 39.2782, -852.243)
 ProjectileScene = ExtResource("26_jggfg")
 
 [node name="RodSpawner3" parent="." instance=ExtResource("25_0y3g0")]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 60.4038, 42.6615, -852.243)
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 60.4038, 39.2782, -852.243)
 ProjectileScene = ExtResource("26_jggfg")
 
 [node name="round_cylinder_sm_blend2" parent="." instance=ExtResource("6_att4f")]
-transform = Transform3D(7.31977, 0, 0, 0, 7.31977, 0, 0, 0, 7.31977, 30.3, -10.2184, -593.071)
-color = Color(0.00392157, 0.603922, 0.984314, 1)
+transform = Transform3D(7.31977, 0, 0, 0, 9.9885, 0, 0, 0, 7.31977, 30.3, -10.8125, -592.75)
+color = Color(0.909804, 0.423529, 0, 1)
 
 [node name="round_cylinder_sm_blend3" parent="." instance=ExtResource("6_att4f")]
-transform = Transform3D(7.31977, 0, 0, 0, 7.31977, 0, 0, 0, 7.31977, -30.3, -10.218, -593.071)
-color = Color(0.00392157, 0.603922, 0.984314, 1)
+transform = Transform3D(7.31977, 0, 0, 0, 9.9885, 0, 0, 0, 7.31977, -30.3, -10.812, -592.75)
+color = Color(0.909804, 0.423529, 0, 1)
+
+[node name="DynamicWallObstacle" parent="." instance=ExtResource("27_1ayr7")]
+transform = Transform3D(-6.6841e-07, 0, -15.2914, 0, 15.2914, 0, 15.2914, 0, -6.6841e-07, -30.303, 39.233, -865.364)
+script = ExtResource("28_1ayr7")
+initial_position = Vector3(-30.303, 39.233, -865.364)
+final_position = Vector3(-30.303, 10.853, -865.364)
 
 [connection signal="body_entered" from="Area3D4" to="CharacterRigid" method="_on_low_g_zone_entered"]
 [connection signal="body_exited" from="Area3D4" to="CharacterRigid" method="_on_area_3d_body_exited"]
