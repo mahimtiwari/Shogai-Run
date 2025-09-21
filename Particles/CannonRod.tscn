@@ -5,5 +5,6 @@
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_37wyp")
+grow_duration = 0.15
 
-[node name="Node3D" parent="." instance=ExtResource("1_hnqf1")]
+[node name="RollerRigidModel" parent="." instance=ExtResource("1_hnqf1")]

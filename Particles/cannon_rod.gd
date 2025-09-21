@@ -1,36 +1,41 @@
 extends Node3D
 
 @export var ProjectileScene: PackedScene
-@export var spawn_scale: Vector3 = Vector3(0.5, 0.5, 0.5)
-@export var grow_duration: float = 0.5
-var t: float = 5
+@export var grow_duration: float = 0.25
+@export var per_emmsion_dration: float = 5
+@onready var roller_rigid_model: RigidBody3D = $RollerRigidModel
+
+var color_list := [
+	Color("fd5dce"),
+	Color("e8d528"),
+	Color("6cf0f4"),
+	Color("ff868d"),
+	Color("aef83a"),
+	Color("01e2fe"),
+	Color("ff4757"),
+]
+
+var rng = RandomNumberGenerator.new()
+
+var t: float = rng.randf_range(2, per_emmsion_dration)
 
 func _ready() -> void:
-	$Node3D.queue_free()
-
-func animate_and_shoot(p: RigidBody3D, impulse_dir: Vector3, impulse_strength: float) -> void:
-	# Start small
-	p.scale = spawn_scale
+	roller_rigid_model.queue_free()
+func animate_grow(p: RigidBody3D) -> void:
+	p.scale=Vector3.ONE*0.5
+	var tween := p.create_tween()
+	tween.tween_property(p, "scale",Vector3.ONE, grow_duration)
 	
-	# Animate growth
-	var tween = p.create_tween()
-	tween.tween_property(p, "scale", Vector3.ONE, grow_duration)
-	
-	# Apply impulse at the same time
-	# Use a call_deferred to avoid physics issues if needed
-	p.apply_impulse(impulse_dir * impulse_strength)
 
 func _physics_process(delta: float) -> void:
 	t -= delta
 	if t <= 0:
-		
 		var copy = ProjectileScene.instantiate() as RigidBody3D
 		get_tree().current_scene.add_child(copy)
+		copy.set_color(color_list.pick_random())
 		copy.global_transform = global_transform
-		
 		var direction = global_transform.basis.z.normalized()
-		var impulse_strength = 25.0 * copy.mass
-		
-		animate_and_shoot(copy, direction, impulse_strength)
-		
-		t = 5
+		var impulse_strength = 30.0*copy.mass
+		copy.apply_impulse(direction * impulse_strength)
+		animate_grow(copy)
+		t = rng.randf_range(2, per_emmsion_dration)

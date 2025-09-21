@@ -714,51 +714,47 @@ checkpoint_index = 2
 transform = Transform3D(18.129, 0, 0, 0, 4.384, 0, 0, 0, 5.88092, 0, 1.057, -585.976)
 color = Color(0.231373, 0.819608, 1, 1)
 
-[node name="spawnBlock15x5_blend4" parent="." instance=ExtResource("10_7v46q")]
-transform = Transform3D(10.3482, 0, 0, 0, 6.1004, 0, 0, 0, 5.88343, 0, -7.863, -615.081)
-color = Color(0.00392157, 0.603922, 0.984314, 1)
-
 [node name="ramp2" parent="." instance=ExtResource("22_b4fio")]
-transform = Transform3D(-18.129, 0, 3.96214e-06, 0, 27.9927, 0, -1.58489e-06, 0, -45.3216, -0.002, 16.132, -706.582)
+transform = Transform3D(-18.129, 0, 3.96214e-06, 0, 27.9927, 0, -1.58489e-06, 0, -45.3216, -0.002, 0.510067, -696.233)
 color = Color(0.231373, 0.819608, 1, 1)
 
 [node name="RodCannonBlock" parent="." instance=ExtResource("19_jggfg")]
-transform = Transform3D(-6.61812e-07, 0, 15.1405, 0, 15.1405, 0, -15.1405, 0, -6.61812e-07, -60.596, 58.5313, -888.021)
+transform = Transform3D(-6.61812e-07, 0, 15.1405, 0, 15.1405, 0, -15.1405, 0, -6.61812e-07, -60.596, 42.9094, -877.672)
 
 [node name="RodCannonBlock2" parent="." instance=ExtResource("19_jggfg")]
-transform = Transform3D(-6.61812e-07, 0, 15.1405, 0, 15.1405, 0, -15.1405, 0, -6.61812e-07, 0, 58.6143, -888.021)
+transform = Transform3D(-6.61812e-07, 0, 15.1405, 0, 15.1405, 0, -15.1405, 0, -6.61812e-07, 0, 42.9924, -877.672)
 
 [node name="RodCannonBlock3" parent="." instance=ExtResource("19_jggfg")]
-transform = Transform3D(-6.61812e-07, 0, 15.1405, 0, 15.1405, 0, -15.1405, 0, -6.61812e-07, 60.5959, 58.5313, -888.021)
+transform = Transform3D(-6.61812e-07, 0, 15.1405, 0, 15.1405, 0, -15.1405, 0, -6.61812e-07, 60.5959, 42.9094, -877.672)
 
 [node name="conveyr_belt1" parent="." instance=ExtResource("24_jqvxq")]
-transform = Transform3D(-3.62074e-07, 1.70664e-08, 15.0178, 1.76808, 7.97796, 1.13357e-07, -7.97796, 1.76808, -6.56447e-07, -60.497, 20.804, -771.053)
+transform = Transform3D(-3.62074e-07, 1.70664e-08, 15.0178, 1.76808, 7.97796, 1.13357e-07, -7.97796, 1.76808, -6.56447e-07, -60.497, 5.18207, -760.704)
 
 [node name="conveyr_belt2" parent="." instance=ExtResource("24_jqvxq")]
-transform = Transform3D(-3.61987e-07, 1.70623e-08, 15.0142, 1.76766, 7.97605, 1.1333e-07, -7.97605, 1.76766, -6.5629e-07, 0, 20.804, -771.053)
+transform = Transform3D(-3.61987e-07, 1.70623e-08, 15.0142, 1.76766, 7.97605, 1.1333e-07, -7.97605, 1.76766, -6.5629e-07, 0, 5.18207, -760.704)
 
 [node name="conveyr_belt3" parent="." instance=ExtResource("24_jqvxq")]
-transform = Transform3D(-3.61987e-07, 1.70623e-08, 15.0142, 1.76766, 7.97605, 1.1333e-07, -7.97605, 1.76766, -6.5629e-07, 60.596, 20.804, -771.053)
+transform = Transform3D(-3.61987e-07, 1.70623e-08, 15.0142, 1.76766, 7.97605, 1.1333e-07, -7.97605, 1.76766, -6.5629e-07, 60.596, 5.18207, -760.704)
 
 [node name="conveyr_belt4" parent="." instance=ExtResource("24_jqvxq")]
-transform = Transform3D(-3.63737e-07, 1.71448e-08, 15.0868, 1.77621, 8.01461, 1.13878e-07, -8.01461, 1.77621, -6.59463e-07, 30.3, 20.804, -771.053)
+transform = Transform3D(-3.63737e-07, 1.71448e-08, 15.0868, 1.77621, 8.01461, 1.13878e-07, -8.01461, 1.77621, -6.59463e-07, 30.3, 5.18207, -760.704)
 texture = ExtResource("26_38bxg")
 direction_inverse = true
 
 [node name="conveyr_belt5" parent="." instance=ExtResource("24_jqvxq")]
-transform = Transform3D(-3.61987e-07, 1.70623e-08, 15.0142, 1.76766, 7.97605, 1.1333e-07, -7.97605, 1.76766, -6.56292e-07, -30.3, 20.804, -771.053)
+transform = Transform3D(-3.61987e-07, 1.70623e-08, 15.0142, 1.76766, 7.97605, 1.1333e-07, -7.97605, 1.76766, -6.56292e-07, -30.3, 5.18207, -760.704)
 texture = ExtResource("26_38bxg")
 direction_inverse = true
 
 [node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8147e-06, 109.321, -903.088)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8147e-06, 89.5331, -892.739)
 modulate = Color(0, 0, 0, 1)
 text = "THIS STAGE IS
 UNDER DEVLOPMENT"
 font_size = 4267
 
 [node name="CharacterRigid" parent="." instance=ExtResource("26_jqvxq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0244, -0.214075, -630.624)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.618615, -0.214075, -589.532)
 
 [node name="RotatorRigid" parent="." instance=ExtResource("27_jqvxq")]
 transform = Transform3D(1.71794, 0, 0, 0, 1.71794, 0, 0, 0, 1.71794, 0, 6.31794, -89.666)
@@ -791,19 +787,27 @@ material = SubResource("StandardMaterial3D_0y3g0")
 transform = Transform3D(14.257, 0, 0, 0, 9.539, 0, 0, 0, 14.263, 0, 44.259, -416.117)
 
 [node name="baseCubeBlockSRound11" parent="." instance=ExtResource("11_kgqs6")]
-transform = Transform3D(76.919, 0, 0, 0, 1.182, 0, 0, 0, 15.153, 0, 42.4525, -888.303)
+transform = Transform3D(76.919, 0, 0, 0, 1.182, 0, 0, 0, 15.153, 0, 26.8306, -877.954)
 
 [node name="RodSpawner" parent="." instance=ExtResource("25_0y3g0")]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.244226, 58.2834, -862.592)
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.244226, 42.6615, -852.243)
 ProjectileScene = ExtResource("26_jggfg")
 
 [node name="RodSpawner2" parent="." instance=ExtResource("25_0y3g0")]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -60.4083, 58.2834, -862.592)
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -60.4083, 42.6615, -852.243)
 ProjectileScene = ExtResource("26_jggfg")
 
 [node name="RodSpawner3" parent="." instance=ExtResource("25_0y3g0")]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 60.4038, 58.2834, -862.592)
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 60.4038, 42.6615, -852.243)
 ProjectileScene = ExtResource("26_jggfg")
+
+[node name="round_cylinder_sm_blend2" parent="." instance=ExtResource("6_att4f")]
+transform = Transform3D(7.31977, 0, 0, 0, 7.31977, 0, 0, 0, 7.31977, 30.3, -10.2184, -593.071)
+color = Color(0.00392157, 0.603922, 0.984314, 1)
+
+[node name="round_cylinder_sm_blend3" parent="." instance=ExtResource("6_att4f")]
+transform = Transform3D(7.31977, 0, 0, 0, 7.31977, 0, 0, 0, 7.31977, -30.3, -10.218, -593.071)
+color = Color(0.00392157, 0.603922, 0.984314, 1)
 
 [connection signal="body_entered" from="Area3D4" to="CharacterRigid" method="_on_low_g_zone_entered"]
 [connection signal="body_exited" from="Area3D4" to="CharacterRigid" method="_on_area_3d_body_exited"]
