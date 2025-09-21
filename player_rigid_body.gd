@@ -38,6 +38,12 @@ var lowG: bool = false
 var bg_m_pitch:=1.0
 var jump_pitch:=1.0
 
+
+var _ground_lost_time: float = 0.0
+const GROUND_GRACE: float = 0.08  # seconds of allowed "miss" before we declare airborne
+
+
+
 func _ready() -> void:
 	
 	sfx_background.play()
@@ -62,6 +68,8 @@ func _unhandled_input(event: InputEvent) -> void:
 
 var p_v: float = 0
 
+var v_list =[]
+
 func _physics_process(delta: float) -> void:
 	# --- Camera rotation ---
 	_camera_pivot.rotation.x -= _camera_input_direction.y * delta
@@ -75,26 +83,50 @@ func _physics_process(delta: float) -> void:
 	_camera_input_direction = Vector2.ZERO
 	
 	# --- Slope Dettection ---	
+	#var is_on_climbable_slope: bool = false
+	#var slope_normal := Vector3.UP
+	#var angle: float
+	#
+	#if _ground_check.is_colliding():
+		#slope_normal = _ground_check.get_collision_normal(0)
+		#angle = rad_to_deg(acos(slope_normal.dot(Vector3.UP)))
+		#if max_slope_angle > angle &&  angle > min_slope_angle: 
+			#is_on_climbable_slope = true
+	#
+	#if is_on_climbable_slope:
+		#slope_normal = _ground_check.get_collision_normal(0)
+		#var m = self.mass
+		#var g = ProjectSettings.get_setting("physics/3d/default_gravity")
+		#
+		## Cancel only the component of gravity perpendicular to slope
+		#var slope_gravity_correction = slope_normal * (Vector3.DOWN.dot(slope_normal) * m * g)
+		#apply_central_force(-slope_gravity_correction)
+	#if is_on_climbable_slope:
+		#var mass = self.mass            # mass of the RigidBody3D
+		#var g = ProjectSettings.get_setting("physics/3d/default_gravity")  # default gravity
+		#var gravity_force = mass * g * gravity_scale
+		#apply_central_force(Vector3.UP * gravity_force)
+		
 	var is_on_climbable_slope: bool = false
 	var slope_normal := Vector3.UP
 	var angle: float
-	
+
 	if _ground_check.is_colliding():
 		slope_normal = _ground_check.get_collision_normal(0)
 		angle = rad_to_deg(acos(slope_normal.dot(Vector3.UP)))
-		if max_slope_angle > angle &&  angle > min_slope_angle: 
+		if max_slope_angle > angle and angle > min_slope_angle:
 			is_on_climbable_slope = true
-	
+
 	if is_on_climbable_slope:
-		slope_normal = _ground_check.get_collision_normal(0)
-		var m = self.mass
+		# ONLY cancel the gravity component perpendicular to the slope (no full upward force)
+		var mass = self.mass
 		var g = ProjectSettings.get_setting("physics/3d/default_gravity")
-
-		# Slightly undercompensate perpendicular gravity
-		var slope_gravity_correction = slope_normal * (Vector3.DOWN.dot(slope_normal) * m * g * 0.9)
-		apply_central_force(-slope_gravity_correction)
-
-
+		# gravity vector for the body (mass included)
+		var gravity_vec = Vector3.DOWN * mass * g * gravity_scale
+		# perpendicular component of gravity onto slope normal
+		var perp = slope_normal * gravity_vec.dot(slope_normal)
+		# apply force that cancels only the perpendicular component (so body stays on slope)
+		apply_central_force(-perp)
 
 	# --- Movement input relative to camera ---
 	var raw_inp := Input.get_vector("left", "right", "forward", "back")
@@ -117,6 +149,7 @@ func _physics_process(delta: float) -> void:
 	var target_v = move_direction * TARGET_SPEED + env_velocity
 	var velocity_error = target_v - linear_velocity
 	if is_on_climbable_slope:
+		
 		# Project error onto slope plane
 		velocity_error -= slope_normal * velocity_error.dot(slope_normal)
 	velocity_error.y = 0  # don't affect vertical
@@ -124,7 +157,16 @@ func _physics_process(delta: float) -> void:
 	apply_central_impulse(impulse)
 	var is_moving = move_direction.length() > 0.1
 	var is_on_ground = _ground_check.is_colliding()
-	
+
+	var raw_ground := _ground_check.is_colliding()
+	if raw_ground:
+		_ground_lost_time = 0.0
+		is_on_ground = true
+	else:
+		_ground_lost_time += delta
+		is_on_ground = _ground_lost_time <= GROUND_GRACE
+
+
 	if is_on_ground && move_direction==Vector3.ZERO && !Input.is_action_just_pressed("jump"):
 		linear_damp=10
 	else:
@@ -133,16 +175,18 @@ func _physics_process(delta: float) -> void:
 	var jump_Scale:=1
 	
 	if !lowG:
+			
 		gravity_scale=6
 	
 	else:
 		jump_Scale=jumpX
 		gravity_scale=1
-
+	
+	if is_on_climbable_slope:
+		gravity_scale=0
 
 
 	p_v = linear_velocity.y
-	print(linear_damp)
 	animtree.set("parameters/conditions/idle", not is_moving and is_on_ground)
 	animtree.set("parameters/conditions/run", is_moving and is_on_ground)
 	animtree.set("parameters/conditions/jump", not is_on_ground)
@@ -150,6 +194,8 @@ func _physics_process(delta: float) -> void:
 	# --- Jump ---
 	if Input.is_action_just_pressed("jump") and is_on_ground:
 		sfx_jump.play(0.18)
+		if !is_moving:
+			jump_Scale=2
 		apply_central_impulse(Vector3.UP * jump_force * jump_Scale)
 
 	# --- Rotate character to face movement ---
@@ -167,7 +213,6 @@ func _physics_process(delta: float) -> void:
 		t_angle,
 		rotation_speed * delta
 	)
-
 
 func _coin_amount_chnged_call(amount:int)->void:
 	sfx_coin.play()

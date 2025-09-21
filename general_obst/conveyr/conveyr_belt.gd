@@ -47,14 +47,14 @@ func _ready():
 
 func _body_in(body: Node3D):
 	if body.is_in_group("player"):
-		#print("innn")
+		print("innn")
 		GameLevelManager.conveyrs_in_num+=1
 		GameLevelManager.enviorment_obstacle_velocity=global_transform.basis.x*platform_speed*(-1 if direction_inverse else 1)*player_speed_factor
 
 
 func _body_out(body:Node3D):
 	if body.is_in_group("player"):
-		#print("outt")
+		print("outt")
 		if GameLevelManager.conveyrs_in_num < 2:
 			GameLevelManager.enviorment_obstacle_velocity=Vector3(0,0,0)
 		GameLevelManager.conveyrs_in_num-=1
