@@ -166,8 +166,7 @@ func _physics_process(delta: float) -> void:
 		_ground_lost_time += delta
 		is_on_ground = _ground_lost_time <= GROUND_GRACE
 
-
-	if is_on_ground && move_direction==Vector3.ZERO && !Input.is_action_just_pressed("jump"):
+	if is_on_ground && move_direction==Vector3.ZERO && !Input.is_action_just_pressed("jump") && env_velocity == Vector3.ZERO:
 		linear_damp=10
 	else:
 		linear_damp=0

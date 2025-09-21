@@ -45,19 +45,34 @@ func _ready():
 	area_3d.connect("body_entered", _body_in)
 	area_3d.connect("body_exited", _body_out)
 
+@onready var convs := GameLevelManager.convs_list
+
 func _body_in(body: Node3D):
 	if body.is_in_group("player"):
-		print("innn")
-		GameLevelManager.conveyrs_in_num+=1
-		GameLevelManager.enviorment_obstacle_velocity=global_transform.basis.x*platform_speed*(-1 if direction_inverse else 1)*player_speed_factor
+		print("inn")
+		
+		convs[self] = global_transform.basis.x * platform_speed * (-1 if direction_inverse else 1) * player_speed_factor
+		_update_player_velocity()
+		print("convvvv", convs)
 
-
-func _body_out(body:Node3D):
+func _body_out(body: Node3D):
 	if body.is_in_group("player"):
-		print("outt")
-		if GameLevelManager.conveyrs_in_num < 2:
-			GameLevelManager.enviorment_obstacle_velocity=Vector3(0,0,0)
-		GameLevelManager.conveyrs_in_num-=1
+		print("out")
+		
+		convs.erase(self)
+		_update_player_velocity()
+
+func _update_player_velocity():
+	print(convs)
+	if convs.size() > 0:
+		var chosen_velocity = convs.values()[0]
+		for v in convs.values():
+			if v.length() < chosen_velocity.length():
+				chosen_velocity = v
+		GameLevelManager.enviorment_obstacle_velocity = chosen_velocity
+		
+	else:
+		GameLevelManager.enviorment_obstacle_velocity = Vector3.ZERO
 
 
 func _apply_appearance():

@@ -767,7 +767,7 @@ UNDER DEVLOPMENT"
 font_size = 4267
 
 [node name="CharacterRigid" parent="." instance=ExtResource("26_jqvxq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0244, 0.0605278, -634.402)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0244, -0.214075, -630.624)
 
 [node name="RotatorRigid" parent="." instance=ExtResource("27_jqvxq")]
 transform = Transform3D(1.71794, 0, 0, 0, 1.71794, 0, 0, 0, 1.71794, 0, 6.31794, -89.666)
