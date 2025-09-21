@@ -794,7 +794,15 @@ transform = Transform3D(14.257, 0, 0, 0, 9.539, 0, 0, 0, 14.263, 0, 44.259, -416
 transform = Transform3D(76.919, 0, 0, 0, 1.182, 0, 0, 0, 15.153, 0, 42.4525, -888.303)
 
 [node name="RodSpawner" parent="." instance=ExtResource("25_0y3g0")]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.244226, 62.7671, -855.353)
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.244226, 58.2834, -862.592)
+ProjectileScene = ExtResource("26_jggfg")
+
+[node name="RodSpawner2" parent="." instance=ExtResource("25_0y3g0")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -60.4083, 58.2834, -862.592)
+ProjectileScene = ExtResource("26_jggfg")
+
+[node name="RodSpawner3" parent="." instance=ExtResource("25_0y3g0")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 60.4038, 58.2834, -862.592)
 ProjectileScene = ExtResource("26_jggfg")
 
 [connection signal="body_entered" from="Area3D4" to="CharacterRigid" method="_on_low_g_zone_entered"]
