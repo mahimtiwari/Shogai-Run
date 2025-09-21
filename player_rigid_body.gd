@@ -89,10 +89,11 @@ func _physics_process(delta: float) -> void:
 		slope_normal = _ground_check.get_collision_normal(0)
 		var m = self.mass
 		var g = ProjectSettings.get_setting("physics/3d/default_gravity")
-		
-		# Cancel only the component of gravity perpendicular to slope
-		var slope_gravity_correction = slope_normal * (Vector3.DOWN.dot(slope_normal) * m * g)
+
+		# Slightly undercompensate perpendicular gravity
+		var slope_gravity_correction = slope_normal * (Vector3.DOWN.dot(slope_normal) * m * g * 0.9)
 		apply_central_force(-slope_gravity_correction)
+
 
 
 	# --- Movement input relative to camera ---
@@ -110,8 +111,10 @@ func _physics_process(delta: float) -> void:
 	if move_direction.length() > 0.001:
 		move_direction = move_direction.normalized()
 	
+	var env_velocity:Vector3 = GameLevelManager.enviorment_obstacle_velocity
+	
 	# --- PID horizontal movement ---
-	var target_v = move_direction * TARGET_SPEED
+	var target_v = move_direction * TARGET_SPEED + env_velocity
 	var velocity_error = target_v - linear_velocity
 	if is_on_climbable_slope:
 		# Project error onto slope plane
@@ -121,11 +124,12 @@ func _physics_process(delta: float) -> void:
 	apply_central_impulse(impulse)
 	var is_moving = move_direction.length() > 0.1
 	var is_on_ground = _ground_check.is_colliding()
-	print(is_on_ground, is_on_climbable_slope)
+	
 	if is_on_ground && move_direction==Vector3.ZERO && !Input.is_action_just_pressed("jump"):
 		linear_damp=10
 	else:
 		linear_damp=0
+		
 	var jump_Scale:=1
 	
 	if !lowG:
@@ -135,8 +139,10 @@ func _physics_process(delta: float) -> void:
 		jump_Scale=jumpX
 		gravity_scale=1
 
+
+
 	p_v = linear_velocity.y
-	
+	print(linear_damp)
 	animtree.set("parameters/conditions/idle", not is_moving and is_on_ground)
 	animtree.set("parameters/conditions/run", is_moving and is_on_ground)
 	animtree.set("parameters/conditions/jump", not is_on_ground)
