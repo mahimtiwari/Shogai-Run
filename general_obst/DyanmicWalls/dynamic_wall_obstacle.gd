@@ -6,9 +6,13 @@ extends Node3D
 @export var pause_timer_range_i: float = 1.0
 @export var pause_timer_range_f: float = 2.0
 
+
 func _ready() -> void:
 	position = initial_position
 	var tween := create_tween()
+	
+	tween.tween_interval(randf_range(1, 5))
+	
 	tween.set_loops()
 	tween.tween_property(self, "position", final_position, animation_time)
 	tween.tween_interval(randf_range(pause_timer_range_i, pause_timer_range_f))

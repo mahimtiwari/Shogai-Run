@@ -762,7 +762,7 @@ UNDER DEVLOPMENT"
 font_size = 4267
 
 [node name="CharacterRigid" parent="." instance=ExtResource("26_jqvxq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.98398, 6.84048, -532.682)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.75015, 6.05351, -559.634)
 
 [node name="RotatorRigid" parent="." instance=ExtResource("27_jqvxq")]
 transform = Transform3D(1.71794, 0, 0, 0, 1.71794, 0, 0, 0, 1.71794, 0, 6.31794, -89.666)
@@ -816,7 +816,6 @@ color = Color(0.909804, 0.423529, 0, 1)
 [node name="Decal" type="Decal" parent="round_cylinder_sm_blend2"]
 transform = Transform3D(-2.53556e-08, 0, 0.580068, 0, 0.425085, 0, -0.580068, 0, -2.53556e-08, 0.039, 1.04, -0.136604)
 texture_albedo = ExtResource("27_1s82q")
-cull_mask = 1048573
 
 [node name="Area3D" type="Area3D" parent="round_cylinder_sm_blend2"]
 script = ExtResource("27_38bxg")
@@ -835,11 +834,6 @@ script = ExtResource("27_38bxg")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="round_cylinder_sm_blend3/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 0.999988, 0, 0, 0, 1, 0, 0.902315, 0)
 shape = SubResource("CylinderShape3D_1ayr7")
-
-[node name="Decal" type="Decal" parent="round_cylinder_sm_blend3"]
-transform = Transform3D(-2.53556e-08, 0, 0.580068, 0, 0.425085, 0, -0.580068, 0, -2.53556e-08, 0.039, 1.04, -0.136604)
-texture_albedo = ExtResource("27_1s82q")
-cull_mask = 1048573
 
 [node name="DynamicWallObstacle" parent="." instance=ExtResource("27_1ayr7")]
 transform = Transform3D(-6.6841e-07, 0, -15.2914, 0, 15.2914, 0, 15.2914, 0, -6.6841e-07, -30.303, 39.233, -865.364)
