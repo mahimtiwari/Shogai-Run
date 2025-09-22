@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://baop6wf7lkt65"]
+
+[ext_resource type="Shader" uid="uid://c46j2dy3uuh4r" path="res://Particles/explosion.tres" id="1_dulx1"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_dulx1")
+shader_parameter/Cloud_Speed = Vector2(0, 0.925)
+shader_parameter/Cloud_Intensity = 0.78

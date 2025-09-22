@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://40cyu745u3tu"]
+[gd_scene load_steps=5 format=3 uid="uid://40cyu745u3tu"]
 
 [ext_resource type="Script" uid="uid://yw1al481yiek" path="res://Particles/cannon_rod.gd" id="1_37wyp"]
 [ext_resource type="PackedScene" uid="uid://br8btcq1cxfj5" path="res://general_obst/CannonShells/roller.tscn" id="1_hnqf1"]
 [ext_resource type="AudioStream" uid="uid://cvwcs6lj6yh1l" path="res://SFX/cannon_fire.mp3" id="3_f5bl1"]
+[ext_resource type="PackedScene" uid="uid://jiqxmg57u5b5" path="res://Particles/explosion.tscn" id="4_r053f"]
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_37wyp")
@@ -17,3 +18,5 @@ volume_db = 6.0
 unit_size = 28.2
 max_db = 6.0
 pitch_scale = 0.68
+
+[node name="Explosion" parent="." instance=ExtResource("4_r053f")]

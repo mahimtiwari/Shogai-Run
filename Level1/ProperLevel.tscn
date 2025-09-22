@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dp8ntlbnsjm35"]
+[gd_scene load_steps=40 format=3 uid="uid://dp8ntlbnsjm35"]
 
 [ext_resource type="PackedScene" uid="uid://cjir0nllr70ct" path="res://Level1/spawn_block_15x_8_blend.tscn" id="2_gdkdi"]
 [ext_resource type="Texture2D" uid="uid://oodasrchstxr" path="res://73_bbefdfe7df90c2ce3b16f344fb358d93_file.jpg" id="3_gdkdi"]
@@ -30,6 +30,7 @@
 [ext_resource type="Script" uid="uid://5hweuprq4ear" path="res://Level1/custom_bouncer_local.gd" id="27_38bxg"]
 [ext_resource type="PackedScene" uid="uid://chldp3in6v0dk" path="res://general_obst/Rotating/rotator_rigid.tscn" id="27_jqvxq"]
 [ext_resource type="Script" uid="uid://cq15fdnwlxr15" path="res://general_obst/DyanmicWalls/dynamic_wall_obstacle.gd" id="28_1ayr7"]
+[ext_resource type="PackedScene" uid="uid://c3tw4ycgqc26p" path="res://general_obst/RandomRotationBounceBoxes/RandomRotationBounceBox.tscn" id="31_gaq7e"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_bfu0y"]
 panorama = ExtResource("3_gdkdi")
@@ -849,6 +850,42 @@ final_position = Vector3(30.303, 10.853, -865.364)
 [node name="CheckPoint4" parent="." instance=ExtResource("21_hugtb")]
 transform = Transform3D(-3.98822e-07, 0, -9.12397, 0, 9.12397, 0, 9.12397, 0, -3.98822e-07, 0, 29.6214, -929.727)
 checkpoint_index = 3
+
+[node name="RandomRotationBounceBox" parent="." instance=ExtResource("31_gaq7e")]
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 39.0772, 16.8016, -951.582)
+
+[node name="RandomRotationBounceBox2" parent="." instance=ExtResource("31_gaq7e")]
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 39.0772, 16.8016, -969.319)
+
+[node name="RandomRotationBounceBox3" parent="." instance=ExtResource("31_gaq7e")]
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 39.0772, 16.8016, -988.907)
+
+[node name="RandomRotationBounceBox4" parent="." instance=ExtResource("31_gaq7e")]
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 39.0772, 16.8016, -1008.64)
+
+[node name="RandomRotationBounceBox5" parent="." instance=ExtResource("31_gaq7e")]
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 58.5618, 16.8016, -951.582)
+
+[node name="RandomRotationBounceBox6" parent="." instance=ExtResource("31_gaq7e")]
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 58.5618, 16.8016, -969.319)
+
+[node name="RandomRotationBounceBox7" parent="." instance=ExtResource("31_gaq7e")]
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 58.5618, 16.8016, -988.907)
+
+[node name="RandomRotationBounceBox8" parent="." instance=ExtResource("31_gaq7e")]
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 58.5618, 16.8016, -1008.64)
+
+[node name="RandomRotationBounceBox9" parent="." instance=ExtResource("31_gaq7e")]
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 19.4535, 16.8016, -951.582)
+
+[node name="RandomRotationBounceBox10" parent="." instance=ExtResource("31_gaq7e")]
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 19.4535, 16.8016, -969.319)
+
+[node name="RandomRotationBounceBox11" parent="." instance=ExtResource("31_gaq7e")]
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 19.4535, 16.8016, -988.907)
+
+[node name="RandomRotationBounceBox12" parent="." instance=ExtResource("31_gaq7e")]
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 19.4535, 16.8016, -1008.64)
 
 [connection signal="body_entered" from="Area3D4" to="CharacterRigid" method="_on_low_g_zone_entered"]
 [connection signal="body_exited" from="Area3D4" to="CharacterRigid" method="_on_area_3d_body_exited"]

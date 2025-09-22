@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3tw4ycgqc26p"]
+
+[ext_resource type="Script" uid="uid://b7jt3hwgobb2o" path="res://general_obst/RandomRotationBounceBoxes/randombouncerotation.gd" id="1_1nskk"]
+[ext_resource type="PackedScene" uid="uid://hy4i1xggvmrk" path="res://general_obst/boxes/base_cube_block_s_round.tscn" id="1_e860t"]
+
+[node name="RandomRotationBounceBox" type="Node3D"]
+script = ExtResource("1_1nskk")
+
+[node name="baseCubeBlockSRound" parent="." instance=ExtResource("1_e860t")]

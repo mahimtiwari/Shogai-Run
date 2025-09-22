@@ -4,6 +4,7 @@ extends Node3D
 @export var grow_duration: float = 0.25
 @export var per_emmsion_dration: float = 5
 @onready var roller_rigid_model: RigidBody3D = $RollerRigidModel
+@onready var explosion: Node3D = $Explosion
 
 var color_list := [
 	Color("fd5dce"),
@@ -26,7 +27,6 @@ func animate_grow(p: RigidBody3D) -> void:
 	var tween := p.create_tween()
 	tween.tween_property(p, "scale",Vector3.ONE, grow_duration)
 
-
 func _physics_process(delta: float) -> void:
 	t -= delta
 	if t <= 0:
@@ -37,6 +37,7 @@ func _physics_process(delta: float) -> void:
 		copy.global_transform = global_transform
 		var direction = global_transform.basis.z.normalized()
 		var impulse_strength = 30.0*copy.mass
+		explosion.get_node("AnimationPlayer").play("init")
 		copy.apply_impulse(direction * impulse_strength)
 		animate_grow(copy)
 		t = rng.randf_range(2, per_emmsion_dration)
