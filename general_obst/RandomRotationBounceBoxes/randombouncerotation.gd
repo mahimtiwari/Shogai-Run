@@ -5,7 +5,6 @@ extends Node3D
 func angle_r(base:float):
 	base = deg_to_rad(base)
 	var ve:int = [1,-1].pick_random()
-	
 	return [
 		Vector3(base, 0, 0),
 		Vector3(0, 0, base),
