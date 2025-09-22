@@ -77,15 +77,15 @@ graph_offset = Vector2(101, -11)
 [node name="Player1" instance=ExtResource("1_st4ii")]
 
 [node name="Skeleton3D" parent="Armature" index="0"]
-bones/0/rotation = Quaternion(-0.0449689, 0.000434178, 0.00174513, 0.998987)
+bones/0/rotation = Quaternion(-0.00234406, 0.000359393, 0.00176205, 0.999996)
 bones/3/rotation = Quaternion(1.86253e-09, -2.18279e-11, 5.72982e-11, 1)
-bones/5/rotation = Quaternion(-0.0790461, 0.0141789, -0.0340037, 0.99619)
+bones/5/rotation = Quaternion(-0.0882, -0.0543942, -0.114357, 0.988021)
 bones/6/rotation = Quaternion(-8.23175e-09, -9.55573e-08, -0.0598798, 0.998206)
-bones/8/rotation = Quaternion(-0.079046, -0.0141789, 0.0340037, 0.99619)
+bones/8/rotation = Quaternion(-0.0882, 0.0543943, 0.114357, 0.988021)
 bones/9/rotation = Quaternion(5.80616e-09, 1.10394e-07, 0.0598797, 0.998206)
 bones/11/rotation = Quaternion(-0.753264, -3.67439e-08, 2.89481e-08, 0.657719)
 bones/14/rotation = Quaternion(-0.753264, 3.67439e-08, -2.89481e-08, 0.657719)
-bones/17/rotation = Quaternion(-0.548236, 0.0267797, 0.00218774, 0.835892)
+bones/17/rotation = Quaternion(-0.49912, 0.0268613, 0.000639794, 0.866116)
 
 [node name="1_low_001" parent="Armature/Skeleton3D" index="0"]
 layers = 2

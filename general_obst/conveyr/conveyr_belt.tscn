@@ -6,6 +6,7 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xxyd8"]
 albedo_texture = ExtResource("3_mou25")
+uv1_offset = Vector3(0, 2.24167, 0)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ulwtm"]
 size = Vector3(25.5398, 0.180594, 1.98829)

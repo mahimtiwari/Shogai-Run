@@ -723,7 +723,7 @@ transform = Transform3D(18.129, 0, 0, 0, 5.84456, 0, 0, 0, 5.88092, 0, -0.460001
 color = Color(0.00392157, 0.603922, 0.984314, 1)
 
 [node name="ramp2" parent="." instance=ExtResource("22_b4fio")]
-transform = Transform3D(-18.129, 0, 3.96214e-06, 0, 27.9927, 0, -1.58489e-06, 0, -45.3216, -0.002, -2.87318, -696.233)
+transform = Transform3D(-18.1746, 0, 3.97211e-06, 0, 28.0631, 0, -1.58888e-06, 0, -45.4356, -0.002, -2.87318, -696.233)
 color = Color(0.231373, 0.819608, 1, 1)
 
 [node name="RodCannonBlock" parent="." instance=ExtResource("19_jggfg")]
@@ -753,13 +753,6 @@ direction_inverse = true
 transform = Transform3D(-3.61987e-07, 1.70623e-08, 15.0142, 1.76766, 7.97605, 1.1333e-07, -7.97605, 1.76766, -6.56292e-07, -30.3, 1.79882, -760.704)
 texture = ExtResource("26_38bxg")
 direction_inverse = true
-
-[node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8147e-06, 89.5331, -892.739)
-modulate = Color(0, 0, 0, 1)
-text = "THIS STAGE IS
-UNDER DEVLOPMENT"
-font_size = 4267
 
 [node name="CharacterRigid" parent="." instance=ExtResource("26_jqvxq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.98398, 6.84048, -532.682)
@@ -852,6 +845,10 @@ transform = Transform3D(-6.6841e-07, 0, -15.2914, 0, 15.2914, 0, 15.2914, 0, -6.
 script = ExtResource("28_1ayr7")
 initial_position = Vector3(30.303, 39.233, -865.364)
 final_position = Vector3(30.303, 10.853, -865.364)
+
+[node name="CheckPoint4" parent="." instance=ExtResource("21_hugtb")]
+transform = Transform3D(-3.98822e-07, 0, -9.12397, 0, 9.12397, 0, 9.12397, 0, -3.98822e-07, 0, 29.6214, -929.727)
+checkpoint_index = 3
 
 [connection signal="body_entered" from="Area3D4" to="CharacterRigid" method="_on_low_g_zone_entered"]
 [connection signal="body_exited" from="Area3D4" to="CharacterRigid" method="_on_area_3d_body_exited"]

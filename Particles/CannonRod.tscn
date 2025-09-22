@@ -1,10 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://40cyu745u3tu"]
+[gd_scene load_steps=4 format=3 uid="uid://40cyu745u3tu"]
 
 [ext_resource type="Script" uid="uid://yw1al481yiek" path="res://Particles/cannon_rod.gd" id="1_37wyp"]
 [ext_resource type="PackedScene" uid="uid://br8btcq1cxfj5" path="res://general_obst/CannonShells/roller.tscn" id="1_hnqf1"]
+[ext_resource type="AudioStream" uid="uid://cvwcs6lj6yh1l" path="res://SFX/cannon_fire.mp3" id="3_f5bl1"]
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_37wyp")
 grow_duration = 0.15
 
 [node name="RollerRigidModel" parent="." instance=ExtResource("1_hnqf1")]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.217575, 0.448204, -0.00512695)
+stream = ExtResource("3_f5bl1")
+volume_db = 6.0
+unit_size = 28.2
+max_db = 6.0
+pitch_scale = 0.68

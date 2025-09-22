@@ -25,11 +25,12 @@ func animate_grow(p: RigidBody3D) -> void:
 	p.scale=Vector3.ONE*0.5
 	var tween := p.create_tween()
 	tween.tween_property(p, "scale",Vector3.ONE, grow_duration)
-	
+
 
 func _physics_process(delta: float) -> void:
 	t -= delta
 	if t <= 0:
+		$AudioStreamPlayer3D.play()
 		var copy = ProjectileScene.instantiate() as RigidBody3D
 		get_tree().current_scene.add_child(copy)
 		copy.set_color(color_list.pick_random())

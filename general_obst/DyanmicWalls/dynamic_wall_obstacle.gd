@@ -2,15 +2,14 @@ extends Node3D
 
 @export var initial_position: Vector3
 @export var final_position: Vector3
-@export var animation_time: float = 3.0 
-@export var pause_timer_range_i: float = 1.0
+@export var animation_time: float = 2.0
+@export var pause_timer_range_i: float = 0.5
 @export var pause_timer_range_f: float = 2.0
 
-
 func _ready() -> void:
+	print(position)
 	position = initial_position
 	var tween := create_tween()
-	
 	tween.tween_interval(randf_range(1, 5))
 	
 	tween.set_loops()
