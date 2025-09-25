@@ -37,8 +37,8 @@ alpha_curve = SubResource("CurveTexture_f5ie8")
 
 [sub_resource type="SphereMesh" id="SphereMesh_f5ie8"]
 
-[sub_resource type="Animation" id="Animation_6555r"]
-resource_name = "init"
+[sub_resource type="Animation" id="Animation_f5ie8"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -52,8 +52,8 @@ tracks/0/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_f5ie8"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_6555r"]
+resource_name = "init"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true

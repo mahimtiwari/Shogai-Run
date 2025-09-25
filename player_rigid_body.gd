@@ -152,6 +152,7 @@ func _physics_process(delta: float) -> void:
 		
 		# Project error onto slope plane
 		velocity_error -= slope_normal * velocity_error.dot(slope_normal)
+		
 	velocity_error.y = 0  # don't affect vertical
 	var impulse = _pid.update(velocity_error, delta) * impulse_scale
 	apply_central_impulse(impulse)
@@ -184,7 +185,7 @@ func _physics_process(delta: float) -> void:
 		_ground_lost_time += delta
 		is_on_ground = _ground_lost_time <= GROUND_GRACE
 
-	if is_on_ground && move_direction==Vector3.ZERO && !Input.is_action_just_pressed("jump") && env_velocity == Vector3.ZERO:
+	if is_on_ground && move_direction==Vector3.ZERO && !Input.is_action_just_pressed("jump") && env_velocity == Vector3.ZERO && !GameLevelManager.env_damp_set_null:
 		linear_damp=10
 	else:
 		linear_damp=0
@@ -201,7 +202,6 @@ func _physics_process(delta: float) -> void:
 	
 	if is_on_climbable_slope:
 		gravity_scale=0
-
 
 	p_v = linear_velocity.y
 	animtree.set("parameters/conditions/idle", not is_moving and is_on_ground)
@@ -230,6 +230,7 @@ func _physics_process(delta: float) -> void:
 		t_angle,
 		rotation_speed * delta
 	)
+	print(linear_damp)
 
 func _coin_amount_chnged_call(amount:int)->void:
 	sfx_coin.play()

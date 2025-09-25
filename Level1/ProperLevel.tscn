@@ -763,7 +763,7 @@ texture = ExtResource("26_38bxg")
 direction_inverse = true
 
 [node name="CharacterRigid" parent="." instance=ExtResource("26_jqvxq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.493, 1.237)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.8735, -904.65)
 
 [node name="RotatorRigid" parent="." instance=ExtResource("27_jqvxq")]
 transform = Transform3D(1.71794, 0, 0, 0, 1.71794, 0, 0, 0, 1.71794, 0, 6.31794, -89.666)

@@ -49,21 +49,17 @@ func _ready():
 
 func _body_in(body: Node3D):
 	if body.is_in_group("player"):
-		print("inn")
 		
 		convs[self] = global_transform.basis.x * platform_speed * (-1 if direction_inverse else 1) * player_speed_factor
 		_update_player_velocity()
-		print("convvvv", convs)
 
 func _body_out(body: Node3D):
 	if body.is_in_group("player"):
-		print("out")
 		
 		convs.erase(self)
 		_update_player_velocity()
 
 func _update_player_velocity():
-	print(convs)
 	if convs.size() > 0:
 		var chosen_velocity = convs.values()[0]
 		for v in convs.values():
