@@ -9,6 +9,8 @@ var enviorment_obstacle_jump_velocity:Vector3
 var conveyrs_in_num:int=0
 var convs_list:={}
 var env_damp_set_null:bool = false
+var pusher_box_direction:Vector3=Vector3.ZERO
+var env_block_push_velocity:Vector3
 
 signal coin_amount_changed(amount: int)
 

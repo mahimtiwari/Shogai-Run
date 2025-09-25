@@ -143,7 +143,9 @@ func _physics_process(delta: float) -> void:
 	if move_direction.length() > 0.001:
 		move_direction = move_direction.normalized()
 	
-	var env_velocity:Vector3 = GameLevelManager.enviorment_obstacle_velocity
+	print(GameLevelManager.env_block_push_velocity)
+	
+	var env_velocity:Vector3 = GameLevelManager.enviorment_obstacle_velocity + GameLevelManager.env_block_push_velocity
 	
 	# --- PID horizontal movement ---
 	var target_v = move_direction * TARGET_SPEED + env_velocity
@@ -230,7 +232,6 @@ func _physics_process(delta: float) -> void:
 		t_angle,
 		rotation_speed * delta
 	)
-	print(linear_damp)
 
 func _coin_amount_chnged_call(amount:int)->void:
 	sfx_coin.play()
