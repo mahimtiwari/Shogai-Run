@@ -12,16 +12,17 @@ extends Node3D
 
 @onready var pusher_rigid_body: RigidBody3D = $PusherRigidBody
 @onready var pusher_mesh: MeshInstance3D = $PusherRigidBody/Pusher
+@onready var decal: Decal = $Decal
 
 var pushers_arr:Array
 var player_in: bool=false
 var t:float = randf_range(min_push_t_value, max_push_t_value+10)
 var t_push:float = 0
 var push_state :=false	
-
+var non_collsion_t_offset: float = 0.0
 var ply: RigidBody3D
 var direction: Vector3
-
+var align_for_non_coll: bool = false
 
 func angle_r(base:float)->Vector3:
 	base = deg_to_rad(base)
@@ -38,10 +39,24 @@ func angle_r(base:float)->Vector3:
 		return Vector3(0, 0, base)*ve
 
 func _ready() -> void:
-	
+	var rnVect: Vector3 = angle_r(10)
 	if random_angle_tilt:
-		rotation = angle_r(10)
-	
+		rotation = rnVect
+	if rnVect.x != 0:
+		if rnVect.x >0:
+			decal.rotation.y = deg_to_rad(-90)
+		else:
+			decal.rotation.y = deg_to_rad(90)
+	elif rnVect.z != 0:
+		if rnVect.z >0:
+			decal.rotation.y=deg_to_rad(180)
+		else:
+			decal.rotation.y =deg_to_rad(0)
+	else:
+		var tex: Texture2D = load("res://texture/circle_h.png")    
+		decal.texture_albedo = tex
+		decal.texture_emission = tex
+		
 
 func find_index_in_nested(arr: Array, target: Node) -> Vector2i:
 	for i in arr.size():
@@ -78,6 +93,23 @@ func down_coutdown_func(delta: float)->void:
 var puReset: bool= false
 
 func _physics_process(delta: float) -> void:
+	#if !align_for_non_coll:
+		#if pushers_arr == []:
+			#pushers_arr = GameLevelManager.pusherOrientList
+		#var adj: Array = get_adjacent_pushers(self)
+		#for ad_l in adj:
+			#for ndP in ad_l:
+				#if ndP != null:
+					#ndP = ndP as Node3D
+					#print(ndP.global_rotation == -self.global_rotation, ndP.non_collsion_t_offset!=0)
+					#
+					#if ndP.global_rotation == -self.global_rotation && ndP:
+						#print("collideeee")
+						#non_collsion_t_offset += 4
+		#align_for_non_coll=true
+		
+	pusher_rigid_body.linear_velocity.x=0
+	pusher_rigid_body.linear_velocity.z=0
 	if pusher_rigid_body.position.y > 1.1:
 		pusher_rigid_body.linear_velocity.y=0
 	if t<=pulse_time_stamp_start && !puReset && t>0:
@@ -93,19 +125,12 @@ func _physics_process(delta: float) -> void:
 				await get_tree().create_timer(wait_time).timeout
 				unique_mat.albedo_color = original_color
 				await get_tree().create_timer(wait_time).timeout
-		
-	if player_in:
-		if pushers_arr == []:
-			pushers_arr = GameLevelManager.pusherOrientList
-		var adj: Array = get_adjacent_pushers(self)
-		for ad_l in adj:
-			for ndP in ad_l:
-				if ndP != null:
-					ndP = ndP as Node3D
-					ndP.queue_free()
+	
+
+						
 	
 	if t<=0:
-		t= randf_range(min_push_t_value, max_push_t_value)
+		t= randf_range(min_push_t_value, max_push_t_value)+non_collsion_t_offset
 		if player_in:
 			ply.linear_damp = 0
 			GameLevelManager.env_damp_set_null= true

@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=4 uid="uid://c3tw4ycgqc26p"]
+[gd_scene load_steps=15 format=4 uid="uid://c3tw4ycgqc26p"]
 
 [ext_resource type="Script" uid="uid://b7jt3hwgobb2o" path="res://general_obst/RandomRotationBounceBoxes/randombouncerotation.gd" id="1_1nskk"]
+[ext_resource type="Texture2D" uid="uid://c0uvvs1olvh8t" path="res://texture/level_arrow_2.png" id="2_4a5x4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5s6yy"]
 resource_name = "Material.001"
@@ -158,6 +159,16 @@ shape = SubResource("BoxShape3D_ctirt")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0020752, 1.29242, -0.00183105)
 shape = SubResource("BoxShape3D_4a5x4")
+
+[node name="Decal" type="Decal" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27021, 0)
+size = Vector3(1, 1, 1)
+texture_albedo = ExtResource("2_4a5x4")
+texture_emission = ExtResource("2_4a5x4")
+emission_energy = 15.86
+modulate = Color(0.905882, 0, 0.545098, 1)
+normal_fade = 0.999
+cull_mask = 1048573
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
