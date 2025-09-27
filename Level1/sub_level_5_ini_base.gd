@@ -1,17 +1,12 @@
 @tool
 extends Node3D
 
-# Backing variable
-var _color: Color = Color(1, 1, 1)
-
-@export var color: Color:
-	get:
-		return _color
+@export var color: Color = Color(1, 1, 1):
 	set(value):
-		_color = value
+		color = value
 		_apply_color()
 
-@onready var cube: CSGMesh3D = $Cube
+@onready var cube: MeshInstance3D = $Cube
 
 func _ready():
 	_apply_color()
@@ -21,6 +16,9 @@ func _apply_color():
 		return
 	if not cube:
 		return
-	var mat = StandardMaterial3D.new()  # Godot 4 uses StandardMaterial3D instead of SpatialMaterial
-	mat.albedo_color = _color
-	cube.material = mat
+	var mat := cube.get_active_material(0)
+	if mat:
+		var unique_mat = mat.duplicate()
+		cube.set_surface_override_material(0, unique_mat)
+		unique_mat.albedo_color = color
+		unique_mat.roughness = 0.58

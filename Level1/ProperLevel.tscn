@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://dp8ntlbnsjm35"]
+[gd_scene load_steps=45 format=3 uid="uid://dp8ntlbnsjm35"]
 
 [ext_resource type="PackedScene" uid="uid://cjir0nllr70ct" path="res://Level1/spawn_block_15x_8_blend.tscn" id="2_gdkdi"]
 [ext_resource type="Texture2D" uid="uid://oodasrchstxr" path="res://73_bbefdfe7df90c2ce3b16f344fb358d93_file.jpg" id="3_gdkdi"]
@@ -35,6 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://8xhyc0jkv78a" path="res://texture/level_arrow.png" id="32_8g8un"]
 [ext_resource type="Texture2D" uid="uid://c0uvvs1olvh8t" path="res://texture/level_arrow_2.png" id="33_tu6wb"]
 [ext_resource type="PackedScene" uid="uid://la3ofofifhyx" path="res://Level1/sub Level5iniBase.tscn" id="35_1a656"]
+[ext_resource type="PackedScene" uid="uid://drri6mxrothwe" path="res://general_obst/Rotating/base_rotators.tscn" id="36_ll2rk"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_bfu0y"]
 panorama = ExtResource("3_gdkdi")
@@ -51,7 +52,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7v46q"]
-size = Vector3(7.375, 1, 21.0376)
+size = Vector3(7.375, 1, 36.7444)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jggfg"]
 size = Vector3(2.82788, 2.11627, 1.40479)
@@ -80,7 +81,7 @@ shadow_enabled = true
 environment = SubResource("Environment_dsrnb")
 
 [node name="CharacterRigid" parent="." instance=ExtResource("26_jqvxq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.1765, -905.637)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 26.3248, -1145.19)
 
 [node name="spawnBlock15x8_blend2" parent="." instance=ExtResource("2_gdkdi")]
 transform = Transform3D(1.11075, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0.784507, -37.991)
@@ -496,7 +497,7 @@ transform = Transform3D(6.13452, 0, 0, 0, 1.04619, 0, 0, 0, 3.3726, -66.8131, -0
 [node name="Area3D3" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D3"]
-transform = Transform3D(66.3921, 0, 0, 0, 66.3921, 0, 0, 0, 66.3921, 24.119, -111.813, -511.444)
+transform = Transform3D(66.3921, 0, 0, 0, 66.3921, 0, 0, 0, 66.3921, 24.119, -111.813, -1032.85)
 shape = SubResource("BoxShape3D_7v46q")
 
 [node name="GameLevelUi" parent="." instance=ExtResource("14_yh826")]
@@ -1168,8 +1169,25 @@ size = Vector3(2, 3.55957, 2)
 texture_albedo = ExtResource("32_8g8un")
 cull_mask = 1048573
 
-[node name="Node3D" parent="." instance=ExtResource("35_1a656")]
-transform = Transform3D(10.3133, 0, 0, 0, 10.3133, 0, 0, 0, 10.3133, 0, 22.763, -1159.23)
+[node name="Sublevel5_base" parent="." instance=ExtResource("35_1a656")]
+transform = Transform3D(5.16987, 0, 0, 0, 5.16987, 0, 0, 0, 5.16987, 0, 20.5873, -1169.86)
+color = Color(0.00392157, 0.603922, 0.984314, 1)
+
+[node name="CheckPoint5" parent="." instance=ExtResource("21_hugtb")]
+transform = Transform3D(-3.98822e-07, 0, -9.12397, 0, 9.12397, 0, 9.12397, 0, -3.98822e-07, 0.351936, 29.9399, -1156.27)
+checkpoint_index = 4
+
+[node name="Node3D" parent="." instance=ExtResource("36_ll2rk")]
+transform = Transform3D(5.16437, 0, 0, 0, 5.16437, 0, 0, 0, 5.16437, 0, 14.9707, -1330.62)
+color = Color(1, 0, 0.560784, 1)
+
+[node name="Node3D2" parent="." instance=ExtResource("36_ll2rk")]
+transform = Transform3D(3.61506, 0, 0, 0, 5.16437, 0, 0, 0, 3.61506, 0, 17.9707, -1330.62)
+color = Color(0, 1, 1, 1)
+
+[node name="Node3D3" parent="." instance=ExtResource("36_ll2rk")]
+transform = Transform3D(1.80753, 0, 0, 0, 5.16437, 0, 0, 0, 1.80753, 0, 21.9445, -1330.62)
+color = Color(1, 1, 0, 1)
 
 [connection signal="body_entered" from="Area3D4" to="CharacterRigid" method="_on_low_g_zone_entered"]
 [connection signal="body_exited" from="Area3D4" to="CharacterRigid" method="_on_area_3d_body_exited"]
