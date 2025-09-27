@@ -11,6 +11,7 @@ var convs_list:={}
 var env_damp_set_null:bool = false
 var pusher_box_direction:Vector3=Vector3.ZERO
 var env_block_push_velocity:Vector3
+var pusherOrientList: Array
 
 signal coin_amount_changed(amount: int)
 

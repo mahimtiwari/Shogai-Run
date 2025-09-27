@@ -10,9 +10,17 @@ extends Node3D
 @export var min_push_t_value: float = 5
 @export var max_push_t_value: float = 8
 
-var player_in: bool=false
 @onready var pusher_rigid_body: RigidBody3D = $PusherRigidBody
 @onready var pusher_mesh: MeshInstance3D = $PusherRigidBody/Pusher
+
+var pushers_arr:Array
+var player_in: bool=false
+var t:float = randf_range(min_push_t_value, max_push_t_value+10)
+var t_push:float = 0
+var push_state :=false	
+
+var ply: RigidBody3D
+var direction: Vector3
 
 
 func angle_r(base:float)->Vector3:
@@ -30,15 +38,29 @@ func angle_r(base:float)->Vector3:
 		return Vector3(0, 0, base)*ve
 
 func _ready() -> void:
+	
 	if random_angle_tilt:
 		rotation = angle_r(10)
 	
-var t:float = randf_range(min_push_t_value, max_push_t_value+10)
-var t_push:float = 0
-var push_state :=false	
 
-var ply: RigidBody3D
-var direction: Vector3
+func find_index_in_nested(arr: Array, target: Node) -> Vector2i:
+	for i in arr.size():
+		var group = arr[i]
+		if group.size() > 0:
+			for j in group.size():
+				if group[j] == target:
+					return Vector2i(i, j)
+	return Vector2i(-1, -1)
+
+func get_adjacent_pushers(nd: Node3D) -> Array:
+	var pos: Vector2i = find_index_in_nested(pushers_arr, nd)
+	var max_x = pushers_arr.size() - 1
+	var max_y = pushers_arr[0].size() - 1 if pushers_arr.size() > 0 else -1
+	var left  = pushers_arr[pos.x][pos.y - 1] if pos.y - 1 >= 0 else null
+	var right = pushers_arr[pos.x][pos.y + 1] if pos.y + 1 <= max_y else null
+	var up    = pushers_arr[pos.x - 1][pos.y] if pos.x - 1 >= 0 else null
+	var down  = pushers_arr[pos.x + 1][pos.y] if pos.x + 1 <= max_x else null
+	return [[left, right], [up, down]]
 
 
 func down_coutdown_func(delta: float)->void:
@@ -62,7 +84,6 @@ func _physics_process(delta: float) -> void:
 		puReset=true
 		var wait_time = pulse_time_stamp_start / (pulses * 2)
 		var mat := pusher_mesh.get_active_material(0)
-		
 		if mat:
 			var unique_mat: StandardMaterial3D = mat.duplicate()
 			var original_color := unique_mat.albedo_color
@@ -73,7 +94,16 @@ func _physics_process(delta: float) -> void:
 				unique_mat.albedo_color = original_color
 				await get_tree().create_timer(wait_time).timeout
 		
-		
+	if player_in:
+		if pushers_arr == []:
+			pushers_arr = GameLevelManager.pusherOrientList
+		var adj: Array = get_adjacent_pushers(self)
+		for ad_l in adj:
+			for ndP in ad_l:
+				if ndP != null:
+					ndP = ndP as Node3D
+					ndP.queue_free()
+	
 	if t<=0:
 		t= randf_range(min_push_t_value, max_push_t_value)
 		if player_in:
