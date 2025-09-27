@@ -21,6 +21,12 @@ func add_coins(amount: int = 1) -> void:
 	coins += amount
 	emit_signal("coin_amount_changed", coins)
 	
+	
+func env_damp_null_timebased(val: bool, vect: Vector3, t:float)->void:
+	await get_tree().create_timer(t).timeout
+	env_damp_set_null=val
+	pusher_box_direction=vect
+	
 #func clear_coins(ammount:int=coins) -> void:
 	#coins-= ammount
 	#emit_signal("coin_amount_changed", coins)

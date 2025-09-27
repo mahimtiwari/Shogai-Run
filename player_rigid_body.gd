@@ -70,6 +70,9 @@ var p_v: float = 0
 
 var v_list =[]
 
+const t_ps: float = 0.2
+var t_pusher_spare:float = t_ps
+
 func _physics_process(delta: float) -> void:
 	# --- Camera rotation ---
 	_camera_pivot.rotation.x -= _camera_input_direction.y * delta
@@ -143,7 +146,6 @@ func _physics_process(delta: float) -> void:
 	if move_direction.length() > 0.001:
 		move_direction = move_direction.normalized()
 	
-	print(GameLevelManager.env_block_push_velocity)
 	
 	var env_velocity:Vector3 = GameLevelManager.enviorment_obstacle_velocity + GameLevelManager.env_block_push_velocity
 	
@@ -186,14 +188,18 @@ func _physics_process(delta: float) -> void:
 	else:
 		_ground_lost_time += delta
 		is_on_ground = _ground_lost_time <= GROUND_GRACE
+	#print(GameLevelManager.env_block_push_velocity, is_on_ground)
 
+	if is_on_ground && !GameLevelManager.env_damp_set_null:
+		GameLevelManager.env_block_push_velocity = Vector3.ZERO
+	
 	if is_on_ground && move_direction==Vector3.ZERO && !Input.is_action_just_pressed("jump") && env_velocity == Vector3.ZERO && !GameLevelManager.env_damp_set_null:
 		linear_damp=10
 	else:
 		linear_damp=0
 		
 	var jump_Scale:=1
-	
+	print(linear_damp, !GameLevelManager.env_damp_set_null)
 	if !lowG:
 			
 		gravity_scale=6
@@ -206,6 +212,7 @@ func _physics_process(delta: float) -> void:
 		gravity_scale=0
 
 	p_v = linear_velocity.y
+	#print(linear_damp, GameLevelManager.env_damp_set_null)
 	animtree.set("parameters/conditions/idle", not is_moving and is_on_ground)
 	animtree.set("parameters/conditions/run", is_moving and is_on_ground)
 	animtree.set("parameters/conditions/jump", not is_on_ground)

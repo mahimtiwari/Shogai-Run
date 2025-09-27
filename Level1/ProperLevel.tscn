@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://dp8ntlbnsjm35"]
+[gd_scene load_steps=43 format=3 uid="uid://dp8ntlbnsjm35"]
 
 [ext_resource type="PackedScene" uid="uid://cjir0nllr70ct" path="res://Level1/spawn_block_15x_8_blend.tscn" id="2_gdkdi"]
 [ext_resource type="Texture2D" uid="uid://oodasrchstxr" path="res://73_bbefdfe7df90c2ce3b16f344fb358d93_file.jpg" id="3_gdkdi"]
@@ -64,8 +64,6 @@ albedo_color = Color(0, 1, 1, 0.498039)
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_1ayr7"]
 height = 0.239502
 radius = 0.99
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_bxwhr"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -636,7 +634,7 @@ transform = Transform3D(10.3482, 0, 0, 0, 6.1004, 0, 0, 0, 13.0039, 0, -0.554, -
 color = Color(0.00392157, 0.603922, 0.984314, 1)
 
 [node name="spawnBlock15x5_blend4" parent="." instance=ExtResource("10_7v46q")]
-transform = Transform3D(10.3482, 0, 0, 0, 6.1004, 0, 0, 0, 17.5322, 0, 18.446, -1157.98)
+transform = Transform3D(10.3482, 0, 0, 0, 6.1004, 0, 0, 0, 17.5322, 0, 18.446, -1161.01)
 color = Color(0.00392157, 0.603922, 0.984314, 1)
 
 [node name="jumprope_gate4" parent="." instance=ExtResource("17_raq7w")]
@@ -861,193 +859,193 @@ transform = Transform3D(-3.98822e-07, 0, -9.12397, 0, 9.12397, 0, 9.12397, 0, -3
 checkpoint_index = 3
 
 [node name="RandomRotationBounceBox" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 0, 16.802, -951.582)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 0, 16.802, -954.612)
 
 [node name="RandomRotationBounceBox2" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 19, 16.802, -951.582)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 19, 16.802, -954.612)
 
 [node name="RandomRotationBounceBox7" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -19, 16.802, -951.582)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -19, 16.802, -954.612)
 
 [node name="RandomRotationBounceBox3" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 38, 16.802, -951.582)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 38, 16.802, -954.612)
 
 [node name="RandomRotationBounceBox6" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -38, 16.802, -951.582)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -38, 16.802, -954.612)
 
 [node name="RandomRotationBounceBox4" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 57, 16.802, -951.582)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 57, 16.802, -954.612)
 
 [node name="RandomRotationBounceBox5" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -57, 16.802, -951.582)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -57, 16.802, -954.612)
 
 [node name="RandomRotationBounceBox8" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 0, 16.802, -970.582)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 0, 16.802, -973.612)
 
 [node name="RandomRotationBounceBox9" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 19, 16.802, -970.582)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 19, 16.802, -973.612)
 
 [node name="RandomRotationBounceBox10" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -19, 16.802, -970.582)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -19, 16.802, -973.612)
 
 [node name="RandomRotationBounceBox11" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 38, 16.802, -970.582)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 38, 16.802, -973.612)
 
 [node name="RandomRotationBounceBox12" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -38, 16.802, -970.582)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -38, 16.802, -973.612)
 
 [node name="RandomRotationBounceBox13" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 57, 16.802, -970.582)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 57, 16.802, -973.612)
 
 [node name="RandomRotationBounceBox14" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -57, 16.802, -970.582)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -57, 16.802, -973.612)
 
 [node name="RandomRotationBounceBox15" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 0, 16.802, -989.582)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 0, 16.802, -992.612)
 
 [node name="RandomRotationBounceBox16" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 19, 16.802, -989.582)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 19, 16.802, -992.612)
 
 [node name="RandomRotationBounceBox17" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -19, 16.802, -989.582)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -19, 16.802, -992.612)
 
 [node name="RandomRotationBounceBox18" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 38, 16.802, -989.582)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 38, 16.802, -992.612)
 
 [node name="RandomRotationBounceBox19" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -38, 16.802, -989.582)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -38, 16.802, -992.612)
 
 [node name="RandomRotationBounceBox20" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 57, 16.802, -989.582)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 57, 16.802, -992.612)
 
 [node name="RandomRotationBounceBox21" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -57, 16.802, -989.582)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -57, 16.802, -992.612)
 
 [node name="RandomRotationBounceBox22" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 0, 16.802, -1008.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 0, 16.802, -1011.61)
 
 [node name="RandomRotationBounceBox23" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 19, 16.802, -1008.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 19, 16.802, -1011.61)
 
 [node name="RandomRotationBounceBox24" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -19, 16.802, -1008.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -19, 16.802, -1011.61)
 
 [node name="RandomRotationBounceBox25" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 38, 16.802, -1008.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 38, 16.802, -1011.61)
 
 [node name="RandomRotationBounceBox26" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -38, 16.802, -1008.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -38, 16.802, -1011.61)
 
 [node name="RandomRotationBounceBox27" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 57, 16.802, -1008.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 57, 16.802, -1011.61)
 
 [node name="RandomRotationBounceBox28" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -57, 16.802, -1008.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -57, 16.802, -1011.61)
 
 [node name="RandomRotationBounceBox29" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 0, 16.802, -1027.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 0, 16.802, -1030.61)
 
 [node name="RandomRotationBounceBox30" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 19, 16.802, -1027.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 19, 16.802, -1030.61)
 
 [node name="RandomRotationBounceBox31" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -19, 16.802, -1027.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -19, 16.802, -1030.61)
 
 [node name="RandomRotationBounceBox32" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 38, 16.802, -1027.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 38, 16.802, -1030.61)
 
 [node name="RandomRotationBounceBox33" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -38, 16.802, -1027.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -38, 16.802, -1030.61)
 
 [node name="RandomRotationBounceBox34" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 57, 16.802, -1027.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 57, 16.802, -1030.61)
 
 [node name="RandomRotationBounceBox35" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -57, 16.802, -1027.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -57, 16.802, -1030.61)
 
 [node name="RandomRotationBounceBox36" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 0, 16.802, -1046.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 0, 16.802, -1049.61)
 
 [node name="RandomRotationBounceBox37" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 19, 16.802, -1046.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 19, 16.802, -1049.61)
 
 [node name="RandomRotationBounceBox38" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -19, 16.802, -1046.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -19, 16.802, -1049.61)
 
 [node name="RandomRotationBounceBox39" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 38, 16.802, -1046.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 38, 16.802, -1049.61)
 
 [node name="RandomRotationBounceBox40" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -38, 16.802, -1046.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -38, 16.802, -1049.61)
 
 [node name="RandomRotationBounceBox41" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 57, 16.802, -1046.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 57, 16.802, -1049.61)
 
 [node name="RandomRotationBounceBox42" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -57, 16.802, -1046.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -57, 16.802, -1049.61)
 
 [node name="RandomRotationBounceBox43" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 0, 16.802, -1065.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 0, 16.802, -1068.61)
 
 [node name="RandomRotationBounceBox44" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 19, 16.802, -1065.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 19, 16.802, -1068.61)
 
 [node name="RandomRotationBounceBox45" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -19, 16.802, -1065.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -19, 16.802, -1068.61)
 
 [node name="RandomRotationBounceBox46" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 38, 16.802, -1065.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 38, 16.802, -1068.61)
 
 [node name="RandomRotationBounceBox47" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -38, 16.802, -1065.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -38, 16.802, -1068.61)
 
 [node name="RandomRotationBounceBox48" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 57, 16.802, -1065.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 57, 16.802, -1068.61)
 
 [node name="RandomRotationBounceBox49" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -57, 16.802, -1065.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -57, 16.802, -1068.61)
 
 [node name="RandomRotationBounceBox50" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 0, 16.802, -1084.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 0, 16.802, -1087.61)
 
 [node name="RandomRotationBounceBox51" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 19, 16.802, -1084.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 19, 16.802, -1087.61)
 
 [node name="RandomRotationBounceBox52" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -19, 16.802, -1084.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -19, 16.802, -1087.61)
 
 [node name="RandomRotationBounceBox53" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 38, 16.802, -1084.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 38, 16.802, -1087.61)
 
 [node name="RandomRotationBounceBox54" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -38, 16.802, -1084.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -38, 16.802, -1087.61)
 
 [node name="RandomRotationBounceBox55" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 57, 16.802, -1084.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 57, 16.802, -1087.61)
 
 [node name="RandomRotationBounceBox56" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -57, 16.802, -1084.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -57, 16.802, -1087.61)
 
 [node name="RandomRotationBounceBox57" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 0, 16.802, -1103.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 0, 16.802, -1106.61)
 
 [node name="RandomRotationBounceBox58" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 19, 16.802, -1103.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 19, 16.802, -1106.61)
 
 [node name="RandomRotationBounceBox59" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -19, 16.802, -1103.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -19, 16.802, -1106.61)
 
 [node name="RandomRotationBounceBox60" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 38, 16.802, -1103.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 38, 16.802, -1106.61)
 
 [node name="RandomRotationBounceBox61" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -38, 16.802, -1103.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -38, 16.802, -1106.61)
 
 [node name="RandomRotationBounceBox62" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 57, 16.802, -1103.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 57, 16.802, -1106.61)
 
 [node name="RandomRotationBounceBox63" parent="." instance=ExtResource("31_gaq7e")]
-transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -57, 16.802, -1103.58)
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -57, 16.802, -1106.61)
 
 [node name="LevelDecals" type="Node3D" parent="."]
 
@@ -1150,15 +1148,6 @@ text = "This Stage is under Devlopment :)
 Its gonna be very chaotic :]"
 font = ExtResource("34_bxwhr")
 font_size = 2502
-
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-transform = Transform3D(5.21601, 0, 0, 0, 5.21601, 0, 0, 0, 5.21601, -0.599258, 42.2594, -951.779)
-gravity_scale = 6.0
-
-[node name="CSGBox3D" type="CSGBox3D" parent="RigidBody3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-shape = SubResource("BoxShape3D_bxwhr")
 
 [connection signal="body_entered" from="Area3D4" to="CharacterRigid" method="_on_low_g_zone_entered"]
 [connection signal="body_exited" from="Area3D4" to="CharacterRigid" method="_on_area_3d_body_exited"]
