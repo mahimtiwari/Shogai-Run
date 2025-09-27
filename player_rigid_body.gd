@@ -199,7 +199,6 @@ func _physics_process(delta: float) -> void:
 		linear_damp=0
 		
 	var jump_Scale:=1
-	print(linear_damp, !GameLevelManager.env_damp_set_null)
 	if !lowG:
 			
 		gravity_scale=6

@@ -1,32 +1,45 @@
 extends Node3D
 
-
 @export var random_angle_tilt: bool = true
-@onready var pusher_rigid_body: RigidBody3D = $PusherRigidBody
+
+@export_group("Pulse Settings")
+@export var pulse_time_stamp_start: float = 1.0
+@export var pulses: int = 5
+
+@export_group("Push Time Range")
+@export var min_push_t_value: float = 5
+@export var max_push_t_value: float = 8
 
 var player_in: bool=false
+@onready var pusher_rigid_body: RigidBody3D = $PusherRigidBody
+@onready var pusher_mesh: MeshInstance3D = $PusherRigidBody/Pusher
 
 
 func angle_r(base:float)->Vector3:
 	base = deg_to_rad(base)
 	var ve:int = [1,-1].pick_random()
-	return [
-		Vector3(base, 0, 0),
-		Vector3(0, 0, base),
-		Vector3(0, 0, 0)
-	].pick_random()*ve
+	var n: float = randf()*100
+	
+	if n<=10:
+		return Vector3.ZERO
+	elif n<=40:
+		return Vector3(base,0,0)
+	elif n<=50:
+		return Vector3(-base,0,0)
+	else:
+		return Vector3(0, 0, base)*ve
 
 func _ready() -> void:
 	if random_angle_tilt:
 		rotation = angle_r(10)
 	
-var t:float = 5
+var t:float = randf_range(min_push_t_value, max_push_t_value+10)
 var t_push:float = 0
 var push_state :=false	
 
 var ply: RigidBody3D
 var direction: Vector3
-var t_c: float = randf_range(5, 10)
+
 
 func down_coutdown_func(delta: float)->void:
 	t_push+=delta
@@ -40,21 +53,37 @@ func down_coutdown_func(delta: float)->void:
 		t_push = 0
 		push_state=false
 
+var puReset: bool= false
 
 func _physics_process(delta: float) -> void:
 	if pusher_rigid_body.position.y > 1.1:
 		pusher_rigid_body.linear_velocity.y=0
+	if t<=pulse_time_stamp_start && !puReset && t>0:
+		puReset=true
+		var wait_time = pulse_time_stamp_start / (pulses * 2)
+		var mat := pusher_mesh.get_active_material(0)
+		
+		if mat:
+			var unique_mat: StandardMaterial3D = mat.duplicate()
+			var original_color := unique_mat.albedo_color
+			pusher_mesh.set_surface_override_material(0, unique_mat)
+			for i in range(pulses):
+				unique_mat.albedo_color = Color(1, 1, 1) 
+				await get_tree().create_timer(wait_time).timeout
+				unique_mat.albedo_color = original_color
+				await get_tree().create_timer(wait_time).timeout
+		
+		
 	if t<=0:
-		t=t_c
+		t= randf_range(min_push_t_value, max_push_t_value)
 		if player_in:
-			print("Pushhh", ply)
 			ply.linear_damp = 0
 			GameLevelManager.env_damp_set_null= true
-			print("sett: ", GameLevelManager.env_damp_set_null)
 			direction = rotation.normalized().rotated(Vector3.UP,-PI/2)
 			ply.apply_central_impulse((Vector3(0,1,0)).normalized()*80*ply.mass)
 			GameLevelManager.env_block_push_velocity = direction*20
 			GameLevelManager.env_damp_null_timebased(false, Vector3.ZERO, 0.3)
+		puReset=false
 		push_state=true
 		pusher_rigid_body.apply_central_impulse(Vector3(0,1,0)*60*pusher_rigid_body.mass)
 	
@@ -79,12 +108,10 @@ func _physics_process(delta: float) -> void:
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
-		print("inn")
 		player_in=true
 		ply=body
 
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body.is_in_group("player"):
-		print("outt")
 		player_in=false
