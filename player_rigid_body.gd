@@ -256,7 +256,6 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 		sfx_jump.pitch_scale = jump_pitch
 		lowG=false
 
-
 func _on_area_3d_3_body_entered_spawn(body: Node3D) -> void:
 	if body.is_in_group("fallers"):
 		body.queue_free()

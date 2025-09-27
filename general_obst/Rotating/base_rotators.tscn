@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=4 uid="uid://drri6mxrothwe"]
 
 [ext_resource type="Script" uid="uid://gnc5qp4u6x1v" path="res://Level1/sub_level_5_ini_base.gd" id="1_hfbe3"]
-[ext_resource type="Texture2D" uid="uid://byci05a1bf3t" path="res://texture/circle_h.png" id="2_tlds2"]
+[ext_resource type="Shader" uid="uid://cqbhk7a4d1vcp" path="res://general_obst/Rotating/base_rotators.tres" id="2_tlds2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vwkbl"]
 resource_name = "Material.001"
@@ -45,14 +45,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ijs5a")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_phs37"]
-resource_name = "Material.001"
-vertex_color_use_as_albedo = true
-albedo_color = Color(0, 0, 1, 1)
-roughness = 0.58
-emission_enabled = true
-emission = Color(1, 1, 1, 1)
-emission_energy_multiplier = 0.0
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_phs37"]
+render_priority = 0
+shader = ExtResource("2_tlds2")
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_hfbe3"]
 height = 2.42
@@ -66,17 +61,9 @@ color = Color(0, 0, 1, 1)
 transform = Transform3D(189.149, 0, 0, 0, -2.25483e-05, 100, 0, -189.149, -1.19209e-05, 0, 0, 0)
 mesh = SubResource("ArrayMesh_w67ei")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_phs37")
+surface_material_override/0 = SubResource("ShaderMaterial_phs37")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("CylinderShape3D_hfbe3")
-
-[node name="Decal" type="Decal" parent="."]
-transform = Transform3D(75.8301, 0, 0, 0, 8.05752, 0, 0, 0, 75.8301, 0, 0.0456485, 0)
-size = Vector3(1, 0.338135, 1)
-texture_albedo = ExtResource("2_tlds2")
-emission_energy = 15.86
-normal_fade = 0.999
-cull_mask = 1048573
