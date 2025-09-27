@@ -197,6 +197,8 @@ func _physics_process(delta: float) -> void:
 		linear_damp=10
 	else:
 		linear_damp=0
+	
+	print(linear_damp)
 		
 	var jump_Scale:=1
 	if !lowG:

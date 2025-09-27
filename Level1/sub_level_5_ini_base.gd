@@ -21,4 +21,3 @@ func _apply_color():
 		var unique_mat = mat.duplicate()
 		cube.set_surface_override_material(0, unique_mat)
 		unique_mat.albedo_color = color
-		unique_mat.roughness = 0.58

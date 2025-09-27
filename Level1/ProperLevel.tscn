@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dp8ntlbnsjm35"]
+[gd_scene load_steps=46 format=3 uid="uid://dp8ntlbnsjm35"]
 
 [ext_resource type="PackedScene" uid="uid://cjir0nllr70ct" path="res://Level1/spawn_block_15x_8_blend.tscn" id="2_gdkdi"]
 [ext_resource type="Texture2D" uid="uid://oodasrchstxr" path="res://73_bbefdfe7df90c2ce3b16f344fb358d93_file.jpg" id="3_gdkdi"]
@@ -66,6 +66,8 @@ albedo_color = Color(0, 1, 1, 0.498039)
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_1ayr7"]
 height = 0.239502
 radius = 0.99
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ll2rk"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -1179,15 +1181,20 @@ checkpoint_index = 4
 
 [node name="Node3D" parent="." instance=ExtResource("36_ll2rk")]
 transform = Transform3D(5.16437, 0, 0, 0, 5.16437, 0, 0, 0, 5.16437, 0, 14.9707, -1330.62)
-color = Color(1, 0, 0.560784, 1)
 
 [node name="Node3D2" parent="." instance=ExtResource("36_ll2rk")]
-transform = Transform3D(3.61506, 0, 0, 0, 5.16437, 0, 0, 0, 3.61506, 0, 17.9707, -1330.62)
-color = Color(0, 1, 1, 1)
+transform = Transform3D(2.81253, 0, 0, 0, 4.0179, 0, 0, 0, 2.81253, 0, 18.4117, -1330.62)
 
 [node name="Node3D3" parent="." instance=ExtResource("36_ll2rk")]
-transform = Transform3D(1.80753, 0, 0, 0, 5.16437, 0, 0, 0, 1.80753, 0, 21.9445, -1330.62)
-color = Color(1, 1, 0, 1)
+transform = Transform3D(1.40626, 0, 0, 0, 4.0179, 0, 0, 0, 1.40626, 0, 21.5034, -1330.62)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(16.1278, 0, 0, 0, 16.1278, 0, 0, 0, 16.1278, 0, 48.6181, -1230.91)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("BoxShape3D_ll2rk")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="RigidBody3D"]
 
 [connection signal="body_entered" from="Area3D4" to="CharacterRigid" method="_on_low_g_zone_entered"]
 [connection signal="body_exited" from="Area3D4" to="CharacterRigid" method="_on_area_3d_body_exited"]

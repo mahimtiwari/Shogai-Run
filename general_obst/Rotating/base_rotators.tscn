@@ -1,7 +1,12 @@
 [gd_scene load_steps=8 format=4 uid="uid://drri6mxrothwe"]
 
-[ext_resource type="Script" uid="uid://gnc5qp4u6x1v" path="res://Level1/sub_level_5_ini_base.gd" id="1_hfbe3"]
+[ext_resource type="Script" uid="uid://dqc08hxhwfbof" path="res://general_obst/Rotating/base_rotators.gd" id="1_hfbe3"]
 [ext_resource type="Shader" uid="uid://cqbhk7a4d1vcp" path="res://general_obst/Rotating/base_rotators.tres" id="2_tlds2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tlds2"]
+render_priority = 0
+shader = ExtResource("2_tlds2")
+shader_parameter/BaseColor = Color(0, 0.545098, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vwkbl"]
 resource_name = "Material.001"
@@ -45,25 +50,29 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ijs5a")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_phs37"]
-render_priority = 0
-shader = ExtResource("2_tlds2")
-
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_hfbe3"]
 height = 2.42
 radius = 27.5903
 
-[node name="PlatformRotator" type="Node3D"]
+[node name="PlatformRotator" type="RigidBody3D"]
+mass = 1e+07
+gravity_scale = 0.0
 script = ExtResource("1_hfbe3")
-color = Color(0, 0, 1, 1)
 
 [node name="Cube" type="MeshInstance3D" parent="."]
 transform = Transform3D(189.149, 0, 0, 0, -2.25483e-05, 100, 0, -189.149, -1.19209e-05, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_tlds2")
 mesh = SubResource("ArrayMesh_w67ei")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_phs37")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CylinderShape3D_hfbe3")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.386768, 0)
+shape = SubResource("CylinderShape3D_hfbe3")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

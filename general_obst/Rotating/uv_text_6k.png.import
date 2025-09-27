@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cp8at3obkqcxv"
-path.s3tc="res://.godot/imported/emmision_texture.png-f51dd809452e0fad16a22b9293ca44b1.s3tc.ctex"
+uid="uid://clb2sq45f65w5"
+path.s3tc="res://.godot/imported/uv_text_6k.png-b3b369ae4366becd8bdd5fb2ebf3d408.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://general_obst/Rotating/emmision_texture.png"
-dest_files=["res://.godot/imported/emmision_texture.png-f51dd809452e0fad16a22b9293ca44b1.s3tc.ctex"]
+source_file="res://general_obst/Rotating/uv_text_6k.png"
+dest_files=["res://.godot/imported/uv_text_6k.png-b3b369ae4366becd8bdd5fb2ebf3d408.s3tc.ctex"]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=1
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1

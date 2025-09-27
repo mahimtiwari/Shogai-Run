@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bx6gketvx0pl5"]
+
+[ext_resource type="PackedScene" uid="uid://b2j0qb2drnwlv" path="res://general_obst/boxes/circle_diff_platform.fbx" id="1_gava3"]
+[ext_resource type="Script" uid="uid://gnc5qp4u6x1v" path="res://Level1/sub_level_5_ini_base.gd" id="2_05p7i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_auepl"]
+
+[node name="circle_diff_platform" instance=ExtResource("1_gava3")]
+script = ExtResource("2_05p7i")
+
+[node name="Cylinder" parent="." index="1"]
+transform = Transform3D(189.149, 0, 0, 0, -2.25483e-05, 100, 0, -189.149, -1.19209e-05, 0, -1.73652e-06, -45.2285)
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_auepl")
