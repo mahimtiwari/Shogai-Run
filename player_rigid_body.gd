@@ -240,6 +240,7 @@ func _physics_process(delta: float) -> void:
 		t_angle,
 		rotation_speed * delta
 	)
+	
 
 func _coin_amount_chnged_call(amount:int)->void:
 	sfx_coin.play()

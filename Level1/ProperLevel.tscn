@@ -1181,12 +1181,7 @@ checkpoint_index = 4
 
 [node name="Node3D" parent="." instance=ExtResource("36_ll2rk")]
 transform = Transform3D(5.16437, 0, 0, 0, 5.16437, 0, 0, 0, 5.16437, 0, 14.9707, -1330.62)
-
-[node name="Node3D2" parent="." instance=ExtResource("36_ll2rk")]
-transform = Transform3D(2.81253, 0, 0, 0, 4.0179, 0, 0, 0, 2.81253, 0, 18.4117, -1330.62)
-
-[node name="Node3D3" parent="." instance=ExtResource("36_ll2rk")]
-transform = Transform3D(1.40626, 0, 0, 0, 4.0179, 0, 0, 0, 1.40626, 0, 21.5034, -1330.62)
+rotation_speed = -0.5
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 transform = Transform3D(16.1278, 0, 0, 0, 16.1278, 0, 0, 0, 16.1278, 0, 48.6181, -1206.43)
