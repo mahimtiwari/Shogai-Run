@@ -55,7 +55,7 @@ height = 2.42
 radius = 27.5903
 
 [node name="PlatformRotator" type="RigidBody3D"]
-mass = 1e+07
+mass = 1e+09
 gravity_scale = 0.0
 script = ExtResource("1_hfbe3")
 

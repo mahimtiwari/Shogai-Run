@@ -12,6 +12,9 @@ var env_damp_set_null:bool = false
 var pusher_box_direction:Vector3=Vector3.ZERO
 var env_block_push_velocity:Vector3
 var pusherOrientList: Array
+var move_direction: Vector3
+var player_global_transform_basis: Basis
+var disc_env_velocity: Vector3
 
 signal coin_amount_changed(amount: int)
 

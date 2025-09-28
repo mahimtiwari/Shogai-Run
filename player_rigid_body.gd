@@ -45,7 +45,7 @@ const GROUND_GRACE: float = 0.08  # seconds of allowed "miss" before we declare 
 
 
 func _ready() -> void:
-	
+	GameLevelManager.player_global_transform_basis = global_transform.basis
 	sfx_background.play()
 	GameLevelManager.connect("coin_amount_changed", _coin_amount_chnged_call)
 	$"../Area3D3".connect("body_entered", _on_area_3d_3_body_entered_spawn)
@@ -136,6 +136,7 @@ func _physics_process(delta: float) -> void:
 	var forward := _camera.global_basis.z
 	var right := _camera.global_basis.x
 	var move_direction := forward * raw_inp.y + right * raw_inp.x
+	GameLevelManager.move_direction = move_direction
 	
 	# Project movement onto slope if on slope
 	if is_on_climbable_slope:
@@ -147,7 +148,7 @@ func _physics_process(delta: float) -> void:
 		move_direction = move_direction.normalized()
 	
 	
-	var env_velocity:Vector3 = GameLevelManager.enviorment_obstacle_velocity + GameLevelManager.env_block_push_velocity
+	var env_velocity:Vector3 = GameLevelManager.enviorment_obstacle_velocity + GameLevelManager.env_block_push_velocity + GameLevelManager.disc_env_velocity
 	
 	# --- PID horizontal movement ---
 	var target_v = move_direction * TARGET_SPEED + env_velocity
@@ -197,8 +198,7 @@ func _physics_process(delta: float) -> void:
 		linear_damp=10
 	else:
 		linear_damp=0
-	
-	print(linear_damp)
+		
 		
 	var jump_Scale:=1
 	if !lowG:
