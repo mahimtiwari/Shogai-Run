@@ -1,9 +1,26 @@
+@tool
 extends RigidBody3D
 
 @export_category("Rotation")
 @export var rotation_speed: float = -0.5  # radians per second
 
+@export_category("Color")
+@export var color: Color = Color(1, 1, 1):
+	set(value):
+		color = value
+		_apply_color()
+
 var player: RigidBody3D
+@onready var cube: MeshInstance3D = $Cube
+
+
+func _ready():
+	_apply_color()
+
+func _apply_color():
+	var material = cube.get_active_material(0)
+	var shader_material: ShaderMaterial = material
+	shader_material.set_shader_parameter("BaseColor", color)
 
 
 func _physics_process(delta: float) -> void:
