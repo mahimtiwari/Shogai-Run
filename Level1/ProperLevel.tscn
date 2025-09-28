@@ -82,7 +82,7 @@ shadow_enabled = true
 environment = SubResource("Environment_dsrnb")
 
 [node name="CharacterRigid" parent="." instance=ExtResource("26_jqvxq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.02096, 4.41476)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 28.4559, -1147.22)
 
 [node name="spawnBlock15x8_blend2" parent="." instance=ExtResource("2_gdkdi")]
 transform = Transform3D(1.11075, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0.784507, -37.991)

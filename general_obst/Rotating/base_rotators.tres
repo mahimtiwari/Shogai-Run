@@ -1,6 +1,6 @@
 [gd_resource type="VisualShader" load_steps=9 format=3 uid="uid://cqbhk7a4d1vcp"]
 
-[ext_resource type="Texture2D" uid="uid://clb2sq45f65w5" path="res://general_obst/Rotating/uv_text_6k.png" id="1_hi3c1"]
+[ext_resource type="Texture2D" uid="uid://b6n1qpk1ttji0" path="res://general_obst/Rotating/uv_texture_6k_sm_bound.png" id="1_hi3c1"]
 
 [sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_mpct3"]
 
@@ -75,7 +75,7 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-1331.66, -10.2485)
+graph_offset = Vector2(-2586.98, -102.3)
 nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_rwuqi")
 nodes/fragment/2/position = Vector2(-1900, -80)
 nodes/fragment/7/node = SubResource("VisualShaderNodeFloatOp_rwuqi")
