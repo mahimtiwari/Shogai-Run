@@ -264,4 +264,4 @@ func _on_area_3d_3_body_entered_spawn(body: Node3D) -> void:
 	if body.is_in_group("fallers"):
 		body.queue_free()
 	if body.is_in_group("player"):
-		position = GameLevelManager.checkpoint_node.position
+a		position = GameLevelManager.checkpoint_node.position

@@ -1,5 +1,5 @@
 @tool
-extends RigidBody3D
+extends StaticBody3D
 
 @export_category("Rotation")
 @export var rotation_speed: float = -0.5  # radians per second
@@ -13,24 +13,32 @@ extends RigidBody3D
 var player: RigidBody3D
 @onready var cube: MeshInstance3D = $Cube
 
-
 func _ready():
+	if cube and cube.mesh:
+		# Make unique mesh per instance so shader changes don't affect others
+		cube.mesh = cube.mesh.duplicate()
 	_apply_color()
 
 func _apply_color():
-	var material = cube.get_active_material(0)
-	var shader_material: ShaderMaterial = material
-	shader_material.set_shader_parameter("BaseColor", color)
+	if not cube or not cube.mesh:
+		return
 
+	var mat = cube.get_active_material(0)
+	if mat and mat is ShaderMaterial:
+		# Make unique material per disc
+		var shader_mat = mat.duplicate() as ShaderMaterial
+		shader_mat.set_shader_parameter("BaseColor", color)
+		# Apply to mesh instance
+		cube.material_override = shader_mat
 
 func _physics_process(delta: float) -> void:
-	angular_velocity.y = rotation_speed
+	rotation.y += rotation_speed *delta
 	if player:
 		var rotator_player_relative_center = Vector3(self.global_position.x, player.global_position.y, self.global_position.z)
 		# v = w x r
 		var r_vect:Vector3 = rotator_player_relative_center-player.global_position
 		#GameLevelManager.r_disc_vect=r_vect
-		var vel_vect: Vector3 = -angular_velocity.cross(r_vect)*1.018
+		var vel_vect: Vector3 = (-Vector3.UP*rotation_speed).cross(r_vect)*1.018
 		
 		GameLevelManager.disc_env_velocity = vel_vect
 		
