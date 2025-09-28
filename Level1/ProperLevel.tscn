@@ -36,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://c0uvvs1olvh8t" path="res://texture/level_arrow_2.png" id="33_tu6wb"]
 [ext_resource type="PackedScene" uid="uid://la3ofofifhyx" path="res://Level1/sub Level5iniBase.tscn" id="35_1a656"]
 [ext_resource type="PackedScene" uid="uid://drri6mxrothwe" path="res://general_obst/Rotating/base_rotators.tscn" id="36_ll2rk"]
+[ext_resource type="FontFile" uid="uid://cr7k02yb1xky8" path="res://UI_nodes/Jua-Regular.ttf" id="37_eeo2s"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_bfu0y"]
 panorama = ExtResource("3_gdkdi")
@@ -67,8 +68,6 @@ albedo_color = Color(0, 1, 1, 0.498039)
 height = 0.239502
 radius = 0.99
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ll2rk"]
-
 [node name="Node3D" type="Node3D"]
 
 [node name="spawnBlock15x8_blend" parent="." instance=ExtResource("2_gdkdi")]
@@ -83,7 +82,7 @@ shadow_enabled = true
 environment = SubResource("Environment_dsrnb")
 
 [node name="CharacterRigid" parent="." instance=ExtResource("26_jqvxq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 26.3248, -1145.19)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.02096, 4.41476)
 
 [node name="spawnBlock15x8_blend2" parent="." instance=ExtResource("2_gdkdi")]
 transform = Transform3D(1.11075, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0.784507, -37.991)
@@ -1181,15 +1180,15 @@ checkpoint_index = 4
 
 [node name="Node3D" parent="." instance=ExtResource("36_ll2rk")]
 transform = Transform3D(5.16437, 0, 0, 0, 5.16437, 0, 0, 0, 5.16437, 0, 14.9707, -1330.62)
-rotation_speed = -0.5
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-transform = Transform3D(16.1278, 0, 0, 0, 16.1278, 0, 0, 0, 16.1278, 0, 48.6181, -1206.43)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-shape = SubResource("BoxShape3D_ll2rk")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="RigidBody3D"]
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 67.9747, -1474.84)
+modulate = Color(1, 1, 0, 1)
+text = "Thrillll... Under Devlopment...
+Its gonna be really dizzyy."
+font = ExtResource("37_eeo2s")
+font_size = 9337
+outline_size = 127
 
 [connection signal="body_entered" from="Area3D4" to="CharacterRigid" method="_on_low_g_zone_entered"]
 [connection signal="body_exited" from="Area3D4" to="CharacterRigid" method="_on_area_3d_body_exited"]
