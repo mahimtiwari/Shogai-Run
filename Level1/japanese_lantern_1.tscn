@@ -79,5 +79,4 @@ light_color = Color(1, 0.576471, 1, 1)
 transform = Transform3D(1.68739, 0, 0, 0, 1.68739, 0, 0, 0, 1.68739, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_ch56h")
