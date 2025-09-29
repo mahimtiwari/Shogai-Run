@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://dp8ntlbnsjm35"]
+[gd_scene load_steps=51 format=3 uid="uid://dp8ntlbnsjm35"]
 
 [ext_resource type="PackedScene" uid="uid://cjir0nllr70ct" path="res://Level1/spawn_block_15x_8_blend.tscn" id="2_gdkdi"]
 [ext_resource type="Texture2D" uid="uid://oodasrchstxr" path="res://73_bbefdfe7df90c2ce3b16f344fb358d93_file.jpg" id="3_gdkdi"]
@@ -41,6 +41,7 @@
 [ext_resource type="PackedScene" uid="uid://hvelk248qiul" path="res://Level1/6_th_ending_plat.tscn" id="39_v4nmj"]
 [ext_resource type="PackedScene" uid="uid://c3kw71qeijbdl" path="res://Level1/torii.tscn" id="40_0mlgr"]
 [ext_resource type="PackedScene" uid="uid://fgkch1ltckco" path="res://Level1/cherry_blossom.tscn" id="41_ssa7w"]
+[ext_resource type="PackedScene" uid="uid://c0mwjm8u6h6oe" path="res://Level1/cherry_blossom_tree.tscn" id="42_fxwko"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_bfu0y"]
 panorama = ExtResource("3_gdkdi")
@@ -1279,21 +1280,21 @@ transform = Transform3D(-3.98822e-07, 0, -9.12397, 0, 9.12397, 0, 9.12397, 0, -3
 checkpoint_index = 5
 
 [node name="DiskRotator" parent="." instance=ExtResource("36_ll2rk")]
-transform = Transform3D(5.15528, -7.78425e-07, -0.306318, -7.79799e-07, -5.16437, -6.56077e-14, -0.306318, 4.62527e-08, -5.15528, 0, 19.62, -1330.62)
+transform = Transform3D(-3.10262, 4.68483e-07, 4.1285, -7.79799e-07, -5.16437, -5.7555e-14, 4.1285, -6.23385e-07, 3.10262, 0, 19.62, -1330.62)
 rotation_speed = 0.5
 color = Color(0.894118, 0.27451, 0.380392, 1)
 
 [node name="DiskRotator4" parent="." instance=ExtResource("36_ll2rk")]
-transform = Transform3D(-3.82925, 0, 0.227527, 0, 1.458, 0, -0.227527, 0, -3.82925, 0, 24.6506, -1330.62)
+transform = Transform3D(2.30457, 0, -3.06657, 0, 1.458, 0, 3.06657, 0, 2.30457, 0, 24.6506, -1330.62)
 color = Color(0.894118, 0.396078, 0, 1)
 
 [node name="DiskRotator2" parent="." instance=ExtResource("36_ll2rk")]
-transform = Transform3D(2.77079, -2.19793e-07, -0.164635, -4.19115e-07, -1.45819, -6.37533e-13, -0.164635, 1.306e-08, -2.77079, 0, 25.1938, -1330.62)
+transform = Transform3D(-1.66755, 1.32279e-07, 2.21893, -4.19115e-07, -1.45819, -6.41085e-13, 2.21893, -1.76017e-07, 1.66755, 0, 25.1938, -1330.62)
 rotation_speed = 0.5
 color = Color(0, 0.553181, 0.899129, 1)
 
 [node name="DiskRotator3" parent="." instance=ExtResource("36_ll2rk")]
-transform = Transform3D(-1.80283, 0, 0.107121, 0, 1.458, 0, -0.107121, 0, -1.80283, 0, 25.5763, -1330.69)
+transform = Transform3D(1.085, 0, -1.44376, 0, 1.458, 0, 1.44376, 0, 1.085, 0, 25.5763, -1330.69)
 color = Color(0, 0.756863, 0.305882, 1)
 
 [node name="Label3D" type="Label3D" parent="."]
@@ -1390,8 +1391,32 @@ transform = Transform3D(-5.88969e-07, 0, -13.474, 0, 13.474, 0, 13.474, 0, -5.88
 [node name="torii5" parent="." instance=ExtResource("40_0mlgr")]
 transform = Transform3D(-5.88969e-07, 0, -13.474, 0, 13.474, 0, 13.474, 0, -5.88969e-07, 0, 50.0195, -1566.17)
 
-[node name="Cherry blossom" parent="." instance=ExtResource("41_ssa7w")]
+[node name="Cherry blossom Particles" parent="." instance=ExtResource("41_ssa7w")]
 transform = Transform3D(1, 0, 0, 0, 0.973391, -0.229149, 0, 0.229149, 0.973391, 0, 102.472, -1667.77)
+
+[node name="Cherry blossom Particles2" parent="." instance=ExtResource("41_ssa7w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 124.635, -1773.7)
+
+[node name="Cherry blossom Particles3" parent="." instance=ExtResource("41_ssa7w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 113.936, -1773.7)
+
+[node name="Cherry blossom tree" parent="." instance=ExtResource("42_fxwko")]
+transform = Transform3D(1.44504, 0, -2.50289, 0, 2.89009, 0, 2.50289, 0, 1.44504, -8.97677, 99.4132, -1809.62)
+
+[node name="Cherry blossom tree2" parent="." instance=ExtResource("42_fxwko")]
+transform = Transform3D(-2.34914, 0, -1.68349, 0, 2.89009, 0, 1.68349, 0, -2.34914, 21.1725, 99.4132, -1798.87)
+
+[node name="Cherry blossom tree3" parent="." instance=ExtResource("42_fxwko")]
+transform = Transform3D(-2.8362, 0, -0.555514, 0, 2.89009, 0, 0.555514, 0, -2.8362, -29.4035, 99.4132, -1784.04)
+
+[node name="Cherry blossom tree5" parent="." instance=ExtResource("42_fxwko")]
+transform = Transform3D(2.2916, 0, 1.76101, 0, 2.89009, 0, -1.76101, 0, 2.2916, -27.7702, 99.4132, -1748.72)
+
+[node name="Cherry blossom tree4" parent="." instance=ExtResource("42_fxwko")]
+transform = Transform3D(2.52208, 0, -1.41128, 0, 2.89009, 0, 1.41128, 0, 2.52208, 23.1205, 99.4132, -1767.64)
+
+[node name="Cherry blossom tree6" parent="." instance=ExtResource("42_fxwko")]
+transform = Transform3D(1.831, 0, -2.23608, 0, 2.89009, 0, 2.23608, 0, 1.831, 28.6784, 99.4132, -1744.43)
 
 [connection signal="body_entered" from="Area3D4" to="CharacterRigid" method="_on_low_g_zone_entered"]
 [connection signal="body_exited" from="Area3D4" to="CharacterRigid" method="_on_area_3d_body_exited"]
