@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://dp8ntlbnsjm35"]
+[gd_scene load_steps=53 format=3 uid="uid://dp8ntlbnsjm35"]
 
 [ext_resource type="PackedScene" uid="uid://cjir0nllr70ct" path="res://Level1/spawn_block_15x_8_blend.tscn" id="2_gdkdi"]
 [ext_resource type="Texture2D" uid="uid://oodasrchstxr" path="res://73_bbefdfe7df90c2ce3b16f344fb358d93_file.jpg" id="3_gdkdi"]
@@ -42,6 +42,8 @@
 [ext_resource type="PackedScene" uid="uid://c3kw71qeijbdl" path="res://Level1/torii.tscn" id="40_0mlgr"]
 [ext_resource type="PackedScene" uid="uid://fgkch1ltckco" path="res://Level1/cherry_blossom.tscn" id="41_ssa7w"]
 [ext_resource type="PackedScene" uid="uid://c0mwjm8u6h6oe" path="res://Level1/cherry_blossom_tree.tscn" id="42_fxwko"]
+[ext_resource type="Texture2D" uid="uid://co8sv8onwtgb0" path="res://texture/finish_line.png" id="43_i3tgm"]
+[ext_resource type="PackedScene" uid="uid://ctiuy62y028gd" path="res://Level1/japanese light.tscn" id="45_fdpwp"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_bfu0y"]
 panorama = ExtResource("3_gdkdi")
@@ -87,7 +89,7 @@ shadow_enabled = true
 environment = SubResource("Environment_dsrnb")
 
 [node name="CharacterRigid" parent="." instance=ExtResource("26_jqvxq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 26.0807, -1496.79)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.59994, 2.30027)
 
 [node name="spawnBlock15x8_blend2" parent="." instance=ExtResource("2_gdkdi")]
 transform = Transform3D(1.11075, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0.784507, -37.991)
@@ -660,6 +662,33 @@ transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2
 [node name="Coin47" parent="all_coins" instance=ExtResource("13_b3pp6")]
 transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, 41.8188, 31.1592, -1101.62)
 
+[node name="Coin57" parent="all_coins" instance=ExtResource("13_b3pp6")]
+transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, -15.2495, 31.1592, -1207.92)
+
+[node name="Coin58" parent="all_coins" instance=ExtResource("13_b3pp6")]
+transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, 112.065, 31.1592, -1285.43)
+
+[node name="Coin59" parent="all_coins" instance=ExtResource("13_b3pp6")]
+transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, -124.242, 31.1592, -1355.43)
+
+[node name="Coin60" parent="all_coins" instance=ExtResource("13_b3pp6")]
+transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, 16.2269, 31.1592, -1415.1)
+
+[node name="Coin61" parent="all_coins" instance=ExtResource("13_b3pp6")]
+transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, -29.8132, 31.1592, -1339.46)
+
+[node name="Coin62" parent="all_coins" instance=ExtResource("13_b3pp6")]
+transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, -82.4304, 31.1592, -1307.98)
+
+[node name="Coin63" parent="all_coins" instance=ExtResource("13_b3pp6")]
+transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, 52.871, 31.1592, -1295.3)
+
+[node name="Coin64" parent="all_coins" instance=ExtResource("13_b3pp6")]
+transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, 33.6093, 31.1592, -1321.14)
+
+[node name="Coin65" parent="all_coins" instance=ExtResource("13_b3pp6")]
+transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, 0, 35.2265, -1330.69)
+
 [node name="Coin52" parent="all_coins" instance=ExtResource("13_b3pp6")]
 transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, -0.0757141, 31.1592, -1123.1)
 
@@ -1227,6 +1256,31 @@ transform = Transform3D(-1.87962e-07, 0, 4.30007, 0, 10.1978, 0, -4.30007, 0, -1
 texture_albedo = ExtResource("33_tu6wb")
 cull_mask = 1048573
 
+[node name="Decal25" type="Decal" parent="LevelDecals"]
+transform = Transform3D(-1.87962e-07, 0, 4.30007, 0, 10.1978, 0, -4.30007, 0, -1.87962e-07, 0, 27.184, -1492.53)
+texture_albedo = ExtResource("33_tu6wb")
+cull_mask = 1048573
+
+[node name="Decal26" type="Decal" parent="LevelDecals"]
+transform = Transform3D(-1.87962e-07, 0, 4.30007, 0, 10.1978, 0, -4.30007, 0, -1.87962e-07, 30.67, 27.184, -1492.53)
+texture_albedo = ExtResource("33_tu6wb")
+cull_mask = 1048573
+
+[node name="Decal27" type="Decal" parent="LevelDecals"]
+transform = Transform3D(-1.87962e-07, 0, 4.30007, 0, 10.1978, 0, -4.30007, 0, -1.87962e-07, 61.34, 27.184, -1492.53)
+texture_albedo = ExtResource("33_tu6wb")
+cull_mask = 1048573
+
+[node name="Decal28" type="Decal" parent="LevelDecals"]
+transform = Transform3D(-1.87962e-07, 0, 4.30007, 0, 10.1978, 0, -4.30007, 0, -1.87962e-07, -61.34, 27.184, -1492.53)
+texture_albedo = ExtResource("33_tu6wb")
+cull_mask = 1048573
+
+[node name="Decal29" type="Decal" parent="LevelDecals"]
+transform = Transform3D(-1.87962e-07, 0, 4.30007, 0, 10.1978, 0, -4.30007, 0, -1.87962e-07, -30.67, 27.184, -1492.53)
+texture_albedo = ExtResource("33_tu6wb")
+cull_mask = 1048573
+
 [node name="Decal10" type="Decal" parent="LevelDecals"]
 transform = Transform3D(2.03249e-14, -23.9079, -4.6498e-07, -4.6498e-07, -1.04505e-06, 10.6375, -10.6375, 0, -4.6498e-07, -17.6051, 40.7535, -879.683)
 texture_albedo = ExtResource("32_8g8un")
@@ -1280,21 +1334,21 @@ transform = Transform3D(-3.98822e-07, 0, -9.12397, 0, 9.12397, 0, 9.12397, 0, -3
 checkpoint_index = 5
 
 [node name="DiskRotator" parent="." instance=ExtResource("36_ll2rk")]
-transform = Transform3D(-3.10262, 4.68483e-07, 4.1285, -7.79799e-07, -5.16437, -5.7555e-14, 4.1285, -6.23385e-07, 3.10262, 0, 19.62, -1330.62)
+transform = Transform3D(-4.76674, 7.19757e-07, 1.98719, -7.79799e-07, -5.16437, 5.61319e-14, 1.98719, -3.00058e-07, 4.76674, 0, 19.62, -1330.62)
 rotation_speed = 0.5
 color = Color(0.894118, 0.27451, 0.380392, 1)
 
 [node name="DiskRotator4" parent="." instance=ExtResource("36_ll2rk")]
-transform = Transform3D(2.30457, 0, -3.06657, 0, 1.458, 0, 3.06657, 0, 2.30457, 0, 24.6506, -1330.62)
+transform = Transform3D(3.54065, 0, -1.47605, 0, 1.458, 0, 1.47605, 0, 3.54065, 0, 24.6506, -1330.62)
 color = Color(0.894118, 0.396078, 0, 1)
 
 [node name="DiskRotator2" parent="." instance=ExtResource("36_ll2rk")]
-transform = Transform3D(-1.66755, 1.32279e-07, 2.21893, -4.19115e-07, -1.45819, -6.41085e-13, 2.21893, -1.76017e-07, 1.66755, 0, 25.1938, -1330.62)
+transform = Transform3D(-2.56196, 2.03228e-07, 1.06805, -4.19115e-07, -1.45819, -5.78795e-13, 1.06805, -8.47233e-08, 2.56196, 0, 25.1938, -1330.62)
 rotation_speed = 0.5
 color = Color(0, 0.553181, 0.899129, 1)
 
 [node name="DiskRotator3" parent="." instance=ExtResource("36_ll2rk")]
-transform = Transform3D(1.085, 0, -1.44376, 0, 1.458, 0, 1.44376, 0, 1.085, 0, 25.5763, -1330.69)
+transform = Transform3D(1.66695, 0, -0.694932, 0, 1.458, 0, 0.694932, 0, 1.66695, 0, 25.5763, -1330.69)
 color = Color(0, 0.756863, 0.305882, 1)
 
 [node name="Label3D" type="Label3D" parent="."]
@@ -1377,19 +1431,19 @@ transform = Transform3D(38.2791, 0, 0, 0, 5.63043, 0, 0, 0, 38.2791, 0, 93.164, 
 color = Color(0.00392157, 0.603922, 0.984314, 1)
 
 [node name="torii" parent="." instance=ExtResource("40_0mlgr")]
-transform = Transform3D(-5.88969e-07, 0, -13.474, 0, 13.474, 0, 13.474, 0, -5.88969e-07, 0, 90.8588, -1678.25)
+transform = Transform3D(-5.88969e-07, 0, -13.474, 0, 13.474, 0, 13.474, 0, -5.88969e-07, -0.594, 90.859, -1678.25)
 
 [node name="torii2" parent="." instance=ExtResource("40_0mlgr")]
-transform = Transform3D(-5.88969e-07, 0, -13.474, 0, 13.474, 0, 13.474, 0, -5.88969e-07, 0, 80.246, -1648.69)
+transform = Transform3D(-5.88969e-07, 0, -13.474, 0, 13.474, 0, 13.474, 0, -5.88969e-07, -0.594451, 80.246, -1648.94)
 
 [node name="torii3" parent="." instance=ExtResource("40_0mlgr")]
-transform = Transform3D(-5.88969e-07, 0, -13.474, 0, 13.474, 0, 13.474, 0, -5.88969e-07, 0, 69.2691, -1620.69)
+transform = Transform3D(-5.88969e-07, 0, -13.474, 0, 13.474, 0, 13.474, 0, -5.88969e-07, -0.594451, 69.2691, -1620.69)
 
 [node name="torii4" parent="." instance=ExtResource("40_0mlgr")]
-transform = Transform3D(-5.88969e-07, 0, -13.474, 0, 13.474, 0, 13.474, 0, -5.88969e-07, 0, 59.2086, -1592.26)
+transform = Transform3D(-5.88969e-07, 0, -13.474, 0, 13.474, 0, 13.474, 0, -5.88969e-07, -0.594451, 59.2086, -1592.26)
 
 [node name="torii5" parent="." instance=ExtResource("40_0mlgr")]
-transform = Transform3D(-5.88969e-07, 0, -13.474, 0, 13.474, 0, 13.474, 0, -5.88969e-07, 0, 50.0195, -1566.17)
+transform = Transform3D(-5.88969e-07, 0, -13.474, 0, 13.474, 0, 13.474, 0, -5.88969e-07, -0.594451, 50.0195, -1566.17)
 
 [node name="Cherry blossom Particles" parent="." instance=ExtResource("41_ssa7w")]
 transform = Transform3D(1, 0, 0, 0, 0.973391, -0.229149, 0, 0.229149, 0.973391, 0, 102.472, -1667.77)
@@ -1401,22 +1455,59 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 124.635, -1773.7)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 113.936, -1773.7)
 
 [node name="Cherry blossom tree" parent="." instance=ExtResource("42_fxwko")]
-transform = Transform3D(1.44504, 0, -2.50289, 0, 2.89009, 0, 2.50289, 0, 1.44504, -8.97677, 99.4132, -1809.62)
+transform = Transform3D(1.44504, 0, -2.50289, 0, 2.89009, 0, 2.50289, 0, 1.44504, -8.97677, 98.7581, -1805.99)
 
 [node name="Cherry blossom tree2" parent="." instance=ExtResource("42_fxwko")]
-transform = Transform3D(-2.34914, 0, -1.68349, 0, 2.89009, 0, 1.68349, 0, -2.34914, 21.1725, 99.4132, -1798.87)
+transform = Transform3D(-2.34914, 0, -1.68349, 0, 2.89009, 0, 1.68349, 0, -2.34914, 21.1725, 98.7581, -1798.87)
 
 [node name="Cherry blossom tree3" parent="." instance=ExtResource("42_fxwko")]
-transform = Transform3D(-2.8362, 0, -0.555514, 0, 2.89009, 0, 0.555514, 0, -2.8362, -29.4035, 99.4132, -1784.04)
+transform = Transform3D(-2.8362, 0, -0.555514, 0, 2.89009, 0, 0.555514, 0, -2.8362, -29.4035, 98.7581, -1784.04)
 
 [node name="Cherry blossom tree5" parent="." instance=ExtResource("42_fxwko")]
-transform = Transform3D(2.2916, 0, 1.76101, 0, 2.89009, 0, -1.76101, 0, 2.2916, -27.7702, 99.4132, -1748.72)
+transform = Transform3D(2.2916, 0, 1.76101, 0, 2.89009, 0, -1.76101, 0, 2.2916, -27.7702, 98.7581, -1748.72)
 
 [node name="Cherry blossom tree4" parent="." instance=ExtResource("42_fxwko")]
-transform = Transform3D(2.52208, 0, -1.41128, 0, 2.89009, 0, 1.41128, 0, 2.52208, 23.1205, 99.4132, -1767.64)
+transform = Transform3D(2.52208, 0, -1.41128, 0, 2.89009, 0, 1.41128, 0, 2.52208, 23.1205, 98.7581, -1767.64)
 
 [node name="Cherry blossom tree6" parent="." instance=ExtResource("42_fxwko")]
-transform = Transform3D(1.831, 0, -2.23608, 0, 2.89009, 0, 2.23608, 0, 1.831, 28.6784, 99.4132, -1744.43)
+transform = Transform3D(1.831, 0, -2.23608, 0, 2.89009, 0, 2.23608, 0, 1.831, 28.6784, 98.7581, -1744.43)
+
+[node name="Decal" type="Decal" parent="."]
+transform = Transform3D(20.4972, 0, 0, 0, 41.6164, 0, 0, 0, 3.07277, 0, 99.7748, -1729.21)
+texture_albedo = ExtResource("43_i3tgm")
+cull_mask = 1046525
+
+[node name="Node3D" parent="." instance=ExtResource("45_fdpwp")]
+transform = Transform3D(3.95645, 0, 3.22381, 0, 5.10357, 0, -3.22381, 0, 3.95645, 27.4148, 99.5222, -1757.09)
+
+[node name="Node3D2" parent="." instance=ExtResource("45_fdpwp")]
+transform = Transform3D(5.04871, 0, 0.746338, 0, 5.10357, 0, -0.746338, 0, 5.04871, 23.8162, 99.5222, -1782.34)
+
+[node name="Node3D3" parent="." instance=ExtResource("45_fdpwp")]
+transform = Transform3D(0.518052, 0, 5.07721, 0, 5.10357, 0, -5.07721, 0, 0.518052, 4.75166, 99.5222, -1803.36)
+
+[node name="Node3D4" parent="." instance=ExtResource("45_fdpwp")]
+transform = Transform3D(3.95645, 0, 3.22381, 0, 5.10357, 0, -3.22381, 0, 3.95645, -21.5078, 99.5222, -1794.18)
+
+[node name="Node3D5" parent="." instance=ExtResource("45_fdpwp")]
+transform = Transform3D(3.76148, 0, -3.4493, 0, 5.10357, 0, 3.4493, 0, 3.76148, -28.2667, 99.5222, -1766.04)
+
+[node name="Label3D2" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 98.9468, -1736.69)
+modulate = Color(1, 1, 0, 1)
+outline_modulate = Color(0.462745, 0, 0.784314, 1)
+text = "FINISH"
+font = ExtResource("37_eeo2s")
+font_size = 1122
+
+[node name="Label3D3" type="Label3D" parent="."]
+transform = Transform3D(0.156094, 0, -0.270364, 0, 0.312189, 0, 0.270364, 0, 0.156094, 30.6284, 107.685, -1759.89)
+modulate = Color(1, 1, 0, 1)
+outline_modulate = Color(0.462745, 0, 0.784314, 1)
+text = "Winning screen yet
+to be added :D"
+font = ExtResource("37_eeo2s")
+font_size = 1122
 
 [connection signal="body_entered" from="Area3D4" to="CharacterRigid" method="_on_low_g_zone_entered"]
 [connection signal="body_exited" from="Area3D4" to="CharacterRigid" method="_on_area_3d_body_exited"]

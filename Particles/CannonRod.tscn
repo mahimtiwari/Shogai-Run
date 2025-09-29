@@ -15,7 +15,7 @@ grow_duration = 0.15
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.217575, 0.448204, -0.00512695)
 stream = ExtResource("3_f5bl1")
 volume_db = 6.0
-unit_size = 28.2
+unit_size = 10.64
 max_db = 6.0
 pitch_scale = 0.68
 
