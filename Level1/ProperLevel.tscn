@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://dp8ntlbnsjm35"]
+[gd_scene load_steps=58 format=3 uid="uid://dp8ntlbnsjm35"]
 
 [ext_resource type="PackedScene" uid="uid://cjir0nllr70ct" path="res://Level1/spawn_block_15x_8_blend.tscn" id="2_gdkdi"]
 [ext_resource type="Texture2D" uid="uid://oodasrchstxr" path="res://73_bbefdfe7df90c2ce3b16f344fb358d93_file.jpg" id="3_gdkdi"]
@@ -48,6 +48,7 @@
 [ext_resource type="PackedScene" uid="uid://udneobqxmmq6" path="res://Level Design Objects/border/border_connectors.tscn" id="46_8hylh"]
 [ext_resource type="PackedScene" uid="uid://dhfrj7g70gfla" path="res://Level Design Objects/net/net.tscn" id="47_t1v87"]
 [ext_resource type="PackedScene" uid="uid://ba0op4bob6kte" path="res://Level Design Objects/border/single_cyl_node.tscn" id="48_hes6s"]
+[ext_resource type="PackedScene" uid="uid://3pih7v5fgbmw" path="res://Level Design Objects/decorations/direction pointers/direction_pointer_1.tscn" id="49_hes6s"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_bfu0y"]
 panorama = ExtResource("3_gdkdi")
@@ -1339,21 +1340,21 @@ transform = Transform3D(-3.98822e-07, 0, -9.12397, 0, 9.12397, 0, 9.12397, 0, -3
 checkpoint_index = 5
 
 [node name="DiskRotator" parent="." instance=ExtResource("36_ll2rk")]
-transform = Transform3D(4.45546, -6.72756e-07, 2.61144, -7.79798e-07, -5.16437, -8.98128e-13, 2.61144, -3.94316e-07, -4.45546, 0, 19.62, -1330.62)
+transform = Transform3D(4.54343, -6.86039e-07, 2.45519, -7.79799e-07, -5.16437, -8.41285e-13, 2.45519, -3.70723e-07, -4.54343, 0, 19.62, -1330.62)
 rotation_speed = 0.5
 color = Color(0.894118, 0.27451, 0.380392, 1)
 
 [node name="DiskRotator4" parent="." instance=ExtResource("36_ll2rk")]
-transform = Transform3D(-3.30943, 0, -1.93973, 0, 1.458, 0, 1.93973, 0, -3.30943, 0, 24.6506, -1330.62)
+transform = Transform3D(-3.37478, 0, -1.82367, 0, 1.458, 0, 1.82367, 0, -3.37478, 0, 24.6506, -1330.62)
 color = Color(0.894118, 0.396078, 0, 1)
 
 [node name="DiskRotator2" parent="." instance=ExtResource("36_ll2rk")]
-transform = Transform3D(2.39466, -1.89956e-07, 1.40356, -4.19115e-07, -1.45819, -5.37036e-14, 1.40356, -1.11338e-07, -2.39466, 0, 25.1938, -1330.62)
+transform = Transform3D(2.44194, -1.93707e-07, 1.31958, -4.19116e-07, -1.45819, -9.77409e-13, 1.31958, -1.04676e-07, -2.44194, 0, 25.1938, -1330.62)
 rotation_speed = 0.5
 color = Color(0, 0.553181, 0.899129, 1)
 
 [node name="DiskRotator3" parent="." instance=ExtResource("36_ll2rk")]
-transform = Transform3D(-1.55809, 0, -0.913233, 0, 1.458, 0, 0.913233, 0, -1.55809, 0, 25.5763, -1330.69)
+transform = Transform3D(-1.58886, 0, -0.858593, 0, 1.458, 0, 0.858593, 0, -1.58886, 0, 25.5763, -1330.69)
 color = Color(0, 0.756863, 0.305882, 1)
 
 [node name="Label3D" type="Label3D" parent="."]
@@ -1731,6 +1732,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.803, 7.93415, -514.04)
 
 [node name="Border_Connectors9" parent="." instance=ExtResource("46_8hylh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4.22994, 75.803, 7.872, -522.223)
+
+[node name="direction_pointer2" parent="." instance=ExtResource("49_hes6s")]
+transform = Transform3D(-1.41938e-07, 3.24717, -2.83876e-07, 3.24717, 1.41938e-07, -1.24086e-14, 0, -2.83876e-07, -3.24717, -1.77836e-07, 5.106, -28.3082)
+
+[node name="direction_pointer3" parent="." instance=ExtResource("49_hes6s")]
+transform = Transform3D(-1.41938e-07, 3.24717, -2.83876e-07, 3.24717, 1.41938e-07, -1.24086e-14, 0, -2.83876e-07, -3.24717, -1.69067e-06, 5.106, -45.613)
 
 [connection signal="body_entered" from="Area3D4" to="CharacterRigid" method="_on_low_g_zone_entered"]
 [connection signal="body_exited" from="Area3D4" to="CharacterRigid" method="_on_area_3d_body_exited"]
