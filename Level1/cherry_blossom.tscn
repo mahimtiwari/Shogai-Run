@@ -39,9 +39,11 @@ material = SubResource("StandardMaterial3D_mkwyo")
 orientation = 0
 
 [node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00118256, 0.0997877, 0.0138969)
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
-amount = 50
+transform = Transform3D(1, 0, 0, 0, 1.85152, 0, 0, 0, 6.5347, 0, 0, 0)
+amount = 100
 lifetime = 5.0
 preprocess = 0.5
 process_material = SubResource("ParticleProcessMaterial_hj3sm")
