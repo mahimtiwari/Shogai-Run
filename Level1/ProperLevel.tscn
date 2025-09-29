@@ -84,18 +84,6 @@ environment = SubResource("Environment_dsrnb")
 
 [node name="CharacterRigid" parent="." instance=ExtResource("26_jqvxq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 26.0807, -1146.21)
-rotation_sensitivity = null
-lower_angle = null
-upper_angle = null
-rotation_speed = null
-jump_force = null
-impulse_scale = null
-TARGET_SPEED = null
-_lowGravity = null
-jumpX = null
-_lowGravityPitch = null
-max_slope_angle = null
-min_slope_angle = null
 
 [node name="spawnBlock15x8_blend2" parent="." instance=ExtResource("2_gdkdi")]
 transform = Transform3D(1.11075, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0.784507, -37.991)
@@ -623,6 +611,69 @@ transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2
 [node name="Coin16" parent="all_coins" instance=ExtResource("13_b3pp6")]
 transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, -73.8392, -6.8806, -263.571)
 
+[node name="Coin36" parent="all_coins" instance=ExtResource("13_b3pp6")]
+transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, -6.7758, 11.1214, -454.48)
+
+[node name="Coin37" parent="all_coins" instance=ExtResource("13_b3pp6")]
+transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, 6.74229, 11.1214, -428.511)
+
+[node name="Coin38" parent="all_coins" instance=ExtResource("13_b3pp6")]
+transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, 7.29227, 11.1214, -481.527)
+
+[node name="Coin39" parent="all_coins" instance=ExtResource("13_b3pp6")]
+transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, -6.86158, 11.1214, -389.796)
+
+[node name="Coin40" parent="all_coins" instance=ExtResource("13_b3pp6")]
+transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, -30.3, 5.59085, -602.339)
+
+[node name="Coin41" parent="all_coins" instance=ExtResource("13_b3pp6")]
+transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, 30.3, 5.59036, -602.339)
+
+[node name="Coin42" parent="all_coins" instance=ExtResource("13_b3pp6")]
+transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, 20.9979, 31.1592, -996.608)
+
+[node name="Coin43" parent="all_coins" instance=ExtResource("13_b3pp6")]
+transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, -20.9148, 31.1592, -1017.81)
+
+[node name="Coin44" parent="all_coins" instance=ExtResource("13_b3pp6")]
+transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, -20.774, 31.1592, -975.453)
+
+[node name="Coin54" parent="all_coins" instance=ExtResource("13_b3pp6")]
+transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, -41.7826, 31.1592, -954.783)
+
+[node name="Coin55" parent="all_coins" instance=ExtResource("13_b3pp6")]
+transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, 63.486, 31.1592, -997.026)
+
+[node name="Coin56" parent="all_coins" instance=ExtResource("13_b3pp6")]
+transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, 0.347446, 31.1592, -1059.6)
+
+[node name="Coin45" parent="all_coins" instance=ExtResource("13_b3pp6")]
+transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, 42.1505, 31.1592, -1038.95)
+
+[node name="Coin46" parent="all_coins" instance=ExtResource("13_b3pp6")]
+transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, -42.0805, 31.1592, -1080.73)
+
+[node name="Coin47" parent="all_coins" instance=ExtResource("13_b3pp6")]
+transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, 41.8188, 31.1592, -1101.62)
+
+[node name="Coin52" parent="all_coins" instance=ExtResource("13_b3pp6")]
+transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, -0.0757141, 31.1592, -1123.1)
+
+[node name="Coin53" parent="all_coins" instance=ExtResource("13_b3pp6")]
+transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, -63.03, 31.1592, -996.623)
+
+[node name="Coin48" parent="all_coins" instance=ExtResource("13_b3pp6")]
+transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, 41.9677, 31.1592, -955.102)
+
+[node name="Coin49" parent="all_coins" instance=ExtResource("13_b3pp6")]
+transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, -62.6408, 31.1592, -1122.85)
+
+[node name="Coin50" parent="all_coins" instance=ExtResource("13_b3pp6")]
+transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, -0.296616, 31.1592, -1081.06)
+
+[node name="Coin51" parent="all_coins" instance=ExtResource("13_b3pp6")]
+transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, -60.9827, 31.1592, -1039.61)
+
 [node name="baseCubeBlockSRound" parent="." instance=ExtResource("11_kgqs6")]
 transform = Transform3D(7.87175, 0, -7.87175, 0, 9.47103, 0, 7.87175, 0, 7.87175, -25.5961, -33.5311, -171.541)
 color = Color(0.953219, 0.437932, 0.543868, 1)
@@ -1147,6 +1198,31 @@ transform = Transform3D(-1.87962e-07, 0, 4.30007, 0, 10.1978, 0, -4.30007, 0, -1
 texture_albedo = ExtResource("33_tu6wb")
 cull_mask = 1048573
 
+[node name="Decal20" type="Decal" parent="LevelDecals"]
+transform = Transform3D(-1.87962e-07, 0, 4.30007, 0, 10.1978, 0, -4.30007, 0, -1.87962e-07, 0, 27.184, -1165.06)
+texture_albedo = ExtResource("33_tu6wb")
+cull_mask = 1048573
+
+[node name="Decal21" type="Decal" parent="LevelDecals"]
+transform = Transform3D(-1.87962e-07, 0, 4.30007, 0, 10.1978, 0, -4.30007, 0, -1.87962e-07, 30.67, 27.184, -1165.06)
+texture_albedo = ExtResource("33_tu6wb")
+cull_mask = 1048573
+
+[node name="Decal22" type="Decal" parent="LevelDecals"]
+transform = Transform3D(-1.87962e-07, 0, 4.30007, 0, 10.1978, 0, -4.30007, 0, -1.87962e-07, 61.34, 27.184, -1165.06)
+texture_albedo = ExtResource("33_tu6wb")
+cull_mask = 1048573
+
+[node name="Decal23" type="Decal" parent="LevelDecals"]
+transform = Transform3D(-1.87962e-07, 0, 4.30007, 0, 10.1978, 0, -4.30007, 0, -1.87962e-07, -61.34, 27.184, -1165.06)
+texture_albedo = ExtResource("33_tu6wb")
+cull_mask = 1048573
+
+[node name="Decal24" type="Decal" parent="LevelDecals"]
+transform = Transform3D(-1.87962e-07, 0, 4.30007, 0, 10.1978, 0, -4.30007, 0, -1.87962e-07, -30.67, 27.184, -1165.06)
+texture_albedo = ExtResource("33_tu6wb")
+cull_mask = 1048573
+
 [node name="Decal10" type="Decal" parent="LevelDecals"]
 transform = Transform3D(2.03249e-14, -23.9079, -4.6498e-07, -4.6498e-07, -1.04505e-06, 10.6375, -10.6375, 0, -4.6498e-07, -17.6051, 40.7535, -879.683)
 texture_albedo = ExtResource("32_8g8un")
@@ -1187,26 +1263,34 @@ cull_mask = 1048573
 transform = Transform3D(5.16987, 0, 0, 0, 5.16987, 0, 0, 0, 5.16987, 0, 20.5873, -1169.86)
 color = Color(0.00392157, 0.603922, 0.984314, 1)
 
+[node name="Sublevel5_base2" parent="." instance=ExtResource("35_1a656")]
+transform = Transform3D(-5.16987, 0, 4.51964e-07, 0, 5.16987, 0, -4.51964e-07, 0, -5.16987, 0, 20.5873, -1491.86)
+color = Color(0.00392157, 0.603922, 0.984314, 1)
+
 [node name="CheckPoint5" parent="." instance=ExtResource("21_hugtb")]
-transform = Transform3D(-3.98822e-07, 0, -9.12397, 0, 9.12397, 0, 9.12397, 0, -3.98822e-07, 0.351936, 29.9399, -1156.27)
+transform = Transform3D(-3.98822e-07, 0, -9.12397, 0, 9.12397, 0, 9.12397, 0, -3.98822e-07, 0.351936, 29.9399, -1165.27)
 checkpoint_index = 4
 
+[node name="CheckPoint6" parent="." instance=ExtResource("21_hugtb")]
+transform = Transform3D(-3.98822e-07, 0, -9.12397, 0, 9.12397, 0, 9.12397, 0, -3.98822e-07, 0.351936, 29.9399, -1492.78)
+checkpoint_index = 5
+
 [node name="DiskRotator" parent="." instance=ExtResource("36_ll2rk")]
-transform = Transform3D(-0.239861, 3.62179e-08, 5.1588, -7.79799e-07, -5.16437, -1.04687e-13, 5.1588, -7.78957e-07, 0.239861, 0, 19.62, -1330.62)
+transform = Transform3D(5.11685, -7.72623e-07, -0.69896, -7.79799e-07, -5.16437, 1.20789e-14, -0.69896, 1.0554e-07, -5.11685, 0, 19.62, -1330.62)
 rotation_speed = 0.5
 color = Color(0.894118, 0.27451, 0.380392, 1)
 
 [node name="DiskRotator4" parent="." instance=ExtResource("36_ll2rk")]
-transform = Transform3D(0.178164, 0, -3.83186, 0, 1.458, 0, 3.83186, 0, 0.178164, 0, 24.6506, -1330.62)
+transform = Transform3D(-3.8007, 0, 0.519174, 0, 1.458, 0, -0.519174, 0, -3.8007, 0, 24.6506, -1330.62)
 color = Color(0.894118, 0.396078, 0, 1)
 
 [node name="DiskRotator2" parent="." instance=ExtResource("36_ll2rk")]
-transform = Transform3D(-0.128914, 1.02258e-08, 2.77268, -4.19115e-07, -1.45819, -5.63223e-13, 2.77268, -2.19943e-07, 0.128914, 0, 25.1938, -1330.62)
+transform = Transform3D(2.75014, -2.18155e-07, -0.375667, -4.19115e-07, -1.45819, -5.97743e-13, -0.375667, 2.98001e-08, -2.75014, 0, 25.1938, -1330.62)
 rotation_speed = 0.5
 color = Color(0, 0.553181, 0.899129, 1)
 
 [node name="DiskRotator3" parent="." instance=ExtResource("36_ll2rk")]
-transform = Transform3D(0.083877, 0, -1.80406, 0, 1.458, 0, 1.80406, 0, 0.083877, 0, 25.5763, -1330.69)
+transform = Transform3D(-1.78939, 0, 0.24443, 0, 1.458, 0, -0.24443, 0, -1.78939, 0, 25.5763, -1330.69)
 color = Color(0, 0.756863, 0.305882, 1)
 
 [node name="Label3D" type="Label3D" parent="."]
@@ -1221,6 +1305,51 @@ outline_size = 127
 
 [node name="Sub5RotatorRod" parent="." instance=ExtResource("38_icw5w")]
 transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 0, 31.1772, -1330.69)
+
+[node name="pusher_row9" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.149338, -1533.85)
+
+[node name="RandomRotationBounceBox5" parent="pusher_row9" instance=ExtResource("31_gaq7e")]
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -63, 16.802, 0)
+front = 50.0
+back = 25.0
+sideways = 15.0
+
+[node name="RandomRotationBounceBox6" parent="pusher_row9" instance=ExtResource("31_gaq7e")]
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -42, 16.802, 0)
+front = 50.0
+back = 25.0
+sideways = 15.0
+
+[node name="RandomRotationBounceBox7" parent="pusher_row9" instance=ExtResource("31_gaq7e")]
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -21, 16.802, 0)
+front = 50.0
+back = 25.0
+sideways = 15.0
+
+[node name="RandomRotationBounceBox" parent="pusher_row9" instance=ExtResource("31_gaq7e")]
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, -2.98023e-08, 16.802, 6.10352e-05)
+front = 50.0
+back = 25.0
+sideways = 15.0
+
+[node name="RandomRotationBounceBox2" parent="pusher_row9" instance=ExtResource("31_gaq7e")]
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 21, 16.802, 0)
+front = 50.0
+back = 25.0
+sideways = 15.0
+
+[node name="RandomRotationBounceBox3" parent="pusher_row9" instance=ExtResource("31_gaq7e")]
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 42, 16.802, 0)
+front = 50.0
+back = 25.0
+sideways = 15.0
+
+[node name="RandomRotationBounceBox4" parent="pusher_row9" instance=ExtResource("31_gaq7e")]
+transform = Transform3D(7.67106, 0, 0, 0, 7.67106, 0, 0, 0, 7.67106, 63, 16.802, 0)
+front = 50.0
+back = 25.0
+sideways = 15.0
 
 [connection signal="body_entered" from="Area3D4" to="CharacterRigid" method="_on_low_g_zone_entered"]
 [connection signal="body_exited" from="Area3D4" to="CharacterRigid" method="_on_area_3d_body_exited"]

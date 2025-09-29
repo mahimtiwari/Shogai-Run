@@ -64,6 +64,7 @@ height = 2.84
 radius = 27.5962
 
 [node name="DiskRotator" type="StaticBody3D"]
+transform = Transform3D(-0.178245, 0, -0.983986, 0, 1, 0, 0.983986, 0, -0.178245, 0, 0, 0)
 script = ExtResource("1_hfbe3")
 
 [node name="Cube" type="MeshInstance3D" parent="."]

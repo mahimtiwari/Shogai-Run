@@ -51,7 +51,6 @@ func _physics_process(delta: float) -> void:
 		else:
 			player.global_transform.basis = player.global_transform.basis.slerp(GameLevelManager.player_global_transform_basis, 0.1)
 			
-
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		player = body as RigidBody3D

@@ -10,6 +10,12 @@ extends Node3D
 @export var min_push_t_value: float = 5
 @export var max_push_t_value: float = 8
 
+@export_category("Direction Bias")
+@export var front: float = 10
+@export var back: float = 30
+@export var sideways: float = 50
+@export var up: float = 10
+
 @onready var pusher_rigid_body: RigidBody3D = $PusherRigidBody
 @onready var pusher_mesh: MeshInstance3D = $PusherRigidBody/Pusher
 @onready var decal: Decal = $Decal
@@ -29,11 +35,11 @@ func angle_r(base:float)->Vector3:
 	var ve:int = [1,-1].pick_random()
 	var n: float = randf()*100
 	
-	if n<=10:
+	if n<=up:
 		return Vector3.ZERO
-	elif n<=40:
+	elif n<=up+back:
 		return Vector3(base,0,0)
-	elif n<=50:
+	elif n<=up+back+front:
 		return Vector3(-base,0,0)
 	else:
 		return Vector3(0, 0, base)*ve
