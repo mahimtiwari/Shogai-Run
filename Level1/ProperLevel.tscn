@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://dp8ntlbnsjm35"]
+[gd_scene load_steps=59 format=3 uid="uid://dp8ntlbnsjm35"]
 
 [ext_resource type="PackedScene" uid="uid://cjir0nllr70ct" path="res://Level1/spawn_block_15x_8_blend.tscn" id="2_gdkdi"]
 [ext_resource type="Texture2D" uid="uid://oodasrchstxr" path="res://73_bbefdfe7df90c2ce3b16f344fb358d93_file.jpg" id="3_gdkdi"]
@@ -49,6 +49,7 @@
 [ext_resource type="PackedScene" uid="uid://dhfrj7g70gfla" path="res://Level Design Objects/net/net.tscn" id="47_t1v87"]
 [ext_resource type="PackedScene" uid="uid://ba0op4bob6kte" path="res://Level Design Objects/border/single_cyl_node.tscn" id="48_hes6s"]
 [ext_resource type="PackedScene" uid="uid://3pih7v5fgbmw" path="res://Level Design Objects/decorations/direction pointers/direction_pointer_1.tscn" id="49_hes6s"]
+[ext_resource type="PackedScene" uid="uid://7r1fup3rgmy1" path="res://Level Design Objects/decorations/floating direction pointer/Floating Direction Pointer.tscn" id="50_ek4gr"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_bfu0y"]
 panorama = ExtResource("3_gdkdi")
@@ -69,7 +70,7 @@ volumetric_fog_density = 0.0097
 size = Vector3(7.375, 1, 36.7444)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jggfg"]
-size = Vector3(2.82788, 2.11627, 1.40479)
+size = Vector3(3.36133, 2.11627, 1.40479)
 
 [sub_resource type="BoxMesh" id="BoxMesh_jqvxq"]
 
@@ -874,11 +875,11 @@ transform = Transform3D(1.71794, 0, 0, 0, 1.71794, 0, 0, 0, 1.71794, 0, 6.31794,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.9212, -17.3262, -249.59)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D4"]
-transform = Transform3D(18.3143, 0, 0, 0, 18.3143, 0, 0, 0, 18.3143, 2.54865, 3.52481, -17.1386)
+transform = Transform3D(18.3143, 0, 0, 0, 18.3143, 0, 0, 0, 18.3143, 5.86857, 3.52481, -17.1386)
 shape = SubResource("BoxShape3D_jggfg")
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="Area3D4"]
-transform = Transform3D(51.4656, 0, 0, 0, 38.2857, 0, 0, 0, 25.668, 2.64926, 3.33534, -17)
+transform = Transform3D(58.0637, 0, 0, 0, 38.2857, 0, 0, 0, 25.668, 6.07194, 3.33534, -17)
 mesh = SubResource("BoxMesh_jqvxq")
 material = SubResource("StandardMaterial3D_0y3g0")
 
@@ -886,11 +887,11 @@ material = SubResource("StandardMaterial3D_0y3g0")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.9984, -17.3262, -249.59)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D5"]
-transform = Transform3D(18.3143, 0, 0, 0, 18.3143, 0, 0, 0, 18.3143, 2.54865, 3.52481, -17.1386)
+transform = Transform3D(18.3143, 0, 0, 0, 18.3143, 0, 0, 0, 18.3143, 0.983704, 3.52481, -17.1386)
 shape = SubResource("BoxShape3D_jggfg")
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="Area3D5"]
-transform = Transform3D(51.4656, 0, 0, 0, 38.2857, 0, 0, 0, 25.668, 2.64926, 3.33534, -17)
+transform = Transform3D(58.0637, 0, 0, 0, 38.2857, 0, 0, 0, 25.668, -0.79738, 3.33534, -17)
 mesh = SubResource("BoxMesh_jqvxq")
 material = SubResource("StandardMaterial3D_0y3g0")
 
@@ -1340,21 +1341,21 @@ transform = Transform3D(-3.98822e-07, 0, -9.12397, 0, 9.12397, 0, 9.12397, 0, -3
 checkpoint_index = 5
 
 [node name="DiskRotator" parent="." instance=ExtResource("36_ll2rk")]
-transform = Transform3D(4.54343, -6.86039e-07, 2.45519, -7.79799e-07, -5.16437, -8.41285e-13, 2.45519, -3.70723e-07, -4.54343, 0, 19.62, -1330.62)
+transform = Transform3D(-2.90739, 4.39004e-07, 4.26823, -7.79798e-07, -5.16437, -3.90445e-13, 4.26823, -6.44485e-07, 2.90739, 0, 19.62, -1330.62)
 rotation_speed = 0.5
 color = Color(0.894118, 0.27451, 0.380392, 1)
 
 [node name="DiskRotator4" parent="." instance=ExtResource("36_ll2rk")]
-transform = Transform3D(-3.37478, 0, -1.82367, 0, 1.458, 0, 1.82367, 0, -3.37478, 0, 24.6506, -1330.62)
+transform = Transform3D(2.15956, 0, -3.17037, 0, 1.458, 0, 3.17037, 0, 2.15956, 0, 24.6506, -1330.62)
 color = Color(0.894118, 0.396078, 0, 1)
 
 [node name="DiskRotator2" parent="." instance=ExtResource("36_ll2rk")]
-transform = Transform3D(2.44194, -1.93707e-07, 1.31958, -4.19116e-07, -1.45819, -9.77409e-13, 1.31958, -1.04676e-07, -2.44194, 0, 25.1938, -1330.62)
+transform = Transform3D(-1.56263, 1.23956e-07, 2.29403, -4.19116e-07, -1.45819, 4.3518e-13, 2.29403, -1.81974e-07, 1.56263, 0, 25.1938, -1330.62)
 rotation_speed = 0.5
 color = Color(0, 0.553181, 0.899129, 1)
 
 [node name="DiskRotator3" parent="." instance=ExtResource("36_ll2rk")]
-transform = Transform3D(-1.58886, 0, -0.858593, 0, 1.458, 0, 0.858593, 0, -1.58886, 0, 25.5763, -1330.69)
+transform = Transform3D(1.01673, 0, -1.49262, 0, 1.458, 0, 1.49262, 0, 1.01673, 0, 25.5763, -1330.69)
 color = Color(0, 0.756863, 0.305882, 1)
 
 [node name="Label3D" type="Label3D" parent="."]
@@ -1707,7 +1708,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4.22994, -84.794, 7.872, -312.19
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.8031, 7.93415, -491.515)
 
 [node name="Border_Pillar22" parent="." instance=ExtResource("45_8hylh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.8031, 7.93415, -552.04)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.8031, 7.57999, -562.248)
+
+[node name="Border_Pillar30" parent="." instance=ExtResource("45_8hylh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.8031, -1.87828, -592.406)
+
+[node name="Border_Pillar29" parent="." instance=ExtResource("45_8hylh")]
+transform = Transform3D(1, 0, 0, 0, 0.945609, 0.325304, 0, -0.325304, 0.945609, -75.8031, 2.83542, -577.619)
 
 [node name="Border_Pillar23" parent="." instance=ExtResource("45_8hylh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.8031, 7.93415, -534.04)
@@ -1716,13 +1723,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.8031, 7.93415, -534.04)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.8031, 7.93415, -514.04)
 
 [node name="Border_Connectors8" parent="." instance=ExtResource("46_8hylh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4.22994, -75.803, 7.872, -522.022)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4.88813, -75.803, 7.872, -526.964)
+
+[node name="Border_Connectors10" parent="." instance=ExtResource("46_8hylh")]
+transform = Transform3D(1, 0, 0, 0, 0.945518, 0.358169, 0, -0.325568, 1.0402, -75.803, 5.27774, -570.171)
+
+[node name="Border_Connectors11" parent="." instance=ExtResource("46_8hylh")]
+transform = Transform3D(1, 0, 0, 0, 0.945518, 0.358169, 0, -0.325568, 1.0402, -75.803, 0.104127, -585.196)
 
 [node name="Border_Pillar25" parent="." instance=ExtResource("45_8hylh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.803, 7.93415, -491.515)
 
 [node name="Border_Pillar26" parent="." instance=ExtResource("45_8hylh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.803, 7.93415, -552.04)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.803, 7.57999, -562.248)
+
+[node name="Border_Pillar31" parent="." instance=ExtResource("45_8hylh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.803, -1.87828, -592.406)
+
+[node name="Border_Pillar32" parent="." instance=ExtResource("45_8hylh")]
+transform = Transform3D(1, 0, 0, 0, 0.945609, 0.325304, 0, -0.325304, 0.945609, 75.803, 2.83542, -577.619)
 
 [node name="Border_Pillar27" parent="." instance=ExtResource("45_8hylh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.803, 7.93415, -534.04)
@@ -1731,13 +1750,79 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.803, 7.93415, -534.04)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.803, 7.93415, -514.04)
 
 [node name="Border_Connectors9" parent="." instance=ExtResource("46_8hylh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4.22994, 75.803, 7.872, -522.223)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4.88813, 75.803, 7.872, -526.964)
+
+[node name="Border_Connectors12" parent="." instance=ExtResource("46_8hylh")]
+transform = Transform3D(1, 0, 0, 0, 0.945518, 0.358169, 0, -0.325568, 1.0402, 75.803, 5.27774, -570.171)
+
+[node name="Border_Connectors13" parent="." instance=ExtResource("46_8hylh")]
+transform = Transform3D(1, 0, 0, 0, 0.945518, 0.358169, 0, -0.325568, 1.0402, 75.803, 0.104127, -585.196)
 
 [node name="direction_pointer2" parent="." instance=ExtResource("49_hes6s")]
 transform = Transform3D(-1.41938e-07, 3.24717, -2.83876e-07, 3.24717, 1.41938e-07, -1.24086e-14, 0, -2.83876e-07, -3.24717, -1.77836e-07, 5.106, -28.3082)
 
 [node name="direction_pointer3" parent="." instance=ExtResource("49_hes6s")]
 transform = Transform3D(-1.41938e-07, 3.24717, -2.83876e-07, 3.24717, 1.41938e-07, -1.24086e-14, 0, -2.83876e-07, -3.24717, -1.69067e-06, 5.106, -45.613)
+
+[node name="Floating Direction Pointer" parent="." instance=ExtResource("50_ek4gr")]
+transform = Transform3D(1.92707, 0, 0.516358, 0, 1.99505, 0, -0.516358, 0, 1.92707, 19.7118, 14.5641, -36.0267)
+
+[node name="Floating Direction Pointer2" parent="." instance=ExtResource("50_ek4gr")]
+transform = Transform3D(1.92707, 0, -0.516358, 0, 1.99505, 0, 0.516358, 0, 1.92707, -19.712, 14.564, -36.027)
+
+[node name="Floating Direction Pointer3" parent="." instance=ExtResource("50_ek4gr")]
+transform = Transform3D(5.30897, 0, -1.18436, 0, 5.43947, 0, 1.18436, 0, 5.30897, -94.7228, 38.4442, -984.781)
+
+[node name="Floating Direction Pointer4" parent="." instance=ExtResource("50_ek4gr")]
+transform = Transform3D(5.30897, 0, -1.18436, 0, 5.43947, 0, 1.18436, 0, 5.30897, -94.7226, 38.4442, -1056.24)
+
+[node name="Floating Direction Pointer5" parent="." instance=ExtResource("50_ek4gr")]
+transform = Transform3D(5.30897, 0, -1.18436, 0, 5.43947, 0, 1.18436, 0, 5.30897, -94.7226, 38.4442, -1123.93)
+
+[node name="Floating Direction Pointer6" parent="." instance=ExtResource("50_ek4gr")]
+transform = Transform3D(5.30847, 0, 1.18658, 0, 5.43947, 0, -1.18658, 0, 5.30847, 94.723, 38.4442, -984.781)
+
+[node name="Floating Direction Pointer7" parent="." instance=ExtResource("50_ek4gr")]
+transform = Transform3D(5.30847, 0, 1.18658, 0, 5.43947, 0, -1.18658, 0, 5.30847, 94.723, 38.4442, -1056.24)
+
+[node name="Floating Direction Pointer8" parent="." instance=ExtResource("50_ek4gr")]
+transform = Transform3D(5.30847, 0, 1.18658, 0, 5.43947, 0, -1.18658, 0, 5.30847, 94.723, 38.4442, -1123.93)
+
+[node name="Border_Pillar33" parent="." instance=ExtResource("45_8hylh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.072, 28.154, -1169.92)
+
+[node name="Border_Pillar36" parent="." instance=ExtResource("45_8hylh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.072, 28.154, -1185.98)
+
+[node name="Border_Pillar35" parent="." instance=ExtResource("45_8hylh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.0717, 28.1538, -1137.81)
+
+[node name="Border_Pillar37" parent="." instance=ExtResource("45_8hylh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.072, 28.154, -1153.87)
+
+[node name="Border_Pillar34" parent="." instance=ExtResource("45_8hylh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.0717, 28.1538, -1202.03)
+
+[node name="Border_Connectors14" parent="." instance=ExtResource("46_8hylh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4.52026, -76.072, 28.091, -1170.08)
+
+[node name="Border_Pillar38" parent="." instance=ExtResource("45_8hylh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.072, 28.154, -1169.92)
+
+[node name="Border_Pillar39" parent="." instance=ExtResource("45_8hylh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.072, 28.154, -1185.98)
+
+[node name="Border_Pillar40" parent="." instance=ExtResource("45_8hylh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.072, 28.1538, -1137.81)
+
+[node name="Border_Pillar41" parent="." instance=ExtResource("45_8hylh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.072, 28.154, -1153.87)
+
+[node name="Border_Pillar42" parent="." instance=ExtResource("45_8hylh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.072, 28.1538, -1202.03)
+
+[node name="Border_Connectors15" parent="." instance=ExtResource("46_8hylh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4.52026, 76.072, 28.091, -1169.95)
 
 [connection signal="body_entered" from="Area3D4" to="CharacterRigid" method="_on_low_g_zone_entered"]
 [connection signal="body_exited" from="Area3D4" to="CharacterRigid" method="_on_area_3d_body_exited"]
