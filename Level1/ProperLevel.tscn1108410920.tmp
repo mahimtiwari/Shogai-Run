@@ -1,7 +1,8 @@
 [gd_scene load_steps=61 format=3 uid="uid://dp8ntlbnsjm35"]
 
+[ext_resource type="Script" uid="uid://btgb7rn2aawvp" path="res://Level1/proper_level.gd" id="1_ywlas"]
 [ext_resource type="PackedScene" uid="uid://cjir0nllr70ct" path="res://Level1/spawn_block_15x_8_blend.tscn" id="2_gdkdi"]
-[ext_resource type="Texture2D" uid="uid://udkx6f8mtwst" path="res://skybox-light-blue-sky-3d-model-bad93c2d7f.webp" id="2_ywlas"]
+[ext_resource type="Texture2D" uid="uid://oodasrchstxr" path="res://73_bbefdfe7df90c2ce3b16f344fb358d93_file.jpg" id="3_gdkdi"]
 [ext_resource type="PackedScene" uid="uid://di0nqs4ve7swx" path="res://general_obst/Rotating/rotator_rigid_large.tscn" id="5_jggfg"]
 [ext_resource type="PackedScene" uid="uid://dxsdo1gfjt54a" path="res://general_obst/bases/round_cylinder_sm_blend.tscn" id="6_att4f"]
 [ext_resource type="PackedScene" uid="uid://bio0tdd4mo587" path="res://general_obst/fall_platform_hexagon/hexagon.tscn" id="8_82quq"]
@@ -24,7 +25,6 @@
 [ext_resource type="PackedScene" uid="uid://dwkk12vbpo1mm" path="res://general_obst/Rotating/rope_rigid.tscn" id="26_1ayr7"]
 [ext_resource type="Texture2D" uid="uid://sfoki57exsli" path="res://general_obst/conveyr/pink_conveyr_down.png" id="26_38bxg"]
 [ext_resource type="PackedScene" uid="uid://br8btcq1cxfj5" path="res://general_obst/CannonShells/roller.tscn" id="26_jggfg"]
-[ext_resource type="PackedScene" uid="uid://dcv6cr8kju056" path="res://player rigid body.tscn" id="26_jqvxq"]
 [ext_resource type="PackedScene" uid="uid://cvg8ow88mcfp" path="res://general_obst/DyanmicWalls/dynamic_wall_obstacle.tscn" id="27_1ayr7"]
 [ext_resource type="Texture2D" uid="uid://bk5k84dtmtviy" path="res://Level1/bouncer_arrow.png" id="27_1s82q"]
 [ext_resource type="Script" uid="uid://5hweuprq4ear" path="res://Level1/custom_bouncer_local.gd" id="27_38bxg"]
@@ -53,7 +53,7 @@
 [ext_resource type="Script" uid="uid://codcvdem38xhl" path="res://Level1/finish_line_area.gd" id="51_ywlas"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_bfu0y"]
-panorama = ExtResource("2_ywlas")
+panorama = ExtResource("3_gdkdi")
 energy_multiplier = 0.7
 
 [sub_resource type="Sky" id="Sky_t0ega"]
@@ -87,6 +87,7 @@ radius = 0.99
 size = Vector3(76.585, 46.745, 13.165)
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_ywlas")
 
 [node name="spawnBlock15x8_blend" parent="." instance=ExtResource("2_gdkdi")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0.95927, 1.76)
@@ -98,9 +99,6 @@ shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_dsrnb")
-
-[node name="CharacterRigid" parent="." instance=ExtResource("26_jqvxq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.4141, -518.597)
 
 [node name="spawnBlock15x8_blend2" parent="." instance=ExtResource("2_gdkdi")]
 transform = Transform3D(1.92361, 0, 0, 0, 5, 0, 0, 0, 5.82652, 0, 0.784507, -37.991)
@@ -520,6 +518,7 @@ transform = Transform3D(66.3921, 0, 0, 0, 66.3921, 0, 0, 0, 66.3921, 24.119, -11
 shape = SubResource("BoxShape3D_7v46q")
 
 [node name="GameLevelUi" parent="." instance=ExtResource("14_yh826")]
+visible = false
 
 [node name="all_coins" type="Node3D" parent="."]
 
@@ -1345,21 +1344,21 @@ transform = Transform3D(-3.98822e-07, 0, -9.12397, 0, 9.12397, 0, 9.12397, 0, -3
 checkpoint_index = 5
 
 [node name="DiskRotator" parent="." instance=ExtResource("36_ll2rk")]
-transform = Transform3D(-5.03077, 7.59625e-07, -1.16708, -7.79799e-07, -5.16437, 6.50737e-13, -1.16708, 1.76224e-07, 5.03077, 0, 19.62, -1330.62)
+transform = Transform3D(4.76194, -7.19033e-07, -1.99867, -7.79799e-07, -5.16437, 9.27241e-14, -1.99867, 3.0179e-07, -4.76194, 0, 19.62, -1330.62)
 rotation_speed = 0.5
 color = Color(0.894118, 0.27451, 0.380392, 1)
 
 [node name="DiskRotator4" parent="." instance=ExtResource("36_ll2rk")]
-transform = Transform3D(3.73676, 0, 0.866882, 0, 1.458, 0, -0.866882, 0, 3.73676, 0, 24.6506, -1330.62)
+transform = Transform3D(-3.53708, 0, 1.48457, 0, 1.458, 0, -1.48457, 0, -3.53708, 0, 24.6506, -1330.62)
 color = Color(0.894118, 0.396078, 0, 1)
 
 [node name="DiskRotator2" parent="." instance=ExtResource("36_ll2rk")]
-transform = Transform3D(-2.70388, 2.14485e-07, -0.627265, -4.19116e-07, -1.45819, 1.59598e-14, -0.627265, 4.97577e-08, 2.70388, 0, 25.1938, -1330.62)
+transform = Transform3D(2.55939, -2.03023e-07, -1.07422, -4.19116e-07, -1.45819, -2.46941e-13, -1.07422, 8.52123e-08, -2.55939, 0, 25.1938, -1330.62)
 rotation_speed = 0.5
 color = Color(0, 0.553181, 0.899129, 1)
 
 [node name="DiskRotator3" parent="." instance=ExtResource("36_ll2rk")]
-transform = Transform3D(1.75928, 0, 0.408131, 0, 1.458, 0, -0.408131, 0, 1.75928, 0, 25.5763, -1330.69)
+transform = Transform3D(-1.66527, 0, 0.698942, 0, 1.458, 0, -0.698942, 0, -1.66527, 0, 25.5763, -1330.69)
 color = Color(0, 0.756863, 0.305882, 1)
 
 [node name="Label3D" type="Label3D" parent="."]
@@ -1513,6 +1512,7 @@ font_size = 1122
 
 [node name="Label3D3" type="Label3D" parent="."]
 transform = Transform3D(0.156094, 0, -0.270364, 0, 0.312189, 0, 0.270364, 0, 0.156094, 30.6284, 107.685, -1759.89)
+visible = false
 modulate = Color(1, 1, 0, 1)
 outline_modulate = Color(0.462745, 0, 0.784314, 1)
 text = "Winning screen yet
@@ -2016,10 +2016,9 @@ script = ExtResource("51_ywlas")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.0863)
 shape = SubResource("BoxShape3D_ek4gr")
 
-[connection signal="body_entered" from="Area3D4" to="CharacterRigid" method="_on_low_g_zone_entered"]
-[connection signal="body_exited" from="Area3D4" to="CharacterRigid" method="_on_area_3d_body_exited"]
-[connection signal="body_entered" from="Area3D5" to="CharacterRigid" method="_on_low_g_zone_entered"]
-[connection signal="body_exited" from="Area3D5" to="CharacterRigid" method="_on_area_3d_body_exited"]
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.694947, -0.353033, -0.626431, 0, 0.87118, -0.490965, 0.719061, -0.341194, -0.605424, -19.4418, 102.812, -1773.5)
+
 [connection signal="body_entered" from="round_cylinder_sm_blend2/Area3D" to="round_cylinder_sm_blend2/Area3D" method="_on_area_l1_custom_bouncer_enter"]
 [connection signal="body_entered" from="round_cylinder_sm_blend3/Area3D" to="round_cylinder_sm_blend3/Area3D" method="_on_area_l1_custom_bouncer_enter"]
 [connection signal="body_entered" from="FinishLineArea" to="FinishLineArea" method="_on_body_entered"]

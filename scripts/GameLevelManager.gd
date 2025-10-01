@@ -15,7 +15,7 @@ var pusherOrientList: Array
 var move_direction: Vector3
 var player_global_transform_basis: Basis
 var disc_env_velocity: Vector3
-
+var level_finished: bool = false
 
 signal coin_amount_changed(amount: int)
 

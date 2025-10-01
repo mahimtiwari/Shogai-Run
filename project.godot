@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Shogai Run"
-run/main_scene="uid://dp8ntlbnsjm35"
+run/main_scene="uid://dvh2mrlug2wv3"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

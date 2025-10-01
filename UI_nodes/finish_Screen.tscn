@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://jn4cska6sd1r"]
+
+[ext_resource type="Script" uid="uid://c3qey45hm8n70" path="res://UI_nodes/game_level__ui.gd" id="1_pq7l5"]
+
+[node name="GameLevelUi" type="CanvasLayer"]
+script = ExtResource("1_pq7l5")

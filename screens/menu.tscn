@@ -1,0 +1,49 @@
+[gd_scene load_steps=10 format=3 uid="uid://dvh2mrlug2wv3"]
+
+[ext_resource type="Script" uid="uid://d1th2iyt011e6" path="res://screens/menu.gd" id="1_8qoiq"]
+[ext_resource type="Texture2D" uid="uid://udkx6f8mtwst" path="res://skybox-light-blue-sky-3d-model-bad93c2d7f.webp" id="1_dc0yw"]
+[ext_resource type="PackedScene" uid="uid://d2rsulfm0jx5p" path="res://Players/player1.tscn" id="3_dhgkt"]
+[ext_resource type="Script" uid="uid://bmflvo0cinrw6" path="res://screens/world_environment.gd" id="3_w6t7d"]
+[ext_resource type="PackedScene" uid="uid://bbe25dv3xjsfg" path="res://general_obst/fall_platform_hexagon/hexagon_menu.tscn" id="4_w6t7d"]
+[ext_resource type="PackedScene" uid="uid://dxc1f4axp38y0" path="res://general_obst/fall_platform_hexagon/hexagon_menu_spe.tscn" id="5_gq33n"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_o3ram"]
+panorama = ExtResource("1_dc0yw")
+
+[sub_resource type="Sky" id="Sky_lt0en"]
+sky_material = SubResource("PanoramaSkyMaterial_o3ram")
+
+[sub_resource type="Environment" id="Environment_dhgkt"]
+background_mode = 2
+sky = SubResource("Sky_lt0en")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_8qoiq")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_dhgkt")
+script = ExtResource("3_w6t7d")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.464233, -0.185708, 2.98023e-08, -0.371417, 0.928466, -0.5, 0.804075, 0.321656, -1.08669, 1.01438, 1.8822)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.028, 2.289)
+
+[node name="Player1" parent="." instance=ExtResource("3_dhgkt")]
+transform = Transform3D(0.447368, 0, 7.82203e-08, 0, 0.447368, 0, -7.82203e-08, 0, 0.447368, -3.18969e-07, 0.129648, -1.76906)
+
+[node name="hexagon3" parent="." instance=ExtResource("4_w6t7d")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 0, 0, 0.07)
+
+[node name="hexagon6" parent="." instance=ExtResource("4_w6t7d")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 1.603, 0, -0.885)
+
+[node name="hexagon7" parent="." instance=ExtResource("4_w6t7d")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -1.602, 0, -0.885)
+
+[node name="hexagon" parent="." instance=ExtResource("5_gq33n")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 0.00390816, 0, -1.77346)
