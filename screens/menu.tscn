@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dvh2mrlug2wv3"]
+[gd_scene load_steps=22 format=3 uid="uid://dvh2mrlug2wv3"]
 
 [ext_resource type="Script" uid="uid://d1th2iyt011e6" path="res://screens/menu.gd" id="1_8qoiq"]
 [ext_resource type="Texture2D" uid="uid://udkx6f8mtwst" path="res://skybox-light-blue-sky-3d-model-bad93c2d7f.webp" id="1_dc0yw"]
@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://bmflvo0cinrw6" path="res://screens/world_environment.gd" id="3_w6t7d"]
 [ext_resource type="PackedScene" uid="uid://bbe25dv3xjsfg" path="res://general_obst/fall_platform_hexagon/hexagon_menu.tscn" id="4_w6t7d"]
 [ext_resource type="PackedScene" uid="uid://dxc1f4axp38y0" path="res://general_obst/fall_platform_hexagon/hexagon_menu_spe.tscn" id="5_gq33n"]
-[ext_resource type="Texture2D" uid="uid://bsmf24gauagmy" path="res://screens/menu_ui/sidebar.png" id="7_gq33n"]
+[ext_resource type="Texture2D" uid="uid://b84alncdxmcar" path="res://screens/menu_ui/sidebar_dark.png" id="7_5fwss"]
 [ext_resource type="Texture2D" uid="uid://bgbposyg7nfew" path="res://screens/menu_ui/home.png" id="8_tsmig"]
 [ext_resource type="Texture2D" uid="uid://wi8awuybredb" path="res://screens/menu_ui/home_selected.png" id="9_45kd6"]
 [ext_resource type="Texture2D" uid="uid://ctdp05v1rqhuq" path="res://screens/menu_ui/settings.png" id="10_0jpem"]
@@ -14,7 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://d3qp2vqv3hq26" path="res://screens/menu_ui/dress.png" id="11_xao2u"]
 [ext_resource type="Texture2D" uid="uid://cdyos2axajufv" path="res://screens/menu_ui/settings_selected.png" id="12_b1fnv"]
 [ext_resource type="Texture2D" uid="uid://c3f6248mlxmc5" path="res://screens/menu_ui/dress_selected.png" id="14_yqvmf"]
-[ext_resource type="Texture2D" uid="uid://cfq6e3efuvsoq" path="res://screens/menu_ui/Untitled design (19).png" id="15_yqvmf"]
+[ext_resource type="Texture2D" uid="uid://c3amb02bu0jeu" path="res://screens/menu_ui/btn_1/normal.png" id="15_3gxtn"]
+[ext_resource type="Texture2D" uid="uid://dgpn8y2674je3" path="res://screens/menu_ui/btn_1/hover.png" id="16_3gxtn"]
+[ext_resource type="FontFile" uid="uid://cr7k02yb1xky8" path="res://UI_nodes/Jua-Regular.ttf" id="16_3x8jw"]
+[ext_resource type="Texture2D" uid="uid://cj5eql6ea8nfp" path="res://screens/menu_ui/btn_1/play icon.png" id="18_5fwss"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_o3ram"]
 panorama = ExtResource("1_dc0yw")
@@ -25,7 +28,7 @@ sky_material = SubResource("PanoramaSkyMaterial_o3ram")
 [sub_resource type="Environment" id="Environment_dhgkt"]
 background_mode = 2
 sky = SubResource("Sky_lt0en")
-sky_rotation = Vector3(0, 40.0451, 0)
+sky_rotation = Vector3(0, 46.9165, 0)
 tonemap_mode = 2
 glow_enabled = true
 
@@ -74,7 +77,7 @@ offset_bottom = 219.0
 grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(0.73, 0.73)
-texture = ExtResource("7_gq33n")
+texture = ExtResource("7_5fwss")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/NinePatchRect"]
 layout_mode = 1
@@ -119,17 +122,42 @@ texture_focused = ExtResource("14_yqvmf")
 script = ExtResource("10_xao2u")
 button_id = "dress"
 
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
-anchors_preset = 3
+[node name="dress2" type="TextureButton" parent="CanvasLayer"]
+texture_filter = 4
+offset_left = 880.0
+offset_top = 532.0
+offset_right = 2530.0
+offset_bottom = 1132.0
+scale = Vector2(0.14, 0.14)
+texture_normal = ExtResource("16_3gxtn")
+texture_hover = ExtResource("15_3gxtn")
+
+[node name="Label" type="Label" parent="CanvasLayer/dress2"]
+layout_mode = 1
+anchors_preset = 6
 anchor_left = 1.0
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -220.0
-offset_top = -131.0
-offset_right = 1700.0
-offset_bottom = 949.0
+anchor_bottom = 0.5
+offset_left = -1035.0
+offset_top = -181.857
+offset_right = -190.0
+offset_bottom = 186.143
 grow_horizontal = 0
-grow_vertical = 0
-scale = Vector2(0.105, 0.105)
-texture_normal = ExtResource("15_yqvmf")
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("16_3x8jw")
+theme_override_font_sizes/font_size = 360
+text = "PLAY"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/dress2"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 164.284
+offset_top = -200.0
+offset_right = 1164.28
+offset_bottom = 800.0
+grow_vertical = 2
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("18_5fwss")

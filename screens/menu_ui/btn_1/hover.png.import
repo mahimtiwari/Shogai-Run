@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://buqhkuiquyofo"
-path="res://.godot/imported/GOAL (7).png-71b902959e036ffa7b9ee602b16be8d0.ctex"
+uid="uid://dgpn8y2674je3"
+path="res://.godot/imported/hover.png-1a4d06984e9e9f7d3b2c9a9bf37377b9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://screens/menu_ui/btn_2/GOAL (7).png"
-dest_files=["res://.godot/imported/GOAL (7).png-71b902959e036ffa7b9ee602b16be8d0.ctex"]
+source_file="res://screens/menu_ui/btn_1/hover.png"
+dest_files=["res://.godot/imported/hover.png-1a4d06984e9e9f7d3b2c9a9bf37377b9.ctex"]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1mte3elkyp86"
-path="res://.godot/imported/GOAL (220 x 100 px).png-b2d1e6d63d9d985a6372095d35a9612f.ctex"
+uid="uid://cj5eql6ea8nfp"
+path="res://.godot/imported/play icon.png-d3051ba920cec9a0a3ff4c215de50431.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://screens/menu_ui/btn_1/GOAL (220 x 100 px).png"
-dest_files=["res://.godot/imported/GOAL (220 x 100 px).png-b2d1e6d63d9d985a6372095d35a9612f.ctex"]
+source_file="res://screens/menu_ui/btn_1/play icon.png"
+dest_files=["res://.godot/imported/play icon.png-d3051ba920cec9a0a3ff4c215de50431.ctex"]
 
 [params]
 
