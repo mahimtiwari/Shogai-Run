@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dvh2mrlug2wv3"]
+[gd_scene load_steps=16 format=3 uid="uid://dvh2mrlug2wv3"]
 
 [ext_resource type="Script" uid="uid://d1th2iyt011e6" path="res://screens/menu.gd" id="1_8qoiq"]
 [ext_resource type="Texture2D" uid="uid://udkx6f8mtwst" path="res://skybox-light-blue-sky-3d-model-bad93c2d7f.webp" id="1_dc0yw"]
@@ -12,9 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://ctdp05v1rqhuq" path="res://screens/menu_ui/settings.png" id="10_0jpem"]
 [ext_resource type="Script" uid="uid://ksb0nd3dbqbi" path="res://screens/menu_side_btns.gd" id="10_xao2u"]
 [ext_resource type="Texture2D" uid="uid://d3qp2vqv3hq26" path="res://screens/menu_ui/dress.png" id="11_xao2u"]
-[ext_resource type="Texture2D" uid="uid://cdyos2axajufv" path="res://screens/menu_ui/settings_selected.png" id="12_b1fnv"]
-[ext_resource type="Texture2D" uid="uid://c3f6248mlxmc5" path="res://screens/menu_ui/dress_selected.png" id="14_yqvmf"]
-[ext_resource type="Texture2D" uid="uid://cfq6e3efuvsoq" path="res://screens/menu_ui/Untitled design (19).png" id="15_yqvmf"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_o3ram"]
 panorama = ExtResource("1_dc0yw")
@@ -25,7 +22,7 @@ sky_material = SubResource("PanoramaSkyMaterial_o3ram")
 [sub_resource type="Environment" id="Environment_dhgkt"]
 background_mode = 2
 sky = SubResource("Sky_lt0en")
-sky_rotation = Vector3(0, 40.0451, 0)
+sky_rotation = Vector3(0, 28.6854, 0)
 tonemap_mode = 2
 glow_enabled = true
 
@@ -96,7 +93,6 @@ size_flags_horizontal = 4
 texture_filter = 4
 layout_mode = 2
 texture_normal = ExtResource("8_tsmig")
-texture_hover = ExtResource("9_45kd6")
 texture_focused = ExtResource("9_45kd6")
 script = ExtResource("10_xao2u")
 button_id = "home"
@@ -105,8 +101,6 @@ button_id = "home"
 texture_filter = 4
 layout_mode = 2
 texture_normal = ExtResource("10_0jpem")
-texture_hover = ExtResource("12_b1fnv")
-texture_focused = ExtResource("12_b1fnv")
 script = ExtResource("10_xao2u")
 button_id = "settings"
 
@@ -114,22 +108,5 @@ button_id = "settings"
 texture_filter = 4
 layout_mode = 2
 texture_normal = ExtResource("11_xao2u")
-texture_hover = ExtResource("14_yqvmf")
-texture_focused = ExtResource("14_yqvmf")
 script = ExtResource("10_xao2u")
 button_id = "dress"
-
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -220.0
-offset_top = -131.0
-offset_right = 1700.0
-offset_bottom = 949.0
-grow_horizontal = 0
-grow_vertical = 0
-scale = Vector2(0.105, 0.105)
-texture_normal = ExtResource("15_yqvmf")
