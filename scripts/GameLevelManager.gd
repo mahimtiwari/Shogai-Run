@@ -17,6 +17,8 @@ var player_global_transform_basis: Basis
 var disc_env_velocity: Vector3
 var level_finished: bool = false
 
+var menu_option_selected: String = "home"
+
 signal coin_amount_changed(amount: int)
 
 func _ready() -> void:

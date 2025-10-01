@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dvh2mrlug2wv3"]
+[gd_scene load_steps=15 format=3 uid="uid://dvh2mrlug2wv3"]
 
 [ext_resource type="Script" uid="uid://d1th2iyt011e6" path="res://screens/menu.gd" id="1_8qoiq"]
 [ext_resource type="Texture2D" uid="uid://udkx6f8mtwst" path="res://skybox-light-blue-sky-3d-model-bad93c2d7f.webp" id="1_dc0yw"]
@@ -6,6 +6,11 @@
 [ext_resource type="Script" uid="uid://bmflvo0cinrw6" path="res://screens/world_environment.gd" id="3_w6t7d"]
 [ext_resource type="PackedScene" uid="uid://bbe25dv3xjsfg" path="res://general_obst/fall_platform_hexagon/hexagon_menu.tscn" id="4_w6t7d"]
 [ext_resource type="PackedScene" uid="uid://dxc1f4axp38y0" path="res://general_obst/fall_platform_hexagon/hexagon_menu_spe.tscn" id="5_gq33n"]
+[ext_resource type="Texture2D" uid="uid://bsmf24gauagmy" path="res://screens/menu_ui/sidebar.png" id="7_gq33n"]
+[ext_resource type="Texture2D" uid="uid://bgbposyg7nfew" path="res://screens/menu_ui/home.png" id="8_tsmig"]
+[ext_resource type="Script" uid="uid://ksb0nd3dbqbi" path="res://screens/menu_side_btns.gd" id="9_45kd6"]
+[ext_resource type="Texture2D" uid="uid://ctdp05v1rqhuq" path="res://screens/menu_ui/settings.png" id="10_0jpem"]
+[ext_resource type="Texture2D" uid="uid://d3qp2vqv3hq26" path="res://screens/menu_ui/dress.png" id="11_xao2u"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_o3ram"]
 panorama = ExtResource("1_dc0yw")
@@ -16,6 +21,7 @@ sky_material = SubResource("PanoramaSkyMaterial_o3ram")
 [sub_resource type="Environment" id="Environment_dhgkt"]
 background_mode = 2
 sky = SubResource("Sky_lt0en")
+sky_rotation = Vector3(0, 28.2687, 0)
 tonemap_mode = 2
 glow_enabled = true
 
@@ -47,3 +53,58 @@ transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -1.602, 0,
 
 [node name="hexagon" parent="." instance=ExtResource("5_gq33n")]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 0.00390816, 0, -1.77346)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer"]
+texture_filter = 4
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -129.0
+offset_top = -127.0
+offset_right = 217.0
+offset_bottom = 219.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.73, 0.73)
+texture = ExtResource("7_gq33n")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.294798
+anchor_top = 0.216763
+anchor_right = 0.482659
+anchor_bottom = 0.783353
+offset_left = -7.99999
+offset_top = -25.0
+offset_right = 427.0
+offset_bottom = 1286.96
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.165, 0.165)
+size_flags_horizontal = 4
+
+[node name="home" type="TextureButton" parent="CanvasLayer/NinePatchRect/VBoxContainer"]
+texture_filter = 4
+layout_mode = 2
+texture_normal = ExtResource("8_tsmig")
+script = ExtResource("9_45kd6")
+button_id = "home"
+
+[node name="settings" type="TextureButton" parent="CanvasLayer/NinePatchRect/VBoxContainer"]
+texture_filter = 4
+layout_mode = 2
+texture_normal = ExtResource("10_0jpem")
+script = ExtResource("9_45kd6")
+button_id = "settings"
+
+[node name="dress" type="TextureButton" parent="CanvasLayer/NinePatchRect/VBoxContainer"]
+texture_filter = 4
+layout_mode = 2
+texture_normal = ExtResource("11_xao2u")
+script = ExtResource("9_45kd6")
+button_id = "dress"

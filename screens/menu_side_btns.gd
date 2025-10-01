@@ -1,0 +1,16 @@
+extends TextureButton
+
+@export var button_id:=""
+
+var target_scale = Vector2.ONE
+
+func _process(delta: float) -> void:
+	
+
+	if is_hovered():
+		target_scale = Vector2(1.05, 1.05) # hover scale
+	else:
+		target_scale = Vector2.ONE       # normal scale
+
+	# Smoothly interpolate current scale toward target_scale
+	scale = scale.lerp(target_scale, 10 * delta) 
