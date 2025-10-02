@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b84alncdxmcar"
-path="res://.godot/imported/sidebar_dark.png-27449f857615067d3ae102444bec7e6d.ctex"
+uid="uid://dffyoi30wda0n"
+path="res://.godot/imported/volume_slider.png-6c178648b5d208460784a26daaebd05e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://screens/menu_ui/sidebar_dark.png"
-dest_files=["res://.godot/imported/sidebar_dark.png-27449f857615067d3ae102444bec7e6d.ctex"]
+source_file="res://screens/menu_ui/volume_slider.png"
+dest_files=["res://.godot/imported/volume_slider.png-6c178648b5d208460784a26daaebd05e.ctex"]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

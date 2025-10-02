@@ -11,12 +11,11 @@
 [ext_resource type="Texture2D" uid="uid://wi8awuybredb" path="res://screens/menu_ui/home_selected.png" id="9_45kd6"]
 [ext_resource type="Texture2D" uid="uid://ctdp05v1rqhuq" path="res://screens/menu_ui/settings.png" id="10_0jpem"]
 [ext_resource type="Script" uid="uid://ksb0nd3dbqbi" path="res://screens/menu_side_btns.gd" id="10_xao2u"]
-[ext_resource type="Texture2D" uid="uid://d3qp2vqv3hq26" path="res://screens/menu_ui/dress.png" id="11_xao2u"]
 [ext_resource type="Texture2D" uid="uid://cdyos2axajufv" path="res://screens/menu_ui/settings_selected.png" id="12_b1fnv"]
-[ext_resource type="Texture2D" uid="uid://c3f6248mlxmc5" path="res://screens/menu_ui/dress_selected.png" id="14_yqvmf"]
 [ext_resource type="Texture2D" uid="uid://c3amb02bu0jeu" path="res://screens/menu_ui/btn_1/normal.png" id="15_3gxtn"]
 [ext_resource type="Texture2D" uid="uid://dgpn8y2674je3" path="res://screens/menu_ui/btn_1/hover.png" id="16_3gxtn"]
 [ext_resource type="FontFile" uid="uid://cr7k02yb1xky8" path="res://UI_nodes/Jua-Regular.ttf" id="16_3x8jw"]
+[ext_resource type="Texture2D" uid="uid://bybt1vy8821wg" path="res://screens/menu_ui/backpanel_4.png" id="17_3x8jw"]
 [ext_resource type="Texture2D" uid="uid://cj5eql6ea8nfp" path="res://screens/menu_ui/btn_1/play icon.png" id="18_5fwss"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_o3ram"]
@@ -28,9 +27,12 @@ sky_material = SubResource("PanoramaSkyMaterial_o3ram")
 [sub_resource type="Environment" id="Environment_dhgkt"]
 background_mode = 2
 sky = SubResource("Sky_lt0en")
-sky_rotation = Vector3(0, 46.9165, 0)
+sky_rotation = Vector3(0, 67.7621, 0)
 tonemap_mode = 2
 glow_enabled = true
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_it6kj"]
+content_margin_top = 10.0
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_8qoiq")
@@ -71,9 +73,9 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -129.0
-offset_top = -127.0
+offset_top = -78.0
 offset_right = 217.0
-offset_bottom = 219.0
+offset_bottom = 138.0
 grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(0.73, 0.73)
@@ -86,10 +88,10 @@ anchor_left = 0.294798
 anchor_top = 0.216763
 anchor_right = 0.482659
 anchor_bottom = 0.783353
-offset_left = -7.99999
-offset_top = -25.0
+offset_left = -8.00011
+offset_top = -25.1069
 offset_right = 427.0
-offset_bottom = 1286.96
+offset_bottom = 894.078
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.165, 0.165)
@@ -113,26 +115,24 @@ texture_focused = ExtResource("12_b1fnv")
 script = ExtResource("10_xao2u")
 button_id = "settings"
 
-[node name="dress" type="TextureButton" parent="CanvasLayer/NinePatchRect/VBoxContainer"]
+[node name="Play" type="TextureButton" parent="CanvasLayer"]
 texture_filter = 4
-layout_mode = 2
-texture_normal = ExtResource("11_xao2u")
-texture_hover = ExtResource("14_yqvmf")
-texture_focused = ExtResource("14_yqvmf")
-script = ExtResource("10_xao2u")
-button_id = "dress"
-
-[node name="dress2" type="TextureButton" parent="CanvasLayer"]
-texture_filter = 4
-offset_left = 880.0
-offset_top = 532.0
-offset_right = 2530.0
-offset_bottom = 1132.0
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -272.0
+offset_top = -116.0
+offset_right = 1378.0
+offset_bottom = 484.0
+grow_horizontal = 0
+grow_vertical = 0
 scale = Vector2(0.14, 0.14)
 texture_normal = ExtResource("16_3gxtn")
 texture_hover = ExtResource("15_3gxtn")
 
-[node name="Label" type="Label" parent="CanvasLayer/dress2"]
+[node name="Label" type="Label" parent="CanvasLayer/Play"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -149,7 +149,7 @@ theme_override_fonts/font = ExtResource("16_3x8jw")
 theme_override_font_sizes/font_size = 360
 text = "PLAY"
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/dress2"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Play"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -161,3 +161,93 @@ offset_bottom = 800.0
 grow_vertical = 2
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("18_5fwss")
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="CanvasLayer"]
+texture_filter = 4
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -245.0
+offset_right = 622.0
+offset_bottom = 429.0
+grow_vertical = 2
+scale = Vector2(0.73, 0.73)
+texture = ExtResource("17_3x8jw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/NinePatchRect2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.287
+anchor_top = 0.5
+anchor_right = 0.287
+anchor_bottom = 0.5
+offset_left = 20.3276
+offset_top = -217.822
+offset_right = 332.328
+offset_bottom = 233.178
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 55
+
+[node name="contLabel" type="HBoxContainer" parent="CanvasLayer/NinePatchRect2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="settings" type="TextureRect" parent="CanvasLayer/NinePatchRect2/VBoxContainer/contLabel"]
+texture_filter = 4
+custom_minimum_size = Vector2(83.905, 80)
+layout_mode = 2
+texture = ExtResource("12_b1fnv")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="CanvasLayer/NinePatchRect2/VBoxContainer/contLabel"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("16_3x8jw")
+theme_override_font_sizes/font_size = 49
+theme_override_styles/normal = SubResource("StyleBoxEmpty_it6kj")
+text = "SETTINGS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/NinePatchRect2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Items" type="VBoxContainer" parent="CanvasLayer/NinePatchRect2/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer/NinePatchRect2/VBoxContainer/VBoxContainer/Items"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("16_3x8jw")
+theme_override_font_sizes/font_size = 40
+text = "Volume"
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer/NinePatchRect2/VBoxContainer/VBoxContainer/Items"]
+layout_mode = 2
+value = 80.0
+
+[node name="Items2" type="VBoxContainer" parent="CanvasLayer/NinePatchRect2/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer/NinePatchRect2/VBoxContainer/VBoxContainer/Items2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("16_3x8jw")
+theme_override_font_sizes/font_size = 40
+text = "SFX"
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer/NinePatchRect2/VBoxContainer/VBoxContainer/Items2"]
+layout_mode = 2
+
+[node name="Items3" type="VBoxContainer" parent="CanvasLayer/NinePatchRect2/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer/NinePatchRect2/VBoxContainer/VBoxContainer/Items3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("16_3x8jw")
+theme_override_font_sizes/font_size = 40
+text = "BGM"
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer/NinePatchRect2/VBoxContainer/VBoxContainer/Items3"]
+layout_mode = 2

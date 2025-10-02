@@ -4,6 +4,11 @@ extends TextureButton
 
 var target_scale = Vector2.ONE
 
+func _ready() -> void:
+	if button_id == GameLevelManager.menu_option_selected:
+		focus_mode = Control.FOCUS_ALL
+		grab_focus()
+
 func _process(delta: float) -> void:
 	#if GameLevelManager.menu_option_selected == button_id:
 	pass
@@ -13,5 +18,8 @@ func _process(delta: float) -> void:
 	#else:
 		#target_scale = Vector2.ONE       # normal scale
 #
-	## Smoothly interpolate current scale toward target_scale
+	 #Smoothly interpolate current scale toward target_scale
 	#scale = scale.lerp(target_scale, 10 * delta) 
+	
+func _on_pressed_btn()-> void:
+	GameLevelManager.menu_option_selected=button_id
