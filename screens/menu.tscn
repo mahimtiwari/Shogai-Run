@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dvh2mrlug2wv3"]
+[gd_scene load_steps=25 format=3 uid="uid://dvh2mrlug2wv3"]
 
 [ext_resource type="Script" uid="uid://d1th2iyt011e6" path="res://screens/menu.gd" id="1_8qoiq"]
 [ext_resource type="Texture2D" uid="uid://udkx6f8mtwst" path="res://skybox-light-blue-sky-3d-model-bad93c2d7f.webp" id="1_dc0yw"]
@@ -17,6 +17,7 @@
 [ext_resource type="FontFile" uid="uid://cr7k02yb1xky8" path="res://UI_nodes/Jua-Regular.ttf" id="16_3x8jw"]
 [ext_resource type="Texture2D" uid="uid://bybt1vy8821wg" path="res://screens/menu_ui/backpanel_4.png" id="17_3x8jw"]
 [ext_resource type="Texture2D" uid="uid://cj5eql6ea8nfp" path="res://screens/menu_ui/btn_1/play icon.png" id="18_5fwss"]
+[ext_resource type="Script" uid="uid://ql38yksuutun" path="res://screens/settings.gd" id="18_ua7pi"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_o3ram"]
 panorama = ExtResource("1_dc0yw")
@@ -27,12 +28,30 @@ sky_material = SubResource("PanoramaSkyMaterial_o3ram")
 [sub_resource type="Environment" id="Environment_dhgkt"]
 background_mode = 2
 sky = SubResource("Sky_lt0en")
-sky_rotation = Vector3(0, 67.7621, 0)
+sky_rotation = Vector3(0, 75.3811, 0)
 tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_it6kj"]
 content_margin_top = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3x8jw"]
+bg_color = Color(0.980392, 0.156863, 0.568627, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5fwss"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_8qoiq")
@@ -162,7 +181,7 @@ grow_vertical = 2
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("18_5fwss")
 
-[node name="NinePatchRect2" type="NinePatchRect" parent="CanvasLayer"]
+[node name="settings" type="NinePatchRect" parent="CanvasLayer"]
 texture_filter = 4
 anchors_preset = 4
 anchor_top = 0.5
@@ -174,8 +193,9 @@ offset_bottom = 429.0
 grow_vertical = 2
 scale = Vector2(0.73, 0.73)
 texture = ExtResource("17_3x8jw")
+script = ExtResource("18_ua7pi")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/NinePatchRect2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/settings"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.287
@@ -190,18 +210,18 @@ grow_horizontal = 0
 grow_vertical = 2
 theme_override_constants/separation = 55
 
-[node name="contLabel" type="HBoxContainer" parent="CanvasLayer/NinePatchRect2/VBoxContainer"]
+[node name="contLabel" type="HBoxContainer" parent="CanvasLayer/settings/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="settings" type="TextureRect" parent="CanvasLayer/NinePatchRect2/VBoxContainer/contLabel"]
+[node name="settings" type="TextureRect" parent="CanvasLayer/settings/VBoxContainer/contLabel"]
 texture_filter = 4
 custom_minimum_size = Vector2(83.905, 80)
 layout_mode = 2
 texture = ExtResource("12_b1fnv")
 expand_mode = 4
 
-[node name="Label" type="Label" parent="CanvasLayer/NinePatchRect2/VBoxContainer/contLabel"]
+[node name="Label" type="Label" parent="CanvasLayer/settings/VBoxContainer/contLabel"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("16_3x8jw")
@@ -211,43 +231,51 @@ text = "SETTINGS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/NinePatchRect2/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/settings/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="Items" type="VBoxContainer" parent="CanvasLayer/NinePatchRect2/VBoxContainer/VBoxContainer"]
+[node name="Items" type="VBoxContainer" parent="CanvasLayer/settings/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="CanvasLayer/NinePatchRect2/VBoxContainer/VBoxContainer/Items"]
+[node name="Label2" type="Label" parent="CanvasLayer/settings/VBoxContainer/VBoxContainer/Items"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("16_3x8jw")
 theme_override_font_sizes/font_size = 40
 text = "Volume"
 
-[node name="HSlider" type="HSlider" parent="CanvasLayer/NinePatchRect2/VBoxContainer/VBoxContainer/Items"]
+[node name="HSlider" type="HSlider" parent="CanvasLayer/settings/VBoxContainer/VBoxContainer/Items"]
 layout_mode = 2
+theme_override_styles/slider = SubResource("StyleBoxFlat_3x8jw")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_5fwss")
 value = 80.0
 
-[node name="Items2" type="VBoxContainer" parent="CanvasLayer/NinePatchRect2/VBoxContainer/VBoxContainer"]
+[node name="Items2" type="VBoxContainer" parent="CanvasLayer/settings/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="CanvasLayer/NinePatchRect2/VBoxContainer/VBoxContainer/Items2"]
+[node name="Label2" type="Label" parent="CanvasLayer/settings/VBoxContainer/VBoxContainer/Items2"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("16_3x8jw")
 theme_override_font_sizes/font_size = 40
 text = "SFX"
 
-[node name="HSlider" type="HSlider" parent="CanvasLayer/NinePatchRect2/VBoxContainer/VBoxContainer/Items2"]
+[node name="HSlider" type="HSlider" parent="CanvasLayer/settings/VBoxContainer/VBoxContainer/Items2"]
+layout_mode = 2
+theme_override_styles/slider = SubResource("StyleBoxFlat_3x8jw")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_5fwss")
+value = 80.0
+
+[node name="Items3" type="VBoxContainer" parent="CanvasLayer/settings/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Items3" type="VBoxContainer" parent="CanvasLayer/NinePatchRect2/VBoxContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label2" type="Label" parent="CanvasLayer/NinePatchRect2/VBoxContainer/VBoxContainer/Items3"]
+[node name="Label2" type="Label" parent="CanvasLayer/settings/VBoxContainer/VBoxContainer/Items3"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("16_3x8jw")
 theme_override_font_sizes/font_size = 40
 text = "BGM"
 
-[node name="HSlider" type="HSlider" parent="CanvasLayer/NinePatchRect2/VBoxContainer/VBoxContainer/Items3"]
+[node name="HSlider" type="HSlider" parent="CanvasLayer/settings/VBoxContainer/VBoxContainer/Items3"]
 layout_mode = 2
+theme_override_styles/slider = SubResource("StyleBoxFlat_3x8jw")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_5fwss")
+value = 80.0
