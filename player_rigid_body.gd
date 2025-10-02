@@ -47,6 +47,7 @@ func _ready() -> void:
 	sfx_jump.volume_linear = sfx_jump.volume_linear*GameLevelManager.sfx_vol_factor*GameLevelManager.master_vol_factor
 	sfx_background.volume_linear = sfx_background.volume_linear*GameLevelManager.bgm_vol_factor*GameLevelManager.master_vol_factor
 	sfx_background.play()
+	sfx_coin.volume_linear = sfx_coin.volume_linear*GameLevelManager.master_vol_factor*GameLevelManager.sfx_vol_factor
 	
 	GameLevelManager.connect("coin_amount_changed", _coin_amount_chnged_call)
 	$"../Area3D3".connect("body_entered", _on_area_3d_3_body_entered_spawn)

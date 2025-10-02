@@ -31,7 +31,7 @@ sky_material = SubResource("PanoramaSkyMaterial_o3ram")
 [sub_resource type="Environment" id="Environment_dhgkt"]
 background_mode = 2
 sky = SubResource("Sky_lt0en")
-sky_rotation = Vector3(0, 91.9577, 0)
+sky_rotation = Vector3(0, 95.8376, 0)
 tonemap_mode = 2
 glow_enabled = true
 
@@ -74,10 +74,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.028, 2.289)
 transform = Transform3D(0.447368, 0, 7.82203e-08, 0, 0.447368, 0, -7.82203e-08, 0, 0.447368, -3.18969e-07, 0.129648, -1.76906)
 
 [node name="Skeleton3D" parent="Player1/Armature" index="0"]
-bones/0/rotation = Quaternion(0.00459548, 0.000347157, 0.0017645, 0.999988)
-bones/5/rotation = Quaternion(-0.0896034, -0.0655602, -0.127387, 0.985619)
-bones/8/rotation = Quaternion(-0.0896034, 0.0655602, 0.127387, 0.985619)
-bones/17/rotation = Quaternion(-0.490954, 0.0268661, 0.000387192, 0.870771)
+bones/0/rotation = Quaternion(-0.0388452, 0.000423473, 0.00174775, 0.999244)
+bones/5/rotation = Quaternion(-0.0804129, 0.00436064, -0.0455438, 0.995711)
+bones/8/rotation = Quaternion(-0.0804129, -0.00436064, 0.0455438, 0.995711)
+bones/17/rotation = Quaternion(-0.541288, 0.0267969, 0.00196568, 0.840407)
 
 [node name="hexagon3" parent="." instance=ExtResource("4_w6t7d")]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 0, 0, 0.07)
@@ -258,6 +258,7 @@ text = "Volume"
 layout_mode = 2
 theme_override_styles/slider = SubResource("StyleBoxFlat_3x8jw")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_5fwss")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_5fwss")
 script = ExtResource("20_it6kj")
 volume_type = "master"
 
@@ -274,6 +275,7 @@ text = "SFX"
 layout_mode = 2
 theme_override_styles/slider = SubResource("StyleBoxFlat_3x8jw")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_5fwss")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_5fwss")
 script = ExtResource("20_it6kj")
 volume_type = "sfx"
 
@@ -290,6 +292,7 @@ text = "BGM"
 layout_mode = 2
 theme_override_styles/slider = SubResource("StyleBoxFlat_3x8jw")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_5fwss")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_5fwss")
 script = ExtResource("20_it6kj")
 volume_type = "bgm"
 
@@ -305,12 +308,15 @@ offset_right = 59.0
 offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 1, 1)
+theme_override_constants/outline_size = 7
 theme_override_fonts/font = ExtResource("16_3x8jw")
 theme_override_font_sizes/font_size = 35
 text = "Loading..."
 
 [node name="menu_bgm" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_qodxg")
-volume_db = -14.311
+volume_db = -10.371
 
 [editable path="Player1"]
