@@ -22,6 +22,7 @@ var t: float = rng.randf_range(2, per_emmsion_dration)
 
 func _ready() -> void:
 	roller_rigid_model.queue_free()
+	$AudioStreamPlayer3D.volume_linear = $AudioStreamPlayer3D.volume_linear*GameLevelManager.sfx_vol_factor*GameLevelManager.master_vol_factor
 func animate_grow(p: RigidBody3D) -> void:
 	p.scale=Vector3.ONE*0.5
 	var tween := p.create_tween()

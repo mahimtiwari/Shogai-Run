@@ -42,11 +42,12 @@ var jump_pitch:=1.0
 var _ground_lost_time: float = 0.0
 const GROUND_GRACE: float = 0.08  # seconds of allowed "miss" before we declare airborne
 
-
-
 func _ready() -> void:
 	GameLevelManager.player_global_transform_basis = global_transform.basis
+	sfx_jump.volume_linear = sfx_jump.volume_linear*GameLevelManager.sfx_vol_factor*GameLevelManager.master_vol_factor
+	sfx_background.volume_linear = sfx_background.volume_linear*GameLevelManager.bgm_vol_factor*GameLevelManager.master_vol_factor
 	sfx_background.play()
+	
 	GameLevelManager.connect("coin_amount_changed", _coin_amount_chnged_call)
 	$"../Area3D3".connect("body_entered", _on_area_3d_3_body_entered_spawn)
 

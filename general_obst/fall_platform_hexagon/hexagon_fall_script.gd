@@ -8,10 +8,15 @@ func _ready() -> void:
 
 var steped_bool:bool = false
 
+var hexagon_sfx_vol_linear
+
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("player") && !steped_bool:
 		steped_bool=true
 		print("Player collided with hexagon!")
+		if hexagon_sfx_vol_linear == null:
+			hexagon_sfx_vol_linear= hexagon_sfx.volume_linear
+		hexagon_sfx.volume_linear= hexagon_sfx_vol_linear*GameLevelManager.sfx_vol_factor*GameLevelManager.master_vol_factor
 		hexagon_sfx.play()
 		var mat := cylinder.get_active_material(0)
 		if mat:

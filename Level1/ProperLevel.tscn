@@ -100,7 +100,7 @@ shadow_enabled = true
 environment = SubResource("Environment_dsrnb")
 
 [node name="CharacterRigid" parent="." instance=ExtResource("26_jqvxq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.4141, -518.597)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.02273, 2.36203)
 
 [node name="spawnBlock15x8_blend2" parent="." instance=ExtResource("2_gdkdi")]
 transform = Transform3D(1.92361, 0, 0, 0, 5, 0, 0, 0, 5.82652, 0, 0.784507, -37.991)
@@ -1345,21 +1345,21 @@ transform = Transform3D(-3.98822e-07, 0, -9.12397, 0, 9.12397, 0, 9.12397, 0, -3
 checkpoint_index = 5
 
 [node name="DiskRotator" parent="." instance=ExtResource("36_ll2rk")]
-transform = Transform3D(5.01758, -7.57633e-07, -1.22255, -7.79799e-07, -5.16437, 6.36526e-13, -1.22255, 1.84599e-07, -5.01758, 0, 19.62, -1330.62)
+transform = Transform3D(4.30637, -6.50243e-07, 2.8506, -7.79798e-07, -5.16437, 6.79159e-13, 2.8506, -4.30429e-07, -4.30637, 0, 19.62, -1330.62)
 rotation_speed = 0.5
 color = Color(0.894118, 0.27451, 0.380392, 1)
 
 [node name="DiskRotator4" parent="." instance=ExtResource("36_ll2rk")]
-transform = Transform3D(-3.72696, 0, 0.908087, 0, 1.458, 0, -0.908087, 0, -3.72696, 0, 24.6506, -1330.62)
+transform = Transform3D(-3.19869, 0, -2.11737, 0, 1.458, 0, 2.11737, 0, -3.19869, 0, 24.6506, -1330.62)
 color = Color(0.894118, 0.396078, 0, 1)
 
 [node name="DiskRotator2" parent="." instance=ExtResource("36_ll2rk")]
-transform = Transform3D(2.69679, -2.13922e-07, -0.657081, -4.19116e-07, -1.45819, 1.59598e-14, -0.657081, 5.21229e-08, -2.69679, 0, 25.1938, -1330.62)
+transform = Transform3D(2.31454, -1.836e-07, 1.53211, -4.19117e-07, -1.45819, -3.30785e-13, 1.53211, -1.21534e-07, -2.31454, 0, 25.1938, -1330.62)
 rotation_speed = 0.5
 color = Color(0, 0.553181, 0.899129, 1)
 
 [node name="DiskRotator3" parent="." instance=ExtResource("36_ll2rk")]
-transform = Transform3D(-1.75467, 0, 0.427531, 0, 1.458, 0, -0.427531, 0, -1.75467, 0, 25.5763, -1330.69)
+transform = Transform3D(-1.50596, 0, -0.996868, 0, 1.458, 0, 0.996868, 0, -1.50596, 0, 25.5763, -1330.69)
 color = Color(0, 0.756863, 0.305882, 1)
 
 [node name="Label3D" type="Label3D" parent="."]

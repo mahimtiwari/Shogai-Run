@@ -19,6 +19,11 @@ var level_finished: bool = false
 
 var menu_option_selected: String = "home"
 
+var master_vol_factor: float = 1
+var sfx_vol_factor: float=1
+var bgm_vol_factor: float=1
+
+
 signal coin_amount_changed(amount: int)
 
 func _ready() -> void:

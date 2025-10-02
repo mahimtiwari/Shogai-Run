@@ -8,7 +8,7 @@ func _process(delta: float) -> void:
 		move_to_target(target_position)
 	else:
 		move_to_target(Vector2(-500.62, target_position.y))
-
+		
 
 var tween: Tween
 
