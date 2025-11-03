@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dvh2mrlug2wv3"]
+[gd_scene load_steps=38 format=3 uid="uid://dvh2mrlug2wv3"]
 
 [ext_resource type="Script" uid="uid://d1th2iyt011e6" path="res://screens/menu.gd" id="1_8qoiq"]
 [ext_resource type="Texture2D" uid="uid://udkx6f8mtwst" path="res://skybox-light-blue-sky-3d-model-bad93c2d7f.webp" id="1_dc0yw"]
@@ -17,10 +17,18 @@
 [ext_resource type="Texture2D" uid="uid://dgpn8y2674je3" path="res://screens/menu_ui/btn_1/hover.png" id="16_3gxtn"]
 [ext_resource type="FontFile" uid="uid://cr7k02yb1xky8" path="res://UI_nodes/Jua-Regular.ttf" id="16_3x8jw"]
 [ext_resource type="Texture2D" uid="uid://bybt1vy8821wg" path="res://screens/menu_ui/backpanel_4.png" id="17_3x8jw"]
+[ext_resource type="Script" uid="uid://b6fpdmq3ipj4r" path="res://screens/PLAY_LABEL.gd" id="17_yugyj"]
 [ext_resource type="Texture2D" uid="uid://cj5eql6ea8nfp" path="res://screens/menu_ui/btn_1/play icon.png" id="18_5fwss"]
 [ext_resource type="Script" uid="uid://ql38yksuutun" path="res://screens/settings.gd" id="18_ua7pi"]
+[ext_resource type="FontFile" uid="uid://bqlgp5byr63m" path="res://Futehodo-MaruGothic.ttf" id="18_uprcj"]
 [ext_resource type="Script" uid="uid://blmobki1wmmrn" path="res://screens/vol_slider.gd" id="20_it6kj"]
 [ext_resource type="AudioStream" uid="uid://8y5v0d3nuiof" path="res://screens/audio/menu_bgm.mp3" id="21_qodxg"]
+[ext_resource type="Script" uid="uid://caetjswvxpne7" path="res://screens/settings_label.gd" id="22_5e4e2"]
+[ext_resource type="FontFile" uid="uid://d3h77v3cxcan0" path="res://MochiyPopOne-Regular.ttf" id="22_5ebf8"]
+[ext_resource type="Texture2D" uid="uid://dy7ty1m4q7uec" path="res://hexa.png" id="22_l8v6q"]
+[ext_resource type="Script" uid="uid://xshjiqmef7sb" path="res://screens/translate_btn.gd" id="22_njo03"]
+[ext_resource type="Script" uid="uid://s0eb012ey8m0" path="res://screens/loading_label.gd" id="23_j86pl"]
+[ext_resource type="Script" uid="uid://dcenfkux6083u" path="res://screens/volume_label_translate.gd" id="23_ycwk6"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_o3ram"]
 panorama = ExtResource("1_dc0yw")
@@ -31,7 +39,7 @@ sky_material = SubResource("PanoramaSkyMaterial_o3ram")
 [sub_resource type="Environment" id="Environment_dhgkt"]
 background_mode = 2
 sky = SubResource("Sky_lt0en")
-sky_rotation = Vector3(0, 95.8376, 0)
+sky_rotation = Vector3(0, 132.528, 0)
 tonemap_mode = 2
 glow_enabled = true
 
@@ -56,6 +64,14 @@ corner_radius_bottom_left = 5
 expand_margin_top = 5.0
 expand_margin_bottom = 5.0
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_njo03"]
+texture = ExtResource("22_l8v6q")
+modulate_color = Color(0.219608, 0.713726, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5ebf8"]
+texture = ExtResource("22_l8v6q")
+modulate_color = Color(1, 0.580392, 0, 1)
+
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_8qoiq")
 
@@ -74,10 +90,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.028, 2.289)
 transform = Transform3D(0.447368, 0, 7.82203e-08, 0, 0.447368, 0, -7.82203e-08, 0, 0.447368, -3.18969e-07, 0.129648, -1.76906)
 
 [node name="Skeleton3D" parent="Player1/Armature" index="0"]
-bones/0/rotation = Quaternion(-0.0388452, 0.000423473, 0.00174775, 0.999244)
-bones/5/rotation = Quaternion(-0.0804129, 0.00436064, -0.0455438, 0.995711)
-bones/8/rotation = Quaternion(-0.0804129, -0.00436064, 0.0455438, 0.995711)
-bones/17/rotation = Quaternion(-0.541288, 0.0267969, 0.00196568, 0.840407)
+bones/0/rotation = Quaternion(0.0405357, 0.00028351, 0.00177584, 0.999177)
+bones/3/rotation = Quaternion(1.86253e-09, -2.18279e-11, 5.72982e-11, 1)
+bones/5/rotation = Quaternion(-0.0964935, -0.123565, -0.194823, 0.968227)
+bones/6/rotation = Quaternion(-8.23175e-09, -9.55573e-08, -0.0598798, 0.998206)
+bones/8/rotation = Quaternion(-0.0964935, 0.123565, 0.194823, 0.968227)
+bones/9/rotation = Quaternion(5.80616e-09, 1.10394e-07, 0.0598797, 0.998206)
+bones/11/rotation = Quaternion(-0.753264, -3.67439e-08, 2.89481e-08, 0.657719)
+bones/14/rotation = Quaternion(-0.753264, 3.67439e-08, -2.89481e-08, 0.657719)
+bones/17/rotation = Quaternion(-0.44769, 0.0268528, -0.00092991, 0.893785)
 
 [node name="hexagon3" parent="." instance=ExtResource("4_w6t7d")]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 0, 0, 0.07)
@@ -128,6 +149,9 @@ size_flags_horizontal = 4
 [node name="home" type="TextureButton" parent="CanvasLayer/NinePatchRect/VBoxContainer"]
 texture_filter = 4
 layout_mode = 2
+focus_neighbor_left = NodePath("../../../settings/VBoxContainer/VBoxContainer/Items2/vol_slider")
+focus_neighbor_top = NodePath("../../../Button")
+focus_neighbor_bottom = NodePath("../settings")
 texture_normal = ExtResource("8_tsmig")
 texture_hover = ExtResource("9_45kd6")
 texture_focused = ExtResource("9_45kd6")
@@ -137,6 +161,9 @@ button_id = "home"
 [node name="settings" type="TextureButton" parent="CanvasLayer/NinePatchRect/VBoxContainer"]
 texture_filter = 4
 layout_mode = 2
+focus_neighbor_left = NodePath("../../../settings/VBoxContainer/VBoxContainer/Items2/vol_slider")
+focus_neighbor_top = NodePath("../home")
+focus_neighbor_bottom = NodePath("../../../Play")
 texture_normal = ExtResource("10_0jpem")
 texture_hover = ExtResource("12_b1fnv")
 texture_focused = ExtResource("12_b1fnv")
@@ -157,8 +184,11 @@ offset_bottom = 484.0
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(0.14, 0.14)
+focus_neighbor_left = NodePath("../settings/VBoxContainer/VBoxContainer/Items3/vol_slider")
+focus_neighbor_top = NodePath("../NinePatchRect/VBoxContainer/settings")
 texture_normal = ExtResource("16_3gxtn")
 texture_hover = ExtResource("15_3gxtn")
+texture_focused = ExtResource("15_3gxtn")
 script = ExtResource("15_ua7pi")
 
 [node name="Label" type="Label" parent="CanvasLayer/Play"]
@@ -169,14 +199,22 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -1035.0
-offset_top = -181.857
+offset_top = -181.0
 offset_right = -190.0
-offset_bottom = 186.143
+offset_bottom = 187.0
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("16_3x8jw")
 theme_override_font_sizes/font_size = 360
 text = "PLAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("17_yugyj")
+jp_font = ExtResource("18_uprcj")
+jp_font_size = 300
+jp_pos_y_offset = 29
+en_font = ExtResource("16_3x8jw")
+en_font_size = 360
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Play"]
 layout_mode = 1
@@ -240,6 +278,13 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_it6kj")
 text = "SETTINGS"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("22_5e4e2")
+jp_text = "オプション"
+jp_font = ExtResource("18_uprcj")
+jp_font_size = 49
+en_text = "SETTINGS"
+en_font = ExtResource("16_3x8jw")
+en_font_size = 49
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/settings/VBoxContainer"]
 layout_mode = 2
@@ -253,9 +298,17 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("16_3x8jw")
 theme_override_font_sizes/font_size = 40
 text = "Volume"
+script = ExtResource("23_ycwk6")
+jp_text = "音量"
+jp_font = ExtResource("18_uprcj")
+jp_font_size = 40
+en_text = "Volume"
+en_font = ExtResource("16_3x8jw")
+en_font_size = 40
 
 [node name="vol_slider" type="HSlider" parent="CanvasLayer/settings/VBoxContainer/VBoxContainer/Items"]
 layout_mode = 2
+focus_neighbor_right = NodePath("../../../../../Button")
 theme_override_styles/slider = SubResource("StyleBoxFlat_3x8jw")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_5fwss")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_5fwss")
@@ -270,9 +323,17 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("16_3x8jw")
 theme_override_font_sizes/font_size = 40
 text = "SFX"
+script = ExtResource("23_ycwk6")
+jp_text = "効果音"
+jp_font = ExtResource("18_uprcj")
+jp_font_size = 40
+en_text = "SFX"
+en_font = ExtResource("16_3x8jw")
+en_font_size = 40
 
 [node name="vol_slider" type="HSlider" parent="CanvasLayer/settings/VBoxContainer/VBoxContainer/Items2"]
 layout_mode = 2
+focus_neighbor_right = NodePath("../../../../../NinePatchRect/VBoxContainer/home")
 theme_override_styles/slider = SubResource("StyleBoxFlat_3x8jw")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_5fwss")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_5fwss")
@@ -290,6 +351,7 @@ text = "BGM"
 
 [node name="vol_slider" type="HSlider" parent="CanvasLayer/settings/VBoxContainer/VBoxContainer/Items3"]
 layout_mode = 2
+focus_neighbor_right = NodePath("../../../../../Play")
 theme_override_styles/slider = SubResource("StyleBoxFlat_3x8jw")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_5fwss")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_5fwss")
@@ -314,9 +376,65 @@ theme_override_constants/outline_size = 7
 theme_override_fonts/font = ExtResource("16_3x8jw")
 theme_override_font_sizes/font_size = 35
 text = "Loading..."
+script = ExtResource("23_j86pl")
+jp_font = ExtResource("18_uprcj")
+jp_font_size = 35
+en_font = ExtResource("16_3x8jw")
+en_font_size = 35
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+texture_filter = 4
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -101.0
+offset_top = 7.0
+offset_right = 707.0
+offset_bottom = 815.0
+grow_horizontal = 0
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("22_l8v6q")
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -96.0
+offset_top = 11.0
+offset_right = -9.0
+offset_bottom = 99.0
+grow_horizontal = 0
+focus_neighbor_left = NodePath("../settings/VBoxContainer/VBoxContainer/Items/vol_slider")
+focus_neighbor_bottom = NodePath("../NinePatchRect/VBoxContainer/home")
+theme_override_styles/focus = SubResource("StyleBoxTexture_njo03")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_5ebf8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_njo03")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5ebf8")
+theme_override_styles/normal = SubResource("StyleBoxTexture_5ebf8")
+script = ExtResource("22_njo03")
+
+[node name="Label" type="Label" parent="CanvasLayer/Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("22_5ebf8")
+theme_override_font_sizes/font_size = 35
+text = "あ"
+horizontal_alignment = 1
 
 [node name="menu_bgm" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_qodxg")
 volume_db = -10.371
+
+[connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]
 
 [editable path="Player1"]

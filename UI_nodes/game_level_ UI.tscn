@@ -1,12 +1,15 @@
-[gd_scene load_steps=192 format=3 uid="uid://dovp8pflu4oid"]
+[gd_scene load_steps=195 format=3 uid="uid://dovp8pflu4oid"]
 
 [ext_resource type="Texture2D" uid="uid://bsur2cnu40ncn" path="res://UI_nodes/ui_round_rect500X100.png" id="1_jnv6f"]
 [ext_resource type="Script" uid="uid://c3qey45hm8n70" path="res://UI_nodes/game_level__ui.gd" id="1_unydp"]
 [ext_resource type="FontFile" uid="uid://cr7k02yb1xky8" path="res://UI_nodes/Jua-Regular.ttf" id="2_dtl3i"]
 [ext_resource type="Texture2D" uid="uid://chcd1ldhpvwpi" path="res://UI_nodes/goal500x100.png" id="3_ed2rf"]
+[ext_resource type="Script" uid="uid://cigor6qc0ijq3" path="res://UI_nodes/_g_textlabel.gd" id="4_2gvwk"]
 [ext_resource type="Texture2D" uid="uid://bjwchhgr3dawk" path="res://UI_nodes/time.png" id="4_e75lp"]
 [ext_resource type="Texture2D" uid="uid://c0347tbqnooqe" path="res://UI_nodes/stars.png" id="4_fvg4s"]
+[ext_resource type="Script" uid="uid://boptnh1mce7k4" path="res://UI_nodes/GAOL_label.gd" id="5_ccs7m"]
 [ext_resource type="Texture2D" uid="uid://dgsmndk13q2xk" path="res://stars/frame_000_delay-0.03s.png" id="5_wayqq"]
+[ext_resource type="FontFile" uid="uid://bqlgp5byr63m" path="res://Futehodo-MaruGothic.ttf" id="6_0j4rw"]
 [ext_resource type="Texture2D" uid="uid://b0357uwqg0c4u" path="res://stars/frame_001_delay-0.04s.png" id="6_unydp"]
 [ext_resource type="Texture2D" uid="uid://blbx21auqt5xl" path="res://stars/frame_002_delay-0.03s.png" id="7_bnghc"]
 [ext_resource type="Texture2D" uid="uid://bnoafv03ruq6q" path="res://stars/frame_003_delay-0.03s.png" id="8_ccs7m"]
@@ -778,6 +781,11 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_dtl3i")
 theme_override_font_sizes/font_size = 31
 text = "REACH THE END!"
+script = ExtResource("4_2gvwk")
+jp_font = ExtResource("6_0j4rw")
+jp_font_size = 31
+en_font = ExtResource("2_dtl3i")
+en_font_size = 31
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="."]
 offset_left = -21.0
@@ -809,6 +817,11 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_dtl3i")
 theme_override_font_sizes/font_size = 27
 text = "GOAL!"
+script = ExtResource("5_ccs7m")
+jp_font = ExtResource("6_0j4rw")
+jp_font_size = 23
+en_font = ExtResource("2_dtl3i")
+en_font_size = 27
 
 [node name="NinePatchRect4" type="NinePatchRect" parent="."]
 anchors_preset = 1

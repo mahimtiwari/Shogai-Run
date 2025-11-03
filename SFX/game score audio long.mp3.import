@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dfakv8dnpimhb"
+path="res://.godot/imported/game score audio long.mp3-82438f913f506408d7f7734b3c2f9e15.mp3str"
+
+[deps]
+
+source_file="res://SFX/game score audio long.mp3"
+dest_files=["res://.godot/imported/game score audio long.mp3-82438f913f506408d7f7734b3c2f9e15.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

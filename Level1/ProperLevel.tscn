@@ -84,7 +84,7 @@ height = 0.239502
 radius = 0.99
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ek4gr"]
-size = Vector3(76.585, 46.745, 13.165)
+size = Vector3(76.585, 39.5253, 15.7246)
 
 [node name="Node3D" type="Node3D"]
 
@@ -100,7 +100,7 @@ shadow_enabled = true
 environment = SubResource("Environment_dsrnb")
 
 [node name="CharacterRigid" parent="." instance=ExtResource("26_jqvxq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.02273, 2.36203)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.716, -1510.14)
 
 [node name="spawnBlock15x8_blend2" parent="." instance=ExtResource("2_gdkdi")]
 transform = Transform3D(1.92361, 0, 0, 0, 5, 0, 0, 0, 5.82652, 0, 0.784507, -37.991)
@@ -699,6 +699,18 @@ transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2
 
 [node name="Coin65" parent="all_coins" instance=ExtResource("13_b3pp6")]
 transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, 0, 35.2265, -1330.69)
+
+[node name="Coin66" parent="all_coins" instance=ExtResource("13_b3pp6")]
+transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, 9.20284, 37.1591, -1336.82)
+
+[node name="Coin68" parent="all_coins" instance=ExtResource("13_b3pp6")]
+transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, -9.203, 37.159, -1336.82)
+
+[node name="Coin67" parent="all_coins" instance=ExtResource("13_b3pp6")]
+transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, -9.203, 37.159, -1324.78)
+
+[node name="Coin69" parent="all_coins" instance=ExtResource("13_b3pp6")]
+transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, 9.368, 37.159, -1324.78)
 
 [node name="Coin52" parent="all_coins" instance=ExtResource("13_b3pp6")]
 transform = Transform3D(6.59403, 0, 0, 0, -2.88234e-07, 6.59403, 0, -6.59403, -2.88234e-07, -0.0757141, 31.1592, -1123.1)
@@ -1345,21 +1357,21 @@ transform = Transform3D(-3.98822e-07, 0, -9.12397, 0, 9.12397, 0, 9.12397, 0, -3
 checkpoint_index = 5
 
 [node name="DiskRotator" parent="." instance=ExtResource("36_ll2rk")]
-transform = Transform3D(-1.56194, 2.35846e-07, 4.92251, -7.79798e-07, -5.16437, 6.43158e-13, 4.92251, -7.43278e-07, 1.56194, 0, 19.62, -1330.62)
+transform = Transform3D(-2.87948, 4.34789e-07, 4.28712, -7.798e-07, -5.16437, -4.06195e-13, 4.28712, -6.47336e-07, 2.87948, 0, 19.62, -1330.62)
 rotation_speed = 0.5
 color = Color(0.894118, 0.27451, 0.380392, 1)
 
 [node name="DiskRotator4" parent="." instance=ExtResource("36_ll2rk")]
-transform = Transform3D(1.16018, 0, -3.65634, 0, 1.458, 0, 3.65634, 0, 1.16018, 0, 24.6506, -1330.62)
+transform = Transform3D(2.13882, 0, -3.18438, 0, 1.458, 0, 3.18438, 0, 2.13882, 0, 24.6506, -1330.62)
 color = Color(0.894118, 0.396078, 0, 1)
 
 [node name="DiskRotator2" parent="." instance=ExtResource("36_ll2rk")]
-transform = Transform3D(-0.839492, 6.65923e-08, 2.64569, -4.19117e-07, -1.45819, -3.30785e-13, 2.64569, -2.09869e-07, 0.839492, 0, 25.1938, -1330.62)
+transform = Transform3D(-1.54762, 1.22765e-07, 2.30418, -4.19116e-07, -1.45819, -4.28366e-13, 2.30418, -1.82779e-07, 1.54762, 0, 25.1938, -1330.62)
 rotation_speed = 0.5
 color = Color(0, 0.553181, 0.899129, 1)
 
 [node name="DiskRotator3" parent="." instance=ExtResource("36_ll2rk")]
-transform = Transform3D(0.546216, 0, -1.72142, 0, 1.458, 0, 1.72142, 0, 0.546216, 0, 25.5763, -1330.69)
+transform = Transform3D(1.00697, 0, -1.49922, 0, 1.458, 0, 1.49922, 0, 1.00697, 0, 25.5763, -1330.69)
 color = Color(0, 0.756863, 0.305882, 1)
 
 [node name="Label3D" type="Label3D" parent="."]
@@ -1502,15 +1514,6 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 98.
 modulate = Color(1, 1, 0, 1)
 outline_modulate = Color(0.462745, 0, 0.784314, 1)
 text = "FINISH"
-font = ExtResource("37_eeo2s")
-font_size = 1122
-
-[node name="Label3D3" type="Label3D" parent="."]
-transform = Transform3D(0.156094, 0, -0.270364, 0, 0.312189, 0, 0.270364, 0, 0.156094, 30.6284, 107.685, -1759.89)
-modulate = Color(1, 1, 0, 1)
-outline_modulate = Color(0.462745, 0, 0.784314, 1)
-text = "Winning screen yet
-to be added :D"
 font = ExtResource("37_eeo2s")
 font_size = 1122
 
@@ -2007,7 +2010,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 104.197, -1737.26)
 script = ExtResource("51_ywlas")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FinishLineArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.0863)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.60983, -0.806519)
 shape = SubResource("BoxShape3D_ek4gr")
 
 [connection signal="body_entered" from="Area3D4" to="CharacterRigid" method="_on_low_g_zone_entered"]

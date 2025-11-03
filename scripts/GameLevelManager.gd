@@ -23,6 +23,10 @@ var master_vol_factor: float = 1
 var sfx_vol_factor: float=1
 var bgm_vol_factor: float=1
 
+var level_complete_time_in_seconds: float = 0
+
+var lang: String = "EN"
+
 
 signal coin_amount_changed(amount: int)
 
